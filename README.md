@@ -1,5 +1,32 @@
 # Frogger
 
+## Installation et Lancement du Projet
+
+Pour cloner et lancer ce projet avec Maven, suivez les étapes ci-dessous :
+
+1. **Cloner le dépôt GitHub :**
+    ```bash
+    git clone https://github.com/votre-utilisateur/frogger.git
+    cd frogger
+    ```
+
+2. **Construire le projet avec Maven :**
+    Assurez-vous d'avoir Maven installé sur votre machine. Si ce n'est pas le cas, vous pouvez le télécharger et l'installer depuis [le site officiel de Maven](https://maven.apache.org/).
+
+    ```bash
+    mvn clean install
+    ```
+
+3. **Exécuter le projet :**
+    Une fois la construction terminée, vous pouvez exécuter le projet en utilisant la commande suivante :
+    ```bash
+    mvn exec:java -Dexec.mainClass="com.votrepackage.Main"
+    ```
+
+    Remplacez `com.votrepackage.Main` par le chemin de votre classe principale.
+
+Vous devriez maintenant être en mesure de voir le jeu Frogger s'exécuter.
+
 ## Description
 
 Implémentation d’un jeu de type Frogger : le joueur contrôle en temps réel un personnage via les touches
