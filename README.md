@@ -1,37 +1,66 @@
 # Frogger
 
+
+## Sommaire
+
+- [Installation et Lancement du Projet](#installation-et-lancement-du-projet)
+- [Description](#description)
+- [Fonctionnalités principales](#fonctionnalités-principales)
+- [Fonctionnalités secondaires](#fonctionnalités-secondaires)
+
+
 ## Installation et Lancement du Projet
 
 Pour cloner et lancer ce projet avec Maven, suivez les étapes ci-dessous :
 
 1. **Cloner le dépôt GitHub :**
+
     ```bash
-    git clone https://github.com/votre-utilisateur/frogger.git
+    git clone https://github.com/baptiste-bcn/frogger
     cd frogger
     ```
 
-2. **Construire le projet avec Maven :**
+2. **Installation de Maven :**
+
     Assurez-vous d'avoir Maven installé sur votre machine. Si ce n'est pas le cas, vous pouvez le télécharger et l'installer depuis [le site officiel de Maven](https://maven.apache.org/).
 
+    - Installez la version **apache-maven-3.9.9-bin.zip**. 
+    - Extrayez les fichiers dans `C:\Program Files\Maven`. 
+    - Ajoutez au `PATH` la variable d'environnement `C:\Program Files\Maven\apache-maven-3.9.9\bin`. 
+    - Vérifiez que l'installation s'est bien effectuée en ouvrant votre terminal et en exécutant :
     ```bash
-    mvn clean install
+    mvn -v
     ```
 
 3. **Exécuter le projet :**
-    Une fois la construction terminée, vous pouvez exécuter le projet en utilisant la commande suivante :
+
+    Naviguer dans le fichier racine du projet :
     ```bash
-    mvn exec:java -Dexec.mainClass="com.votrepackage.Main"
+    cd .\frogger\
     ```
 
-    Remplacez `com.votrepackage.Main` par le chemin de votre classe principale.
+    Compilez les fichiers :
+    ```bash
+    mvn compile
+    ```
 
-Vous devriez maintenant être en mesure de voir le jeu Frogger s'exécuter.
+    Création d'un fichier JAR :
+    ```bash
+    mvn package
+    ```
+
+    Vous devriez maintenant être en mesure d'exécuter le projet avec la commande :
+    ```bash
+    java -jar .\target\frogger-1.0-SNAPSHOT.jar
+    ```
+
 
 ## Description
 
 Implémentation d’un jeu de type Frogger : le joueur contrôle en temps réel un personnage via les touches
 multidirectionnelles, et doit traverser une grille sur laquelle se déplacent des obstacles. Information sur le jeu
 d’origine sur [Wikipédia](https://en.wikipedia.org/wiki/Frogger).
+
 
 ## Fonctionnalités principales
 
@@ -44,6 +73,7 @@ Les fonctionnalités suivantes doivent être toutes implémentées :
 
 - Une interface lisible et contrôlable en temps réel au clavier.
 - Système de scoring.
+
 
 ## Fonctionnalités secondaires
 
