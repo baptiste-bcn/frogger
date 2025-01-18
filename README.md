@@ -17,7 +17,6 @@ Pour cloner et lancer ce projet avec Maven, suivez les étapes ci-dessous :
 
     ```bash
     git clone https://github.com/baptiste-bcn/frogger
-    cd frogger
     ```
 
 2. **Installation de Maven :**
@@ -35,24 +34,19 @@ Pour cloner et lancer ce projet avec Maven, suivez les étapes ci-dessous :
 3. **Exécuter le projet :**
 
     Naviguer dans le fichier racine du projet :
-    ```bash
-    cd .\frogger\
-    ```
+        ```bash
+        cd .\frogger\
+        ```
 
-    Compilez les fichiers :
-    ```bash
-    mvn compile
-    ```
+        Nettoyez et installez les dépendances :
+        ```bash
+        mvn clean install
+        ```
 
-    Création d'un fichier JAR :
-    ```bash
-    mvn package
-    ```
-
-    Vous devriez maintenant être en mesure d'exécuter le projet avec la commande :
-    ```bash
-    java -jar .\target\frogger-1.0-SNAPSHOT.jar
-    ```
+        Exécutez le projet :
+        ```bash
+        mvn javafx:run
+        ```
 
 
 ## Description
