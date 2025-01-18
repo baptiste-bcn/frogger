@@ -1,13 +1,11 @@
 # Frogger
 
-
 ## Sommaire
 
 - [Installation et Lancement du Projet](#installation-et-lancement-du-projet)
 - [Description](#description)
 - [Fonctionnalités principales](#fonctionnalités-principales)
 - [Fonctionnalités secondaires](#fonctionnalités-secondaires)
-
 
 ## Installation et Lancement du Projet
 
@@ -34,19 +32,21 @@ Pour cloner et lancer ce projet avec Maven, suivez les étapes ci-dessous :
 3. **Exécuter le projet :**
 
     Naviguer dans le fichier racine du projet :
-        ```bash
-        cd .\frogger\
-        ```
-
-        Nettoyez et installez les dépendances :
-        ```bash
-        mvn clean install
-        ```
-
-        Exécutez le projet :
-        ```bash
-        mvn javafx:run
-        ```
+   
+   ```bash
+   cd .\frogger\
+   ```
+   
+   Nettoyez et installez les dépendances :
+        
+   ```bash
+   mvn clean install
+   ```
+    Exécutez le projet :
+        
+   ```bash
+   mvn javafx:run
+   ```
 
 
 ## Description
