@@ -1,10 +1,18 @@
 package com.frogger;
 
-/**
- * Hello world!
- */
-public class App {
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+public class App extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Frogger");
+        Menu menu = new Menu(primaryStage);
+        menu.show();
+    }
+
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        launch(args);
     }
 }
