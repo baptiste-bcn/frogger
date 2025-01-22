@@ -1,6 +1,5 @@
 package com.frogger;
 
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Frog extends ImageView {
@@ -11,6 +10,4 @@ public class Frog extends ImageView {
         this.setX(400);
         this.setY(550);
     }
-
-    // Add movement methods here
 }
