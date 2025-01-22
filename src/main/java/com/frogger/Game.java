@@ -17,6 +17,10 @@ public class Game {
         Scene scene = new Scene(root, 800, 600);
 
         Frog frog = new Frog();
+        // Positionner la grenouille dans la première rangée et au milieu
+        frog.setX(400 - frog.getWidth() / 2);
+        frog.setY(0);
+
         root.getChildren().add(frog);
 
         stage.setScene(scene);
@@ -34,7 +38,7 @@ public class Game {
                 tile.setX(j * tileSize);
                 tile.setY(i * tileSize);
 
-                if (i % 2 == 0) {
+                if (i % 5 == 0 || i == rows - 1) {
                     tile.setFill(javafx.scene.paint.Color.GREEN); // Safe zones
                 } else {
                     tile.setFill(javafx.scene.paint.Color.GRAY); // Car zones
@@ -44,5 +48,4 @@ public class Game {
             }
         }
     }
-
 }
