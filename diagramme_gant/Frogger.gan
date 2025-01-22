@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2024-12-01" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.3.3312" locale="fr_FR">
+    <description/>
+    <view zooming-state="default:8" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="200" order="0"/>
+        <field id="tpd4" name="Date de début" width="75" order="1"/>
+        <field id="tpd5" name="Date de fin" width="75" order="2"/>
+        <field id="tpd15" name="Notes" width="20" order="3"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+        <option id="color.recent"><![CDATA[#000000 #ffcc00 #ff00ff #f4f4f4 #990099 #00ffff #0033ff #ff0033 #00cccc #99ff00]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="210" order="0"/>
+        <field id="1" name="Rôle par défaut" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" uid="a24b70fd88f143e186cead4438e2e450" name="Initialisation du projet" color="#99ff00" shape="0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1" meeting="false" start="2025-01-15" duration="5" complete="0" expand="true">
+            <notes><![CDATA[- Création du dépôt GitHub
+- Mise en place des outils de développement (IDE, JDK, etc.)
+- Configuration du projet Java avec Maven (structure de répertoires, fichiers de configuration)]]></notes>
+            <depend id="1" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="1" uid="59e025deac9f409491a45e983153a744" name="Planification et Conception" color="#00cccc" shape="0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1" meeting="false" start="2025-01-22" duration="5" complete="0" expand="true">
+            <notes><![CDATA[- Définition des objectifs et des fonctionnalités du jeu
+- Création du diagramme UML des classes et des objets
+- Choix des librairies
+
+]]></notes>
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" uid="02632fdb373a4dad99f6a9d05fa4277b" name="Développement" color="#ff0033" shape="1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0" meeting="false" start="2025-01-29" duration="10" complete="0" expand="true">
+            <notes><![CDATA[- Création des classes
+- Développement des classes
+- Création de l'interface
+]]></notes>
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="3" uid="cec59a844e4c4d7dab536c8d5a2b1882" name="Tests et bugs" color="#0033ff" shape="0,1,1,1,1,0,0,0,1,0,0,0,1,0,0,0" meeting="false" start="2025-02-12" duration="10" complete="0" expand="true">
+            <notes><![CDATA[- Tests pour vérifier que le jeu fonctionne correctement
+- Notations des bugs trouvés lors des tests
+]]></notes>
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="4" uid="8feaaa45cf4b4ac0969c9f7971bbcae3" name="Optimisation et débugging" color="#00ffff" shape="0,1,1,1,1,0,0,0,1,0,0,0,1,0,0,0" meeting="false" start="2025-02-26" duration="5" complete="0" expand="true">
+            <notes><![CDATA[- Résolution des bugs et des problèmes d'affichage
+- Optimisation du code (performance, gestion mémoire, etc.)
+- Amélioration de la fluidité du jeu]]></notes>
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="7" uid="8ab065b90bec431fa81993080de1c4b8" name="Test Final" color="#ff00ff" shape="0,1,1,1,1,0,0,0,1,0,0,0,1,0,0,0" meeting="false" start="2025-03-05" duration="13" complete="0" expand="true">
+            <notes><![CDATA[- Test final du jeu et vérification du bon fonctionnement du jeu
+]]></notes>
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="5" uid="879466a6c4f04155bf642d01fe86e15f" name="Documentation et préparations de la présentation" color="#ffcc00" meeting="false" start="2025-03-24" duration="32" complete="0" expand="true">
+            <notes><![CDATA[- Rédaction de la documentation technique (architecture, classes, méthodes)
+- Création d'un fichier README pour le dépôt GitHub (instructions d'installation et de jeu)
+- Préparation de la documentation utilisateur (instructions pour jouer au jeu)
+]]></notes>
+            <depend id="6" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="6" uid="050d6d686a614793a2c07b37e3379456" name="Présentation du rendu" color="#000000" meeting="false" start="2025-05-07" duration="2" complete="0" expand="true">
+            <notes><![CDATA[Rendu
+]]></notes>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
