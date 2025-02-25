@@ -35,12 +35,4 @@ public class Joueur {
         gc.setFill(color);
         gc.fillOval(x * tileSize + 10, y * tileSize + 10, tileSize - 20, tileSize - 20);
     }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
 }

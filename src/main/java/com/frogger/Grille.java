@@ -5,10 +5,10 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class Grille {
-    private int TILE_SIZE = 50;
-    private int GRID_WIDTH = 10;
-    private int GRID_HEIGHT = 10;
-    private Canvas canvas;
+    private final int TILE_SIZE;
+    private final int GRID_WIDTH;
+    private final int GRID_HEIGHT;
+    private final Canvas canvas;
 
     public Grille(Canvas canvas, int width, int height, int tileSize) {
         this.canvas = canvas;
@@ -16,13 +16,8 @@ public class Grille {
         this.GRID_HEIGHT = height;
         this.TILE_SIZE = tileSize;
 
-        // Ajuster la taille du canvas en fonction de la taille de la grille
         canvas.setWidth(width * tileSize);
         canvas.setHeight(height * tileSize);
-    }
-
-    public Grille(Canvas canvas) {
-        this.canvas = canvas;
     }
 
     public void dessinerGrille() {

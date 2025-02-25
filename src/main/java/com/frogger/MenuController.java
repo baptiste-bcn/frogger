@@ -19,36 +19,29 @@ public class MenuController {
     }
 
     public void showMenu() {
-        // Layout principal
         VBox menuLayout = new VBox(25); // Espacement amélioré
         menuLayout.setAlignment(Pos.CENTER);
         menuLayout.setStyle("-fx-background-color: linear-gradient(to bottom, #98FB98, #2E8B57);"); // Dégradé vert
 
-        // Titre du jeu
         Label title = new Label("FROGGER");
         title.setFont(Font.font("Arial", FontWeight.BOLD, 50));
         title.setTextFill(Color.DARKGREEN);
 
-        // Effet d'ombre portée sur le titre
         DropShadow shadow = new DropShadow();
         shadow.setOffsetY(4.0);
         shadow.setColor(Color.gray(0.3));
         title.setEffect(shadow);
 
-        // Création des boutons stylés
         Button soloButton = createStyledButton("Jouer Solo");
         Button multiplayerButton = createStyledButton("Mode Multijoueur");
         Button quitButton = createStyledButton("Quitter");
 
-        // Actions des boutons
         soloButton.setOnAction(e -> startGame(false));
         multiplayerButton.setOnAction(e -> startGame(true));
         quitButton.setOnAction(e -> stage.close());
 
-        // Ajout des éléments à la scène
         menuLayout.getChildren().addAll(title, soloButton, multiplayerButton, quitButton);
 
-        // Création de la scène
         Scene menuScene = new Scene(menuLayout, 500, 400);
         stage.setScene(menuScene);
         stage.show();
