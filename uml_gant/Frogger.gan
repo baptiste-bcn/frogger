@@ -4,7 +4,7 @@
         <field id="tpd3" name="Nom" width="244" order="0"/>
         <field id="tpd4" name="Date de début" width="120" order="1"/>
         <field id="tpd5" name="Date de fin" width="119" order="2"/>
-        <option id="color.recent"><![CDATA[#000000 #ffcc00 #ff00ff #f4f4f4 #990099 #00ffff #0033ff #ff0033 #00cccc #99ff00]]></option>
+        <option id="color.recent"><![CDATA[#ffcc00 #99ff99 #c6cbf1 #000000 #ff00ff #f4f4f4 #990099 #00ffff #0033ff #ff0033]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="210" order="0"/>
@@ -34,13 +34,13 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Initialisation du projet" color="#8cb6ce" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2025-01-15" duration="5" complete="100" thirdDate="2025-01-15" thirdDate-constraint="0" expand="true">
+        <task id="0" name="Initialisation du projet" color="#c6cbf1" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2025-01-15" duration="5" complete="100" thirdDate="2025-01-15" thirdDate-constraint="0" expand="true">
             <notes><![CDATA[- Création du dépôt GitHub
 - Mise en place des outils de développement (IDE, JDK, etc.)
 - Configuration du projet Java avec Maven (structure de répertoires, fichiers de configuration)]]></notes>
             <depend id="1" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="1" name="Planification et Conception" color="#8cb6ce" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2025-01-22" duration="5" complete="100" thirdDate="2025-01-22" thirdDate-constraint="0" expand="true">
+        <task id="1" name="Planification et Conception" color="#c6cbf1" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2025-01-22" duration="5" complete="100" thirdDate="2025-01-22" thirdDate-constraint="0" expand="true">
             <notes><![CDATA[- Définition des objectifs et des fonctionnalités du jeu
 - Création du diagramme UML des classes et des objets
 - Choix des librairies
@@ -49,22 +49,22 @@
             <depend id="9" type="2" difference="0" hardness="Strong"/>
             <depend id="13" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="9" name="Tests et bugs" color="#8cb6ce" meeting="false" start="2025-02-25" duration="40" complete="0" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
+        <task id="9" name="Tests et bugs" color="#99ff99" meeting="false" start="2025-02-25" duration="40" complete="0" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="13" name="Développement" color="#8cb6ce" meeting="false" start="2025-02-25" duration="40" complete="10" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
+        <task id="13" name="Développement" color="#99ff99" meeting="false" start="2025-02-25" duration="40" complete="10" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="15" name="Documentation + rapport" color="#8cb6ce" meeting="false" start="2025-03-25" duration="20" complete="0" thirdDate="2025-03-25" thirdDate-constraint="1" expand="true">
+        <task id="15" name="Documentation + rapport" color="#ffcc00" meeting="false" start="2025-03-25" duration="20" complete="0" thirdDate="2025-03-25" thirdDate-constraint="1" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="17" name="Optimisation et debugging" color="#8cb6ce" meeting="false" start="2025-04-22" duration="5" complete="0" thirdDate="2025-04-22" thirdDate-constraint="1" expand="true">
+        <task id="17" name="Optimisation et debugging" color="#99ff99" meeting="false" start="2025-04-22" duration="5" complete="0" thirdDate="2025-04-22" thirdDate-constraint="1" expand="true">
             <depend id="21" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="21" name="Tests finaux" color="#8cb6ce" meeting="false" start="2025-04-29" duration="3" complete="0" thirdDate="2025-04-29" thirdDate-constraint="1" expand="true">
+        <task id="21" name="Tests finaux" color="#ffcc00" meeting="false" start="2025-04-29" duration="3" complete="0" thirdDate="2025-04-29" thirdDate-constraint="1" expand="true">
             <depend id="26" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="26" name="Rendu du projet + soutenance" color="#8cb6ce" meeting="false" start="2025-05-02" duration="2" complete="0" thirdDate="2025-05-02" thirdDate-constraint="1" expand="true"/>
+        <task id="26" name="Rendu du projet + soutenance" color="#ffcc00" meeting="false" start="2025-05-02" duration="2" complete="0" thirdDate="2025-05-02" thirdDate-constraint="1" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="Baptiste" function="Default:0" contacts="" phone=""/>
