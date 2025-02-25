@@ -3,10 +3,10 @@ package com.frogger;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class GameController {
     private final Stage stage;
@@ -15,15 +15,6 @@ public class GameController {
     private final Joueur joueur1;
     private final Joueur joueur2;
     private final boolean isMultiplayer;
-
-    public GameController(Stage stage, boolean isMultiplayer) {
-        this.stage = stage;
-        this.canvas = new Canvas(500, 500); // Initial canvas size
-        this.grille = new Grille(canvas);
-        this.joueur1 = new Joueur(grille, Color.GREEN);
-        this.joueur2 = isMultiplayer ? new Joueur(grille, Color.BLUE) : null;
-        this.isMultiplayer = isMultiplayer;
-    }
 
     public GameController(Stage stage, boolean isMultiplayer, int width, int height, int tileSize) {
         this.stage = stage;
