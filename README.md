@@ -75,4 +75,4 @@ Les fonctionnalités suivantes sont facultatives et indépendantes les unes des 
 
 - Sauvegarde des scores les plus élevés.
 - Mode Versus : 2 joueurs jouent simultanément, le premier à atteindre l’objectif gagne la partie.
-- Toute autre fonctionnalité que vous jugerez utile.
+- Toute autre fonctionnalité que vous jugerez utile. 
