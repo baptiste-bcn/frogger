@@ -4,6 +4,8 @@ import javafx.geometry.Bounds;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView; // Add this import statement// Add this import statement
 
+import java.util.Objects;
+
 public class Frog extends ImageView {
     private static final int MOVE_DISTANCE = 40;
     private static final int BOARD_WIDTH = 800;
@@ -12,7 +14,7 @@ public class Frog extends ImageView {
     public Frog() {
         // Try to load an image if available
         try {
-            setImage(new Image(getClass().getResourceAsStream("/ressources/images/frog.png")));
+            setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/ressources/images/frog.png"))));
         } catch (Exception e) {
             // Fallback to colored rectangle
             setFitWidth(40);
@@ -48,7 +50,7 @@ public class Frog extends ImageView {
     }
 
     public void initializePosition() {
-        setX(BOARD_WIDTH / 2 - getFitWidth() / 2);
+        setX((double) BOARD_WIDTH / 2 - getFitWidth() / 2);
         setY(BOARD_HEIGHT - getFitHeight() - MOVE_DISTANCE);
     }
 
