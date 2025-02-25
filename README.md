@@ -2,14 +2,14 @@
 
 ## Sommaire
 
-- [Installation et Lancement du Projet](#installation-et-lancement-du-projet)
+- [Installation et lancement du projet](#installation-et-lancement-du-projet)
 - [Description](#description)
 - [Fonctionnalités principales](#fonctionnalités-principales)
 - [Fonctionnalités secondaires](#fonctionnalités-secondaires)
 
-## Installation et Lancement du Projet
+## Installation et lancement du projet
 
-Pour cloner et lancer ce projet avec Maven, suivez les étapes ci-dessous :
+Pour cloner et lancer ce projet avec Maven, suivre les étapes ci-dessous :
 
 1. **Cloner le dépôt GitHub :**
 
@@ -19,60 +19,59 @@ Pour cloner et lancer ce projet avec Maven, suivez les étapes ci-dessous :
 
 2. **Installation de Maven :**
 
-    Assurez-vous d'avoir Maven installé sur votre machine. Si ce n'est pas le cas, vous pouvez le télécharger et l'installer depuis [le site officiel de Maven](https://maven.apache.org/).
+   S'assurer que Maven est installé sur la machine. Si ce n'est pas le cas, le télécharger et l'installer
+   depuis [le site officiel de Maven](https://maven.apache.org/).
 
-    - Installez la version **apache-maven-3.9.9-bin.zip**. 
-    - Extrayez les fichiers dans `C:\Program Files\Maven`. 
-    - Ajoutez au `PATH` la variable d'environnement `C:\Program Files\Maven\apache-maven-3.9.9\bin`. 
-    - Vérifiez que l'installation s'est bien effectuée en ouvrant votre terminal et en exécutant :
+    - Télécharger la version **apache-maven-3.9.9-bin.zip**.
+    - Extraire les fichiers dans `C:\Program Files\Maven`.
+    - Ajouter à la variable d'environnement `PATH` le chemin `C:\Program Files\Maven\apache-maven-3.9.9\bin`.
+    - Vérifier l'installation en ouvrant un terminal et en exécutant la commande suivante :
     ```bash
     mvn -v
     ```
 
 3. **Exécuter le projet :**
 
-    Naviguer dans le fichier racine du projet :
-   
+   Accéder au répertoire racine du projet :
+
    ```bash
    cd .\frogger\
    ```
-   
-   Nettoyez et installez les dépendances :
-        
+
+   Nettoyer et installer les dépendances :
+
    ```bash
    mvn clean install
    ```
-    Exécutez le projet :
-        
+
+   Lancer le projet :
+
    ```bash
    mvn javafx:run
    ```
 
-
 ## Description
 
-Implémentation d’un jeu de type Frogger : le joueur contrôle en temps réel un personnage via les touches
-multidirectionnelles, et doit traverser une grille sur laquelle se déplacent des obstacles. Information sur le jeu
-d’origine sur [Wikipédia](https://en.wikipedia.org/wiki/Frogger).
-
+Implémentation d'un jeu de type Frogger. Le joueur contrôle un personnage en temps réel à l'aide des touches
+directionnelles, et doit traverser une grille où se déplacent des obstacles. Pour plus d'informations sur le jeu d'
+origine, consulter [la page Wikipédia](https://en.wikipedia.org/wiki/Frogger).
 
 ## Fonctionnalités principales
 
-Vous êtes libre de modifier le thème et les règles du jeu d’origine tant que :
+Le thème et les règles du jeu d'origine peuvent être modifiés, à condition que les critères suivants soient respectés :
 
-- Le personnage doit traverser la grille verticalement.
-- Les obstacles ou plateformes se déplacent horizontalement.
+- Le personnage doit traverser la grille de manière verticale.
+- Les obstacles ou plateformes doivent se déplacer horizontalement.
 
-Les fonctionnalités suivantes doivent être toutes implémentées :
+Les fonctionnalités suivantes doivent impérativement être implémentées :
 
-- Une interface lisible et contrôlable en temps réel au clavier.
-- Système de scoring.
-
+- Une interface claire et contrôlable en temps réel à l'aide du clavier.
+- Un système de scoring.
 
 ## Fonctionnalités secondaires
 
 Les fonctionnalités suivantes sont facultatives et indépendantes les unes des autres :
 
-- Sauvegarde des scores les plus élevés.
-- Mode Versus : 2 joueurs jouent simultanément, le premier à atteindre l’objectif gagne la partie.
-- Toute autre fonctionnalité que vous jugerez utile. 
+- Sauvegarder les scores les plus élevés.
+- Mode Versus : deux joueurs jouent simultanément, et le premier à atteindre l'objectif remporte la partie.
+- Toute autre fonctionnalité jugée utile.
