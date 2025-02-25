@@ -25,6 +25,15 @@ public class GameController {
         this.isMultiplayer = isMultiplayer;
     }
 
+    public GameController(Stage stage, boolean isMultiplayer, int width, int height, int tileSize) {
+        this.stage = stage;
+        this.canvas = new Canvas(500, 500); // Initial canvas size
+        this.grille = new Grille(canvas, width, height, tileSize);
+        this.joueur1 = new Joueur(grille, Color.GREEN);
+        this.joueur2 = isMultiplayer ? new Joueur(grille, Color.BLUE) : null;
+        this.isMultiplayer = isMultiplayer;
+    }
+
     public void lancerJeu() {
         BorderPane root = new BorderPane();
         root.setCenter(canvas);
@@ -40,6 +49,7 @@ public class GameController {
         stage.setScene(scene);
         stage.show();
 
+        stage.sizeToScene();
         stage.requestFocus();
         mettreAJourAffichage();
     }
@@ -51,16 +61,20 @@ public class GameController {
             case Q -> joueur1.moveLeft();
             case D -> joueur1.moveRight();
             case UP -> {
-                if (isMultiplayer && joueur2 != null) joueur2.moveTop();
+                if (isMultiplayer && joueur2 != null)
+                    joueur2.moveTop();
             }
             case DOWN -> {
-                if (isMultiplayer && joueur2 != null) joueur2.moveBottom();
+                if (isMultiplayer && joueur2 != null)
+                    joueur2.moveBottom();
             }
             case LEFT -> {
-                if (isMultiplayer && joueur2 != null) joueur2.moveLeft();
+                if (isMultiplayer && joueur2 != null)
+                    joueur2.moveLeft();
             }
             case RIGHT -> {
-                if (isMultiplayer && joueur2 != null) joueur2.moveRight();
+                if (isMultiplayer && joueur2 != null)
+                    joueur2.moveRight();
             }
         }
         mettreAJourAffichage();

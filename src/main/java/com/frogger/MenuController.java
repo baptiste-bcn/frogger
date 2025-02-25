@@ -28,7 +28,7 @@ public class MenuController {
     }
 
     private void startGame(boolean isMultiplayer) {
-        GameController gameController = new GameController(stage, isMultiplayer);
+        GameController gameController = new GameController(stage, isMultiplayer, 15, 20, 30);
         gameController.lancerJeu();
     }
 }
