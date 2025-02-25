@@ -82,7 +82,7 @@
                 <archive>
                     <manifest>
                         <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                        <mainClass>com.frogger.App</mainClass>
+                        <mainClass>com.frogger.Main</mainClass>
                     </manifest>
                 </archive>
             </configuration>
@@ -99,7 +99,7 @@
                 </execution>
             </executions>
             <configuration>
-                <mainClass>com.frogger.App</mainClass>
+                <mainClass>com.frogger.Main</mainClass>
             </configuration>
         </plugin>
         <plugin>

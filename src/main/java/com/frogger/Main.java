@@ -1,17 +1,13 @@
 package com.frogger;
 
-import com.frogger.views.Menu;
-
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-public class App extends Application {
-
+public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Frogger");
-        Menu menu = new Menu(primaryStage);
-        menu.show();
+        GameController game = new GameController(primaryStage);
+        game.lancerJeu();
     }
 
     public static void main(String[] args) {
