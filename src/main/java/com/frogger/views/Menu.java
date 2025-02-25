@@ -1,4 +1,6 @@
-package com.frogger;
+package com.frogger.views;
+
+import com.frogger.controller.Game;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
