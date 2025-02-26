@@ -54,19 +54,19 @@ public class GameController {
             case Q -> joueur1.moveLeft();
             case D -> joueur1.moveRight();
             case UP -> {
-                if (isMultiplayer && joueur2 != null)
+                if (isMultiplayer)
                     joueur2.moveTop();
             }
             case DOWN -> {
-                if (isMultiplayer && joueur2 != null)
+                if (isMultiplayer)
                     joueur2.moveBottom();
             }
             case LEFT -> {
-                if (isMultiplayer && joueur2 != null)
+                if (isMultiplayer)
                     joueur2.moveLeft();
             }
             case RIGHT -> {
-                if (isMultiplayer && joueur2 != null)
+                if (isMultiplayer)
                     joueur2.moveRight();
             }
         }
