@@ -1,5 +1,7 @@
-package com.frogger;
+package com.frogger.controller;
 
+import com.frogger.model.Grille;
+import com.frogger.model.Joueur;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -21,8 +23,6 @@ public class MenuController {
     public void showMenu() {
         VBox menuLayout = new VBox(25); // Espacement amélioré
         menuLayout.setAlignment(Pos.CENTER);
-        menuLayout.setStyle("-fx-background-color: linear-gradient(to bottom, #98FB98, #2E8B57);"); // Dégradé vert
-
         Label title = new Label("FROGGER");
         title.setFont(Font.font("Arial", FontWeight.BOLD, 50));
         title.setTextFill(Color.DARKGREEN);
@@ -52,28 +52,28 @@ public class MenuController {
         button.setFont(Font.font("Arial", FontWeight.BOLD, 16));
         button.setTextFill(Color.WHITE);
         button.setStyle(
-            "-fx-background-color: #228B22; " +  // Vert foncé
-            "-fx-background-radius: 15px; " + // Bords arrondis
-            "-fx-padding: 10px 20px; " +
-            "-fx-border-color: white; " +
-            "-fx-border-radius: 15px;"
+                "-fx-background-color: #228B22; " +  // Vert foncé
+                        "-fx-background-radius: 15px; " + // Bords arrondis
+                        "-fx-padding: 10px 20px; " +
+                        "-fx-border-color: white; " +
+                        "-fx-border-radius: 15px;"
         );
 
         // Effet au survol
         button.setOnMouseEntered(e -> button.setStyle(
-            "-fx-background-color: #32CD32; " + // Vert clair
-            "-fx-background-radius: 15px; " +
-            "-fx-padding: 10px 20px; " +
-            "-fx-border-color: white; " +
-            "-fx-border-radius: 15px;"
+                "-fx-background-color: #32CD32; " + // Vert clair
+                        "-fx-background-radius: 15px; " +
+                        "-fx-padding: 10px 20px; " +
+                        "-fx-border-color: white; " +
+                        "-fx-border-radius: 15px;"
         ));
 
         button.setOnMouseExited(e -> button.setStyle(
-            "-fx-background-color: #228B22; " +
-            "-fx-background-radius: 15px; " +
-            "-fx-padding: 10px 20px; " +
-            "-fx-border-color: white; " +
-            "-fx-border-radius: 15px;"
+                "-fx-background-color: #228B22; " +
+                        "-fx-background-radius: 15px; " +
+                        "-fx-padding: 10px 20px; " +
+                        "-fx-border-color: white; " +
+                        "-fx-border-radius: 15px;"
         ));
 
         return button;

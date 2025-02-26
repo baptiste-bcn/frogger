@@ -1,5 +1,7 @@
-package com.frogger;
+package com.frogger.controller;
 
+import com.frogger.model.Grille;
+import com.frogger.model.Joueur;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;

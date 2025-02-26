@@ -1,5 +1,6 @@
 package com.frogger;
 
+import com.frogger.controller.MenuController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

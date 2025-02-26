@@ -1,4 +1,4 @@
-package com.frogger;
+package com.frogger.model;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
