@@ -35,7 +35,7 @@ Pour cloner et lancer ce projet avec Maven, suivre les étapes ci-dessous :
    Accéder au répertoire racine du projet :
 
    ```bash
-   cd .\frogger\
+   cd ./frogger
    ```
 
    Nettoyer et installer les dépendances :
