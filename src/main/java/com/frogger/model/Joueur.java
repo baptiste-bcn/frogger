@@ -15,6 +15,21 @@ public class Joueur {
         this.y = grille.getHeight() - 1; // En bas
     }
 
+    public int getX() {
+    return this.x;
+    }
+
+    public int getY() {
+        return this.y;
+        }
+
+    public void setPosition(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+
+
     public void moveTop() {
         if (y > 0) y--;
     }
