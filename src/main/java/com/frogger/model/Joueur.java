@@ -5,30 +5,42 @@ import javafx.scene.paint.Color;
 
 public class Joueur {
     private int x, y;
+    private int score;
+    private int highestRowReached;
     private final Grille grille;
     private final Color color;
     private int previousX;
     private int previousY;
-
 
     public Joueur(Grille grille, Color color) {
         this.grille = grille;
         this.color = color;
         this.x = grille.getWidth() / 2;
         this.y = grille.getHeight() - 1;
+        this.score = 0;
+        this.highestRowReached = this.y;
     }
 
     public int getX() {
-    return this.x;
+        return this.x;
     }
 
     public int getY() {
         return this.y;
-        }
+    }
+
+    public int getScore() {
+        return this.score;
+    }
 
     public void setPosition(int x, int y) {
         this.x = x;
         this.y = y;
+        this.highestRowReached = y;
+    }
+
+    public void resetScore() {
+        this.score = 0;
     }
 
     public void annulerDeplacement() {
@@ -38,7 +50,13 @@ public class Joueur {
 
     public void moveTop() {
         sauvegarderPosition();
-        if (y > 0) y--;
+        if (y > 0) {
+            y--;
+            if (y < highestRowReached) {
+                highestRowReached = y;
+                score++;
+            }
+        }
     }
 
     public void moveBottom() {
@@ -60,7 +78,6 @@ public class Joueur {
         previousX = x;
         previousY = y;
     }
-
 
     public void dessiner(GraphicsContext gc, int tileSize) {
         gc.setFill(color);

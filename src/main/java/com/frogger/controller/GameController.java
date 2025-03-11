@@ -2,6 +2,7 @@ package com.frogger.controller;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.util.Duration;
 import com.frogger.model.Grille;
 import com.frogger.model.Joueur;
@@ -135,6 +136,7 @@ private void checkCollisions() {
 
     private void resetPlayer(Joueur joueur) {
         joueur.setPosition(grille.getWidth() / 2, grille.getHeight() - 1); // Retour à la position initiale
+        joueur.resetScore(); // Réinitialiser le score
         mettreAJourAffichage();
     }
 
@@ -151,6 +153,14 @@ private void checkCollisions() {
         joueur1.dessiner(canvas.getGraphicsContext2D(), grille.getTileSize());
         if (isMultiplayer) {
             joueur2.dessiner(canvas.getGraphicsContext2D(), grille.getTileSize());
+        }
+
+        // Draw the score
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+        gc.setFill(Color.BLACK);
+        gc.fillText("Score: " + joueur1.getScore(), 10, 20);
+        if (isMultiplayer) {
+            gc.fillText("Score Joueur 2: " + joueur2.getScore(), 10, 40);
         }
     }
 
