@@ -2,6 +2,7 @@ package com.frogger.model;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+
 import java.util.ArrayList;
 import java.util.List;
 
