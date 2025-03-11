@@ -54,11 +54,11 @@ private void initializeObstacles() {
     obstacles.add(new Obstacle(grille, 2, 11, 3, -1, Color.RED, false)); // Voiture
 
     // Ajout d'une route "eau" avec troncs flottants
-    obstacles.add(new Obstacle(grille, 7, 8, 2, 1, Color.BROWN, false)); // Tronc
+    obstacles.add(new Obstacle(grille, 8, 8, 2, 1, Color.BROWN, false)); // Tronc
     obstacles.add(new Obstacle(grille, 2, 8, 2, 1, Color.BROWN, false)); // Tronc
 
     // Génération aléatoire d'arbres
-    int nombreArbres = random.nextInt(5) + 5; // Entre 5 et 10 arbres
+    int nombreArbres = random.nextInt(15) + 25; // Entre 15 et 25 arbres
 
     for (int i = 0; i < nombreArbres; i++) {
         int x, y;
@@ -69,7 +69,6 @@ private void initializeObstacles() {
             y = random.nextInt(grille.getHeight()); // Position aléatoire en Y
             positionValide = true;
 
-            // Vérifie si l'arbre est sur une route ou sur l'eau
             for (Route route : routes) {
                 if (route.getY() == y) {
                     positionValide = false;
@@ -81,6 +80,10 @@ private void initializeObstacles() {
                     positionValide = false;
                     break;
                 }
+                if (y >= grille.getHeight()-2) {
+                positionValide = false;
+                break;
+            }
             }
         } while (!positionValide);
 
@@ -104,19 +107,32 @@ private void initializeObstacles() {
         mettreAJourAffichage();
     }
 
-    private void checkCollisions() {
+
+private void checkCollisions() {
     for (Obstacle obstacle : obstacles) {
-        // Vérifie si le joueur entre en collision avec un obstacle mobile
+        // Vérifie les collisions avec les obstacles mobiles (voitures, troncs, etc.)
         if (!obstacle.isStatic() && obstacle.collidesWith(joueur1)) {
-            System.out.println("💀 Collision détectée ! Joueur mort !");
-            resetPlayer(joueur1); // Réinitialiser le joueur
+            System.out.println("\uD83D\uDC80 Collision détectée ! Joueur mort !");
+            resetPlayer(joueur1);
         }
         if (isMultiplayer && !obstacle.isStatic() && obstacle.collidesWith(joueur2)) {
-            System.out.println("💀 Collision détectée ! Joueur 2 mort !");
+            System.out.println("\uD83D\uDC80 Collision détectée ! Joueur 2 mort !");
             resetPlayer(joueur2);
+        }
+        
+        // Vérifie les collisions avec les obstacles statiques (buissons)
+        if (obstacle.isStatic()) {
+            if (obstacle.isStatic() && obstacle.collidesWith(joueur1)) {
+                joueur1.annulerDeplacement();
+            }
+
+            if (isMultiplayer && obstacle.isStatic() && obstacle.collidesWith(joueur2)) {
+            joueur2.annulerDeplacement();
+            }
         }
     }
 }
+
     private void resetPlayer(Joueur joueur) {
         joueur.setPosition(grille.getWidth() / 2, grille.getHeight() - 1); // Retour à la position initiale
         mettreAJourAffichage();
