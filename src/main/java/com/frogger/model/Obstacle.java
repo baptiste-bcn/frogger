@@ -23,15 +23,14 @@ public class Obstacle {
         x += speed;
         if (x > grille.getWidth()) {
             x = -width;
-        } else if (x + width < 0) {  
+        } else if (x + width < 0) {
             x = grille.getWidth();
-    }
+        }
     }
 
     public boolean isStatic() {
         return this.speed == 0; // Un obstacle est statique s’il ne bouge pas
     }
-
 
     public int getX() {
         return this.x;
@@ -40,7 +39,6 @@ public class Obstacle {
     public int getY() {
         return this.y;
     }
-
 
     public void draw(GraphicsContext gc, int tileSize) {
         gc.setFill(color);

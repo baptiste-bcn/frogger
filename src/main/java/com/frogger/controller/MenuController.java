@@ -1,16 +1,14 @@
 package com.frogger.controller;
 
-import com.frogger.model.Grille;
-import com.frogger.model.Joueur;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.scene.effect.DropShadow;
 import javafx.stage.Stage;
 
 public class MenuController {
@@ -52,12 +50,11 @@ public class MenuController {
         button.setFont(Font.font("Arial", FontWeight.BOLD, 16));
         button.setTextFill(Color.WHITE);
         button.setStyle(
-                "-fx-background-color: #228B22; " +  // Vert foncé
+                "-fx-background-color: #228B22; " + // Vert foncé
                         "-fx-background-radius: 15px; " + // Bords arrondis
                         "-fx-padding: 10px 20px; " +
                         "-fx-border-color: white; " +
-                        "-fx-border-radius: 15px;"
-        );
+                        "-fx-border-radius: 15px;");
 
         // Effet au survol
         button.setOnMouseEntered(e -> button.setStyle(
@@ -65,16 +62,14 @@ public class MenuController {
                         "-fx-background-radius: 15px; " +
                         "-fx-padding: 10px 20px; " +
                         "-fx-border-color: white; " +
-                        "-fx-border-radius: 15px;"
-        ));
+                        "-fx-border-radius: 15px;"));
 
         button.setOnMouseExited(e -> button.setStyle(
                 "-fx-background-color: #228B22; " +
                         "-fx-background-radius: 15px; " +
                         "-fx-padding: 10px 20px; " +
                         "-fx-border-color: white; " +
-                        "-fx-border-radius: 15px;"
-        ));
+                        "-fx-border-radius: 15px;"));
 
         return button;
     }
