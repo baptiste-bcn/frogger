@@ -34,15 +34,15 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Initialisation du projet" color="#c6cbf1" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2025-01-15" duration="6" complete="0" thirdDate="2025-01-15" thirdDate-constraint="0" expand="false">
+        <task id="0" name="Initialisation du projet" color="#c6cbf1" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2025-01-15" thirdDate-constraint="0" expand="true">
             <notes><![CDATA[- Création du dépôt GitHub
 - Mise en place des outils de développement (IDE, JDK, etc.)
 - Configuration du projet Java avec Maven (structure de répertoires, fichiers de configuration)]]></notes>
             <depend id="1" type="2" difference="0" hardness="Strong"/>
-            <task id="41" name="Création du dépôt GitHub" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="0" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="42" name="Ajout des collaborateurs au projet" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="0" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="44" name="Mise en place des outils de développement" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="0" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="46" name="Configuration du projet avec l'outil Maven" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="0" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="41" name="Création du dépôt GitHub" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="42" name="Ajout des collaborateurs au projet" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="44" name="Mise en place des outils de développement" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="46" name="Configuration du projet avec l'outil Maven" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
         </task>
         <task id="1" name="Planification et Conception" color="#c6cbf1" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2025-01-27" duration="1" complete="0" thirdDate="2025-01-27" thirdDate-constraint="1" expand="false">
             <notes><![CDATA[- Définition des objectifs et des fonctionnalités du jeu
@@ -59,9 +59,12 @@
         <task id="9" name="Tests et bugs" color="#99ff99" meeting="false" start="2025-02-25" duration="40" complete="15" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="13" name="Développement" color="#99ff99" meeting="false" start="2025-02-25" duration="5" complete="0" thirdDate="2025-02-25" thirdDate-constraint="1" expand="false">
+        <task id="13" name="Développement" color="#99ff99" meeting="false" start="2025-02-25" duration="11" complete="37" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
             <task id="28" name="MVC à implémenter" color="#99ff99" meeting="false" start="2025-02-25" duration="5" complete="0" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true"/>
+            <task id="53" name="Ajout d'un système de scoring" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
+            <task id="58" name="Impossible d'entrer en collision avec un arbre (obstacle fixe)" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
+            <task id="64" name="Améliorer la gestion de l'appui des touches" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
         </task>
         <task id="15" name="Documentation + rapport" color="#ffcc00" meeting="false" start="2025-03-25" duration="20" complete="0" thirdDate="2025-03-25" thirdDate-constraint="1" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
@@ -83,11 +86,14 @@
         <allocation task-id="0" resource-id="0" function="Default:0" responsible="true" load="50.0"/>
         <allocation task-id="1" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="13" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="53" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="1" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="13" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="0" resource-id="1" function="Default:0" responsible="false" load="50.0"/>
+        <allocation task-id="64" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="1" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="13" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="58" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
     </allocations>
     <vacations/>
     <previous/>
