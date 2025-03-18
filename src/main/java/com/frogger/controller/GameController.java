@@ -14,6 +14,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -212,18 +214,40 @@ public class GameController {
         BorderPane root = new BorderPane();
         root.setCenter(canvas);
 
-        Button backButton = new Button("Back");
+        Button backButton = createStyledButton();
         backButton.setOnAction(e -> showMenu());
         root.setTop(backButton);
 
         Scene scene = new Scene(root);
         initializeKeyHandlers(scene);
 
-        stage.setTitle("Frogger");
+        stage.setTitle("Froggy Road");
         stage.setScene(scene);
         stage.show();
 
         startGameLoop(); // Lancer l'animation des obstacles
+    }
+
+    private Button createStyledButton() {
+        Button button = new Button("Back");
+        button.setFont(Font.font("Arial", FontWeight.BOLD, 16));
+        button.setTextFill(Color.WHITE);
+        setButtonStyle(button, "#228B22"); // Vert foncé
+
+        // Effet au survol
+        button.setOnMouseEntered(e -> setButtonStyle(button, "#32CD32")); // Vert clair
+        button.setOnMouseExited(e -> setButtonStyle(button, "#228B22")); // Vert foncé
+
+        return button;
+    }
+
+    private void setButtonStyle(Button button, String backgroundColor) {
+        button.setStyle(
+                "-fx-background-color: " + backgroundColor + "; " +
+                        "-fx-background-radius: 15px; " +
+                        "-fx-padding: 10px 20px; " +
+                        "-fx-border-color: white; " +
+                        "-fx-border-radius: 15px;");
     }
 
     private void showMenu() {

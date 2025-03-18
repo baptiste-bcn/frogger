@@ -21,7 +21,7 @@ public class MenuController {
     public void showMenu() {
         VBox menuLayout = new VBox(25); // Espacement amélioré
         menuLayout.setAlignment(Pos.CENTER);
-        Label title = new Label("FROGGER");
+        Label title = new Label("Froggy Road");
         title.setFont(Font.font("Arial", FontWeight.BOLD, 50));
         title.setTextFill(Color.DARKGREEN);
 
