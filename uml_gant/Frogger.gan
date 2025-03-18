@@ -59,14 +59,15 @@
         <task id="9" name="Tests et bugs" color="#99ff99" meeting="false" start="2025-02-25" duration="40" complete="15" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="13" name="Développement" color="#99ff99" meeting="false" start="2025-02-25" duration="16" complete="30" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
+        <task id="13" name="Développement" color="#99ff99" meeting="false" start="2025-02-25" duration="16" complete="47" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
             <task id="28" name="MVC à implémenter" color="#99ff99" meeting="false" start="2025-02-25" duration="5" complete="0" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true"/>
             <task id="53" name="Ajout d'un système de scoring" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
             <task id="58" name="Impossible d'entrer en collision avec un arbre (obstacle fixe)" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
             <task id="64" name="Améliorer la gestion de l'appui des touches" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
-            <task id="72" name="Restructure du code pour respecter le modèle MVC" color="#8cb6ce" meeting="false" start="2025-03-18" duration="1" complete="0" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="75" name="Restructure et finalisation du diagramme de classes" color="#8cb6ce" meeting="false" start="2025-03-18" duration="1" complete="0" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="72" name="Restructure du code pour respecter le modèle MVC" color="#99ff99" meeting="false" start="2025-03-18" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="75" name="Restructure et finalisation du diagramme de classes" color="#99ff99" meeting="false" start="2025-03-18" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="78" name="Essai de rendre aléatoire la création de routes, vitesses des véhicules" color="#99ff99" meeting="false" start="2025-03-18" duration="1" complete="25" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
         </task>
         <task id="15" name="Documentation + rapport" color="#ffcc00" meeting="false" start="2025-03-25" duration="20" complete="0" thirdDate="2025-03-25" thirdDate-constraint="1" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
@@ -89,6 +90,7 @@
         <allocation task-id="1" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="13" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="53" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="78" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="1" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="13" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="0" resource-id="1" function="Default:0" responsible="false" load="50.0"/>
