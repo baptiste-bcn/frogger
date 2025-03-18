@@ -3,12 +3,15 @@ package com.frogger.model;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+import java.util.Random;
+
 public class Obstacle {
     private int x, y;
     private final int width;
     private final int speed;
-    private final Color color;
+    private Color color;
     private final Grille grille;
+    private final Random random = new Random();
 
     public Obstacle(Grille grille, int x, int y, int width, int speed, Color color, boolean isWater) {
         this.grille = grille;
@@ -16,7 +19,11 @@ public class Obstacle {
         this.y = y;
         this.width = width;
         this.speed = speed;
-        this.color = color;
+        this.color = speed == 0 ? color : getRandomColor();
+    }
+
+    private Color getRandomColor() {
+        return Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256));
     }
 
     public void move() {
