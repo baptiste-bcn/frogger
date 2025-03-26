@@ -17,17 +17,11 @@ public class SettingsController {
 
     @FXML
     public void initialize() {
-        btnBack.sceneProperty().addListener((observable, oldScene, newScene) -> {
-            if (newScene != null) {
-                Stage stage = (Stage) newScene.getWindow();
-                checkFullScreen.setSelected(stage.isFullScreen());
-
-                checkFullScreen.setOnAction(event -> {
-                    stage.setFullScreen(checkFullScreen.isSelected());
-                });
-
-                btnBack.setOnAction(event -> sceneController.showMenu());
-            }
+        checkFullScreen.setSelected(true);
+        btnBack.setOnAction(event -> sceneController.showMenu());
+        checkFullScreen.setOnAction(event -> {
+            Stage stage = sceneController.getStage();
+            stage.setFullScreen(checkFullScreen.isSelected());
         });
     }
 
