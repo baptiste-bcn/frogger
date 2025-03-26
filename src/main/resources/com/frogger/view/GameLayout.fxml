@@ -4,6 +4,5 @@
 <?import javafx.scene.text.Text?>
 
 <VBox styleClass="game" xmlns:fx="http://javafx.com/fxml" fx:controller="com.frogger.controller.GameController" stylesheets="@/com/frogger/view/GameLayout.css">
-    <Text fx:id="text" text="Hello, JavaFX!" />
-    <Button text="Click me" onAction="#changeText"/>
+    <Button text="Retour" fx:id="btnBack"/>
 </VBox>

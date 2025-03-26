@@ -7,11 +7,3 @@
   -fx-background-color: dodgerblue;
   -fx-text-fill: white;
 }
-
-.text {
-  -fx-fill: darkblue;
-}
-
-.modified-text {
-  -fx-fill: red;
-}

@@ -1,15 +1,20 @@
 package com.frogger.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.text.Text;
+import javafx.scene.control.Button;
 
 public class GameController {
     @FXML
-    private Text text;
+    private Button btnBack;
+
+    private SceneController sceneController;
 
     @FXML
-    public void changeText() {
-        text.setText("Hello modifié!");
-        text.getStyleClass().add("modified-text");
+    public void initialize() {
+        btnBack.setOnAction(event -> sceneController.showMenu());
+    }
+
+    public void setSceneController(SceneController sceneController) {
+        this.sceneController = sceneController;
     }
 }

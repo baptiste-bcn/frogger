@@ -38,6 +38,9 @@ public class SceneController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/frogger/view/GameLayout.fxml"));
             Parent gameLayout = loader.load();
             scene.setRoot(gameLayout);
+
+            GameController controller = loader.getController();
+            controller.setSceneController(this);
         } catch (Exception e) {
             e.printStackTrace();
         }
