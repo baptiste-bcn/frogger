@@ -7,12 +7,12 @@ import java.util.Random;
 public class Obstacle {
     private int x, y;
     private final int width;
-    private final int speed;
+    private final float speed;
     private Color color;
     private final Grille grille;
     private final Random random = new Random();
 
-    public Obstacle(Grille grille, int x, int y, int width, int speed, Color color) {
+    public Obstacle(Grille grille, int x, int y, int width, float speed, Color color) {
         this.grille = grille;
         this.x = x;
         this.y = y;
@@ -35,7 +35,7 @@ public class Obstacle {
     }
 
     public boolean isStatic() {
-        return this.speed == 0;
+        return this.speed == 0; //Pour gerer colision avec buissons plus tard
     }
 
     public int getX() {
