@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
-
-<VBox styleClass="game" xmlns:fx="http://javafx.com/fxml" fx:controller="com.frogger.controller.GameController" stylesheets="@/com/frogger/view/GameLayout.css">
-    <Button text="Retour" fx:id="btnBack"/>
-</VBox>
