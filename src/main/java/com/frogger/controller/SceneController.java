@@ -3,6 +3,7 @@ package com.frogger.controller;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
 public class SceneController {
@@ -16,6 +17,7 @@ public class SceneController {
         this.stage.setScene(this.scene);
         this.stage.setFullScreen(true);
         this.stage.setFullScreenExitHint("");
+        this.stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
     }
 
     public void showMenu() {

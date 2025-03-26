@@ -1,6 +1,7 @@
 package com.frogger;
 
 import javafx.application.Application;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 import com.frogger.controller.SceneController;
 
@@ -10,6 +11,7 @@ public class Main extends Application {
         stage.setTitle("Frogger Menu");
         stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
+        stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
 
         SceneController sceneController = new SceneController(stage);
         sceneController.showMenu();
