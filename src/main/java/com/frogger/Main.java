@@ -4,11 +4,14 @@ import javafx.application.Application;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 import com.frogger.controller.SceneController;
+import javafx.scene.image.Image;
 
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setTitle("Frogger Menu");
+        Image icon = new Image(getClass().getResourceAsStream("/images/frog.png"));
+        stage.getIcons().add(icon);
+        stage.setTitle("Frogger");
         stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
         stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
