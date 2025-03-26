@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.GridPane?>
+
+<VBox styleClass="game" xmlns:fx="http://javafx.com/fxml" fx:controller="com.frogger.controller.GameController" stylesheets="@/view/game/GameStyles.css">
+    <Button text="Retour" fx:id="btnBack"/>
+    <GridPane fx:id="grid" styleClass="grid"/>
+</VBox>

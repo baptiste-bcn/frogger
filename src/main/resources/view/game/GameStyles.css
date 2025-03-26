@@ -1,9 +1,9 @@
 .game {
   -fx-background-color: lightblue;
   -fx-font-size: 16px;
+  -fx-alignment: center;
 }
 
-.button {
-  -fx-background-color: dodgerblue;
-  -fx-text-fill: white;
+.grid {
+  -fx-alignment: center;
 }

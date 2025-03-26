@@ -3,7 +3,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.frogger.controller.SettingsController" stylesheets="@/com/frogger/view/SettingsStyle.css" styleClass="settings">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.frogger.controller.SettingsController" stylesheets="@/view/settings/SettingsStyle.css" styleClass="settings">
     <CheckBox text="Plein écran" fx:id="checkFullScreen"/>
     <Button text="Retour" fx:id="btnBack"/>
 </VBox>
