@@ -3,7 +3,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.frogger.controller.GameController" stylesheets="@/com/frogger/view/GameLayout.css">
+<VBox styleClass="game" xmlns:fx="http://javafx.com/fxml" fx:controller="com.frogger.controller.GameController" stylesheets="@/com/frogger/view/GameLayout.css">
     <Text fx:id="text" text="Hello, JavaFX!" />
     <Button text="Click me" onAction="#changeText"/>
 </VBox>
