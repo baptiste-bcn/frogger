@@ -78,9 +78,4 @@ public class Joueur {
         previousX = x;
         previousY = y;
     }
-
-    public void dessiner(GraphicsContext gc, int tileSize) {
-        gc.setFill(color);
-        gc.fillOval(x * tileSize + 10, y * tileSize + 10, tileSize - 20, tileSize - 20);
-    }
 }

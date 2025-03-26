@@ -1,47 +1,44 @@
 package com.frogger.model;
 
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
+import java.util.List;
+import java.util.ArrayList;
 import javafx.scene.paint.Color;
+import java.util.Random;
 
 public class Grille {
-    private final int TILE_SIZE;
-    private final int GRID_WIDTH;
-    private final int GRID_HEIGHT;
-    private final Canvas canvas;
+    private final int width;
+    private final int height;
+    private List<Obstacle> obstacles;
 
-    public Grille(Canvas canvas, int width, int height, int tileSize) {
-        this.canvas = canvas;
-        this.GRID_WIDTH = width;
-        this.GRID_HEIGHT = height;
-        this.TILE_SIZE = tileSize;
-
-        canvas.setWidth(width * tileSize);
-        canvas.setHeight(height * tileSize);
-    }
-
-    public void dessinerGrille() {
-        GraphicsContext gc = canvas.getGraphicsContext2D();
-        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-
-        gc.setStroke(Color.GRAY);
-        for (int i = 0; i <= GRID_WIDTH; i++) {
-            gc.strokeLine(i * TILE_SIZE, 0, i * TILE_SIZE, GRID_HEIGHT * TILE_SIZE);
-        }
-        for (int i = 0; i <= GRID_HEIGHT; i++) {
-            gc.strokeLine(0, i * TILE_SIZE, GRID_WIDTH * TILE_SIZE, i * TILE_SIZE);
-        }
-    }
-
-    public int getTileSize() {
-        return TILE_SIZE;
+    public Grille(int width, int height) {
+        this.width = width;
+        this.height = height;
+        // Initialiser les obstacles ou autres éléments nécessaires ici
+        this.obstacles = new ArrayList<>();
+        generateRandomObstacles();
     }
 
     public int getWidth() {
-        return GRID_WIDTH;
+        return width;
     }
 
     public int getHeight() {
-        return GRID_HEIGHT;
+        return height;
+    }
+
+    public List<Obstacle> getObstacles() {
+        return obstacles;
+    }
+
+    private void generateRandomObstacles() {
+        Random rand = new Random();
+        for (int i = 0; i < 20; i++) {
+            int x = rand.nextInt(width);
+            int y = rand.nextInt(height);
+            int obstacleWidth = 1;
+            int speed = rand.nextInt(3);
+            Color color = Color.GREEN; 
+            obstacles.add(new Obstacle(this, x, y, obstacleWidth, speed, color));
+        }
     }
 }

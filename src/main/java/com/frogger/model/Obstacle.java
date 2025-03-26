@@ -1,6 +1,5 @@
 package com.frogger.model;
 
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 import java.util.Random;
@@ -13,7 +12,7 @@ public class Obstacle {
     private final Grille grille;
     private final Random random = new Random();
 
-    public Obstacle(Grille grille, int x, int y, int width, int speed, Color color, boolean isWater) {
+    public Obstacle(Grille grille, int x, int y, int width, int speed, Color color) {
         this.grille = grille;
         this.x = x;
         this.y = y;
@@ -36,7 +35,7 @@ public class Obstacle {
     }
 
     public boolean isStatic() {
-        return this.speed == 0; // Un obstacle est statique s’il ne bouge pas
+        return this.speed == 0;
     }
 
     public int getX() {
@@ -47,9 +46,12 @@ public class Obstacle {
         return this.y;
     }
 
-    public void draw(GraphicsContext gc, int tileSize) {
-        gc.setFill(color);
-        gc.fillRect(x * tileSize, y * tileSize, width * tileSize, tileSize);
+    public int getWidth() {
+        return this.width;
+    }
+
+    public Color getColor() {
+        return this.color;
     }
 
     public boolean collidesWith(Joueur joueur) {
