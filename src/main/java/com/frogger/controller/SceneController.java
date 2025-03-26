@@ -22,7 +22,7 @@ public class SceneController {
 
     public void showMenu() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/frogger/view/MenuLayout.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/menu/MenuLayout.fxml"));
             Parent menuLayout = loader.load();
             scene.setRoot(menuLayout);
 
@@ -35,7 +35,7 @@ public class SceneController {
 
     public void showGame() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/frogger/view/GameLayout.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/game/GameLayout.fxml"));
             Parent gameLayout = loader.load();
             scene.setRoot(gameLayout);
 
@@ -48,7 +48,8 @@ public class SceneController {
 
     public void showSettings() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/frogger/view/SettingsLayout.fxml"));
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/view/settings/SettingsLayout.fxml"));
             Parent settingsLayout = loader.load();
             scene.setRoot(settingsLayout);
 
