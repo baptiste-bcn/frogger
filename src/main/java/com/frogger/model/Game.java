@@ -1,7 +1,7 @@
 package com.frogger.model;
 
 public class Game {
-    private Grid grid;
+    private final Grid grid;
     private boolean running;
 
     public Game(Grid grid) {

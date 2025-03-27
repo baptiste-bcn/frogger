@@ -6,10 +6,10 @@ import java.util.Random;
 
 public class Obstacle {
     private float x;
-    private int y;
+    private final int y;
     private final int width;
     private final float speed;
-    private Color color;
+    private final Color color;
     private final Grid grid;
     private final Random random = new Random();
 

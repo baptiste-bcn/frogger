@@ -7,8 +7,8 @@ import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
 public class SceneController {
-    private Stage stage;
-    private Scene scene;
+    private final Stage stage;
+    private final Scene scene;
 
     public SceneController(Stage stage) {
         this.stage = stage;
