@@ -24,8 +24,8 @@ public class GameController {
         Platform.runLater(() -> {
             btnBack.setOnAction(event -> sceneController.showMenu());
 
-            for (int row = 0; row < gridModel.getRows(); row++) {
-                for (int col = 0; col < gridModel.getCols(); col++) {
+            for (int row = 0; row < gridModel.getHeight(); row++) {
+                for (int col = 0; col < gridModel.getWidth(); col++) {
                     Rectangle cell = new Rectangle(50, 50, Color.LIGHTGRAY);
                     cell.setStroke(Color.BLACK);
                     grid.add(cell, col, row);
