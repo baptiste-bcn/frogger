@@ -4,9 +4,14 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
 
 <VBox styleClass="game" xmlns:fx="http://javafx.com/fxml" fx:controller="com.frogger.controller.GameController" stylesheets="@/view/game/GameStyles.css">
-    <Button text="Retour" fx:id="btnBack"/>
+    <HBox styleClass="gameHeader">
+        <Button text="Retour" fx:id="btnBack"/>
+        <Label text="Welcome to FROGGER" fx:id="lblScore" styleClass="score-label"/>
+    </HBox>
     <StackPane styleClass="gameStackPane">
         <GridPane fx:id="grid" styleClass="grid"/>
         <GridPane fx:id="obstacleLayer" styleClass="obstacle-pane"/>

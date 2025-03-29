@@ -17,9 +17,11 @@ public class SettingsController {
 
     @FXML
     public void initialize() {
+
         checkFullScreen.sceneProperty().addListener((observable, oldScene, newScene) -> {
 
             Stage stage = (Stage) checkFullScreen.getScene().getWindow();
+
             checkFullScreen.setSelected(stage.isFullScreen());
             checkFullScreen.setOnAction(event -> {
                 stage.setFullScreen(checkFullScreen.isSelected());

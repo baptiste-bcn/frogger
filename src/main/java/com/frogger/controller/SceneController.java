@@ -16,6 +16,12 @@ public class SceneController {
         this.stage.setScene(this.scene);
     }
 
+    /**
+     * ============================
+     * SWITCH SCENE SECTION
+     * ============================
+     **/
+
     public void showMenu() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/menu/MenuLayout.fxml"));
@@ -29,7 +35,7 @@ public class SceneController {
         }
     }
 
-    public void showGame() {
+    public void showGame(boolean isDuoMode) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/game/GameLayout.fxml"));
             Parent gameLayout = loader.load();
@@ -37,6 +43,7 @@ public class SceneController {
 
             GameController controller = loader.getController();
             controller.setSceneController(this);
+            controller.setDuoMode(isDuoMode);
         } catch (Exception e) {
             e.printStackTrace();
         }

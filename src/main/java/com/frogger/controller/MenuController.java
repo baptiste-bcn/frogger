@@ -5,6 +5,12 @@ import javafx.scene.control.Button;
 
 public class MenuController {
 
+    /**
+     * ============================
+     * FXML ELEMENTS SECTION
+     * ============================
+     **/
+
     @FXML
     private Button btnSolo;
 
@@ -21,8 +27,8 @@ public class MenuController {
 
     @FXML
     public void initialize() {
-        btnSolo.setOnAction(event -> sceneController.showGame());
-        btnDuo.setOnAction(event -> sceneController.showGame());
+        btnSolo.setOnAction(event -> sceneController.showGame(false));
+        btnDuo.setOnAction(event -> sceneController.showGame(true));
         btnSettings.setOnAction(event -> sceneController.showSettings());
         btnQuit.setOnAction(event -> sceneController.getStage().close());
     }

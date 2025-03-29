@@ -17,6 +17,12 @@ public class Obstacle {
         this.type = type;
     }
 
+    /**
+     * ============================
+     * GETTER SECTION
+     * ============================
+     **/
+
     public int getX() {
         return x;
     }
@@ -32,6 +38,12 @@ public class Obstacle {
     public ObstacleType getType() {
         return type;
     }
+
+    /**
+     * ============================
+     * DEPLACEMENT SECTION
+     * ============================
+     **/
 
     public void move(int gridWidth) {
         if (type == ObstacleType.CAR) {

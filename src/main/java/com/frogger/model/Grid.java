@@ -48,6 +48,12 @@ public class Grid {
         }
     }
 
+    /**
+     * ============================
+     * GETTER SECTION
+     * ============================
+     **/
+
     public int getWidth() {
         return width;
     }
