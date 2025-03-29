@@ -67,15 +67,20 @@ public class GameController {
 
     @FXML
     public void initialize() {
-        btnBack.setOnAction(event -> sceneController.showMenu());
-
         // Ajouter un écouteur pour s'assurer que la scène est attachée avant de
         // configurer les événements clavier
         grid.sceneProperty().addListener((observable, oldScene, newScene) -> {
             if (newScene != null) {
-                newScene.setOnKeyPressed(this::handleKeyPress);
-                initializeGameComponents();
+                btnBack.setOnAction(event -> sceneController.showMenu());
 
+                newScene.setOnKeyPressed(this::handleKeyPress);
+
+                // Vérifiez si le jeu est initialisé avant d'appeler initializeGameComponents
+                if (game != null) {
+                    initializeGameComponents();
+                } else {
+                    System.out.println("Game is not initialized yet.");
+                }
             }
         });
     }
