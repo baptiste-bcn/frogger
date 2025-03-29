@@ -17,7 +17,7 @@ public class Game {
 
         // Initialiser les positions des joueurs
         int gridWidth = grid.getWidth();
-        int player1X = gridWidth / 2 - 1;
+        int player1X = gridWidth % 2 == 1 ? (isDuoMode() ? gridWidth / 2 - 1 : gridWidth / 2) : gridWidth / 2 - 1;
         int player2X = gridWidth % 2 == 0 ? gridWidth / 2 : gridWidth / 2 + 1;
 
         this.player1 = new Player(player1X, grid.getHeight() - 1);
@@ -67,7 +67,7 @@ public class Game {
             player.setScore(player.getScore() + 100);
 
             int gridWidth = grid.getWidth();
-            int startX = player == player1 ? gridWidth / 2 - 1 : gridWidth / 2 + 1;
+            int startX = duoMode && player == player2 ? gridWidth / 2 + 1 : gridWidth / 2;
             player.resetPosition(startX, grid.getHeight() - 1);
 
             return true;
@@ -86,7 +86,7 @@ public class Game {
 
         // Réinitialiser les positions des joueurs
         int gridWidth = grid.getWidth();
-        int player1X = gridWidth / 2 - 1;
+        int player1X = gridWidth % 2 == 1 ? (isDuoMode() ? gridWidth / 2 - 1 : gridWidth / 2) : gridWidth / 2 - 1;
         int player2X = gridWidth % 2 == 0 ? gridWidth / 2 : gridWidth / 2 + 1;
 
         player1.resetPosition(player1X, grid.getHeight() - 1);

@@ -323,6 +323,7 @@ public class GameController {
                     // Vérifier si le joueur a terminé
                     if (game.hasFinished(game.getPlayer1())) {
                         updateScore();
+                        resetGameView();
                     }
                     if (isDuoMode && game.hasFinished(game.getPlayer2())) {
                         updateScore();
@@ -355,7 +356,7 @@ public class GameController {
         initializeObstacles();
 
         // Réinitialiser la vue du joueur
-        updatePlayerView();
+        initializePlayers(); // Recrée les vues des joueurs
     }
 
     public void setSceneController(SceneController sceneController) {
