@@ -1,9 +1,41 @@
 .game {
-  -fx-background-color: lightblue;
-  -fx-font-size: 16px;
+  -fx-alignment: center;
+}
+
+.obstacle-pane {
   -fx-alignment: center;
 }
 
 .grid {
   -fx-alignment: center;
+}
+
+.safe-cell {
+  -fx-background-color: green;
+}
+
+.road-cell {
+  -fx-background-color: gray;
+}
+
+.grid-cell {
+  -fx-border-color: black;
+  -fx-border-width: 1px;
+  -fx-pref-width: 50px;
+  -fx-pref-height: 50px;
+}
+
+/* Styles pour les obstacles */
+.tree {
+  -fx-background-color: purple;
+  -fx-border-color: black;
+  -fx-pref-width: 50px;
+  -fx-pref-height: 50px;
+  -fx-background-radius: 25px;
+}
+.car {
+  -fx-background-color: red;
+  -fx-border-color: black;
+  -fx-pref-width: 50px;
+  -fx-pref-height: 50px;
 }

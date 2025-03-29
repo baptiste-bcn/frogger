@@ -1,6 +1,5 @@
 package com.frogger.controller;
 
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -18,18 +17,20 @@ public class SettingsController {
 
     @FXML
     public void initialize() {
-        Platform.runLater(() -> {
+        checkFullScreen.sceneProperty().addListener((observable, oldScene, newScene) -> {
+
             Stage stage = (Stage) checkFullScreen.getScene().getWindow();
             checkFullScreen.setSelected(stage.isFullScreen());
-
-            btnBack.setOnAction(event -> {
-                sceneController.showMenu();
-            });
-
             checkFullScreen.setOnAction(event -> {
                 stage.setFullScreen(checkFullScreen.isSelected());
             });
+
         });
+
+        btnBack.setOnAction(event -> {
+            sceneController.showMenu();
+        });
+
     }
 
     public void setSceneController(SceneController sceneController) {

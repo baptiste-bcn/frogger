@@ -1,61 +1,48 @@
 package com.frogger.model;
 
-import javafx.scene.paint.Color;
-
-import java.util.Random;
-
 public class Obstacle {
-    private float x;
+    private int x;
     private final int y;
-    private final int width;
-    private final float speed;
-    private final Color color;
-    private final Grid grid;
-    private final Random random = new Random();
+    private final double speed;
+    private final ObstacleType type;
 
-    public Obstacle(Grid grid, float x, int y, int width, float speed, Color color) {
-        this.grid = grid;
+    public enum ObstacleType {
+        TREE, CAR
+    }
+
+    public Obstacle(int x, int y, double speed, ObstacleType type) {
         this.x = x;
         this.y = y;
-        this.width = width;
         this.speed = speed;
-        this.color = speed == 0 ? color : getRandomColor();
-    }
-
-    private Color getRandomColor() {
-        return Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256));
-    }
-
-    public void move() {
-        x += speed;
-        if (x > grid.getWidth()) {
-            x = -width;
-        } else if (x + width < 0) {
-            x = grid.getWidth();
-        }
-    }
-
-    public boolean isStatic() {
-        return this.speed == 0; //Pour gerer colision avec buissons plus tard
+        this.type = type;
     }
 
     public int getX() {
-        return (int) this.x;
+        return x;
     }
 
     public int getY() {
-        return this.y;
+        return y;
     }
 
-    public int getWidth() {
-        return this.width;
+    public double getSpeed() {
+        return speed;
     }
 
-    public Color getColor() {
-        return this.color;
+    public ObstacleType getType() {
+        return type;
     }
 
-    public boolean collidesWith(Joueur joueur) {
-        return joueur.getX() >= x && joueur.getX() < (x + width) && joueur.getY() == y;
+    public void move(int gridWidth) {
+        if (type == ObstacleType.CAR) {
+            x += speed;
+            if (x < 0) {
+                // On revient à droite de la grille
+                x = gridWidth - 1;
+            } else if (x >= gridWidth) {
+                // On revient à gauche de la grille
+                x = 0;
+            }
+        }
     }
 }

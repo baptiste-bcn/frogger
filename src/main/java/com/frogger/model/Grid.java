@@ -1,23 +1,51 @@
 package com.frogger.model;
 
-
-import javafx.scene.paint.Color;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class Grid {
     private final int width;
     private final int height;
-    private final List<Obstacle> obstacles;
+    private final List<RowType> rows;
+
+    public enum RowType {
+        SAFE, ROAD
+    }
 
     public Grid(int width, int height) {
         this.width = width;
         this.height = height;
-        // Initialiser les obstacles ou autres éléments nécessaires ici
-        this.obstacles = new ArrayList<>();
-        generateRandomObstacles();
+        this.rows = new ArrayList<>();
+
+        int consecutiveRoads = 0;
+        int consecutiveSafes = 0;
+
+        for (int i = 0; i < height; i++) {
+            if (consecutiveSafes == 2 || i == 2 || i == height - 3) {
+                // Limiter à 2 lignes SAFE consécutives
+                // ou si on est sur la 3ème ou avant-dernière ligne on met une ligne ROAD
+                rows.add(RowType.ROAD);
+                consecutiveSafes = 0;
+                consecutiveRoads++;
+            } else if (i < 2 || i > height - 3 || consecutiveRoads == 3) {
+                // Les deux premières et deux dernières lignes sont toujours SAFE
+                // ou si on a 3 lignes ROAD consécutives on met une ligne SAFE
+                rows.add(RowType.SAFE);
+                consecutiveSafes++;
+                consecutiveRoads = 0;
+            } else {
+                // On alterne entre ROAD et SAFE
+                if (Math.random() < 0.3) {
+                    rows.add(RowType.SAFE);
+                    consecutiveSafes++;
+                    consecutiveRoads = 0;
+                } else {
+                    rows.add(RowType.ROAD);
+                    consecutiveRoads++;
+                    consecutiveSafes = 0;
+                }
+            }
+        }
     }
 
     public int getWidth() {
@@ -28,31 +56,10 @@ public class Grid {
         return height;
     }
 
-    public List<Obstacle> getObstacles() {
-        return obstacles;
-    }
-
-    private void generateRandomObstacles() {
-        Random rand = new Random();
-        //les buissons
-        for (int i = 0; i < 20; i++) {
-            int x = rand.nextInt(width - 1); //pour ne pas apparaitre sur le joueur
-            int y = rand.nextInt(height - 1);
-            int obstacleWidth = 1;
-            float speed = 0;
-            Color color = Color.GREEN;
-            obstacles.add(new Obstacle(this, x, y, obstacleWidth, speed, color));
+    public RowType getRowType(int rowIndex) {
+        if (rowIndex < 0 || rowIndex >= height) {
+            throw new IndexOutOfBoundsException("Invalid row index");
         }
-
-        //les voitures
-        for (int i = 0; i < 20; i++) {
-            int x = rand.nextInt(width - 1);
-            int y = rand.nextInt(height - 1);
-            int obstacleWidth = rand.nextInt(2) + 2; // 2 ou 3
-            float speed = (rand.nextFloat() * 0.15f) * (rand.nextBoolean() ? 1 : -1); //vitesse entre -0.15 et 0.15
-            Color color = Color.GREEN; //pas important car random couleur dans obstacle
-            obstacles.add(new Obstacle(this, x, y, obstacleWidth, speed, color));
-        }
+        return rows.get(rowIndex);
     }
 }
-
