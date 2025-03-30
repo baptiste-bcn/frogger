@@ -55,7 +55,6 @@ public class GameController {
         this.isDuoMode = isDuoMode;
         this.game = new Game(isDuoMode);
 
-        // Initialize components after the game is set
         initializeGameComponents();
     }
 
@@ -67,15 +66,12 @@ public class GameController {
 
     @FXML
     public void initialize() {
-        // Ajouter un écouteur pour s'assurer que la scène est attachée avant de
-        // configurer les événements clavier
         grid.sceneProperty().addListener((observable, oldScene, newScene) -> {
             if (newScene != null) {
                 btnBack.setOnAction(event -> sceneController.showMenu());
 
                 newScene.setOnKeyPressed(this::handleKeyPress);
 
-                // Vérifiez si le jeu est initialisé avant d'appeler initializeGameComponents
                 if (game != null) {
                     initializeGameComponents();
                 } else {
@@ -89,7 +85,6 @@ public class GameController {
         initializeGrid();
         initializeObstacles();
         initializePlayers();
-        initializeKeyHandlers();
         startGameLoop();
     }
 
@@ -103,7 +98,6 @@ public class GameController {
         player1View = new Region();
         player1View.getStyleClass().add("player");
 
-        // Positionner le joueur initialement
         GridPane.setColumnIndex(player1View, player1.getX());
         GridPane.setRowIndex(player1View, player1.getY());
         obstacleLayer.getChildren().add(player1View);
@@ -113,7 +107,6 @@ public class GameController {
             player2View = new Region();
             player2View.getStyleClass().add("player2");
 
-            // Positionner le joueur 2
             GridPane.setColumnIndex(player2View, player2.getX());
             GridPane.setRowIndex(player2View, player2.getY());
             obstacleLayer.getChildren().add(player2View);
@@ -137,7 +130,6 @@ public class GameController {
     }
 
     private void checkCollisions() {
-        // Gérer les collisions pour le joueur 1
         boolean collisionOccurred = game.handleCollision(game.getPlayer1());
         updatePlayerView();
 
@@ -145,7 +137,6 @@ public class GameController {
             updateScore();
         }
 
-        // Gérer les collisions pour le joueur 2 si le mode duo est activé
         if (isDuoMode) {
             collisionOccurred = game.handleCollision(game.getPlayer2());
             updatePlayerView();
@@ -175,18 +166,17 @@ public class GameController {
         Player player1 = game.getPlayer1();
         player1.savePreviousPosition();
 
-        // Déplacement du joueur 1
         switch (event.getCode()) {
-            case Z: // Haut
+            case Z:
                 player1.moveUp();
                 break;
-            case Q: // Gauche
+            case Q:
                 player1.moveLeft();
                 break;
-            case S: // Bas
+            case S:
                 player1.moveDown(game.getGrid().getHeight());
                 break;
-            case D: // Droite
+            case D:
                 player1.moveRight(game.getGrid().getWidth());
                 break;
             default:
@@ -195,23 +185,21 @@ public class GameController {
 
         checkCollisions();
 
-        // Déplacement du joueur 2 si le mode duo est activé
-
         if (isDuoMode) {
             Player player2 = game.getPlayer2();
             player2.savePreviousPosition();
 
             switch (event.getCode()) {
-                case UP: // Haut
+                case UP:
                     player2.moveUp();
                     break;
-                case LEFT: // Gauche
+                case LEFT:
                     player2.moveLeft();
                     break;
-                case DOWN: // Bas
+                case DOWN:
                     player2.moveDown(game.getGrid().getHeight());
                     break;
-                case RIGHT: // Droite
+                case RIGHT:
                     player2.moveRight(game.getGrid().getWidth());
                     break;
                 default:
@@ -237,12 +225,11 @@ public class GameController {
     private void initializeGrid() {
         Grid gridModel = game.getGrid();
 
-        // Add row and column constraints to the grid
         for (int col = 0; col < gridModel.getWidth(); col++) {
-            grid.getColumnConstraints().add(new ColumnConstraints(50)); // Set column width to 50
+            grid.getColumnConstraints().add(new ColumnConstraints(50));
         }
         for (int row = 0; row < gridModel.getHeight(); row++) {
-            grid.getRowConstraints().add(new RowConstraints(50)); // Set row height to 50
+            grid.getRowConstraints().add(new RowConstraints(50));
         }
 
         for (int row = 0; row < gridModel.getHeight(); row++) {
@@ -266,13 +253,12 @@ public class GameController {
      **/
 
     private void initializeObstacles() {
-        // Add column constraints to obstacleLayer
         for (int col = 0; col < game.getGrid().getWidth(); col++) {
-            obstacleLayer.getColumnConstraints().add(new ColumnConstraints(50)); // Set column width to 50
+            obstacleLayer.getColumnConstraints().add(new ColumnConstraints(50));
         }
 
         for (int row = 0; row < game.getGrid().getHeight(); row++) {
-            obstacleLayer.getRowConstraints().add(new RowConstraints(50)); // Set row height to 50
+            obstacleLayer.getRowConstraints().add(new RowConstraints(50));
         }
 
         for (Obstacle obstacle : game.getObstacles()) {
@@ -283,12 +269,10 @@ public class GameController {
                 obstacleView.getStyleClass().add("car");
             }
 
-            // Ajouter l'obstacle dans la bonne cellule
             GridPane.setColumnIndex(obstacleView, obstacle.getX());
             GridPane.setRowIndex(obstacleView, obstacle.getY());
             obstacleLayer.getChildren().add(obstacleView);
 
-            // Associer l'obstacleView à l'obstacle pour mise à jour ultérieure
             obstacleView.setUserData(obstacle);
         }
     }
@@ -321,11 +305,9 @@ public class GameController {
             @Override
             public void handle(long now) {
                 if (now - lastUpdate >= 100_000_000) {
-                    // Mettre à jour les obstacles
                     game.updateObstacles();
                     updateObstacleView();
 
-                    // Vérifier si le joueur a terminé
                     if (game.hasFinished(game.getPlayer1())) {
                         updateScore();
                         resetGameView();
@@ -334,7 +316,6 @@ public class GameController {
                         updateScore();
                     }
 
-                    // Vérifier les collisions
                     checkCollisions();
 
                     lastUpdate = now;
@@ -345,23 +326,19 @@ public class GameController {
     }
 
     private void resetGameView() {
-        // Réinitialiser le modèle
         game.resetGame();
 
-        // Réinitialiser la grille principale
         grid.getChildren().clear();
         grid.getColumnConstraints().clear();
         grid.getRowConstraints().clear();
         initializeGrid();
 
-        // Réinitialiser la couche des obstacles
         obstacleLayer.getChildren().clear();
         obstacleLayer.getColumnConstraints().clear();
         obstacleLayer.getRowConstraints().clear();
         initializeObstacles();
 
-        // Réinitialiser la vue du joueur
-        initializePlayers(); // Recrée les vues des joueurs
+        initializePlayers();
     }
 
     public void setSceneController(SceneController sceneController) {
