@@ -15,7 +15,6 @@ public class Game {
         this.grid = new Grid(19, 18);
         this.obstacles = new ArrayList<>();
 
-        // Initialiser les positions des joueurs
         int gridWidth = grid.getWidth();
         int player1X = gridWidth % 2 == 1 ? (isDuoMode() ? gridWidth / 2 - 1 : gridWidth / 2) : gridWidth / 2 - 1;
         int player2X = gridWidth % 2 == 0 ? gridWidth / 2 : gridWidth / 2 + 1;
@@ -60,7 +59,7 @@ public class Game {
 
     public boolean hasFinished(Player player) {
         if (player == null) {
-            return false; // Si le joueur est null, il n'a pas terminé
+            return false;
         }
 
         if (player.getY() == 0) {
@@ -80,11 +79,9 @@ public class Game {
         // Réinitialiser la grille
         this.grid = new Grid(grid.getWidth(), grid.getHeight());
 
-        // Réinitialiser les obstacles
         this.obstacles.clear();
         initializeObstacles();
 
-        // Réinitialiser les positions des joueurs
         int gridWidth = grid.getWidth();
         int player1X = gridWidth % 2 == 1 ? (isDuoMode() ? gridWidth / 2 - 1 : gridWidth / 2) : gridWidth / 2 - 1;
         int player2X = gridWidth % 2 == 0 ? gridWidth / 2 : gridWidth / 2 + 1;
@@ -143,11 +140,9 @@ public class Game {
         for (Obstacle obstacle : obstacles) {
             if (obstacle.getX() == player.getX() && obstacle.getY() == player.getY()) {
                 if (obstacle.getType() == Obstacle.ObstacleType.TREE) {
-                    // Collision avec un arbre, revenir à la position précédente
                     player.restorePreviousPosition();
                     return true;
                 } else if (obstacle.getType() == Obstacle.ObstacleType.CAR) {
-                    // Collision avec une voiture, réinitialiser la position et le score du joueur
                     player.resetPosition(grid.getWidth() / 2 - 1, grid.getHeight() - 1);
                     player.resetScore();
                     return true;

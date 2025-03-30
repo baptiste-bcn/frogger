@@ -153,14 +153,6 @@ public class GameController {
      * ============================
      **/
 
-    private void initializeKeyHandlers() {
-        grid.sceneProperty().addListener((observable, oldScene, newScene) -> {
-            if (newScene != null) {
-                newScene.setOnKeyPressed(this::handleKeyPress);
-            }
-        });
-    }
-
     private void handleKeyPress(KeyEvent event) {
 
         Player player1 = game.getPlayer1();
