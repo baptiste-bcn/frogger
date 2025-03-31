@@ -112,7 +112,8 @@ public class Game {
             Grid.RowType rowType = grid.getRowType(row);
 
             if (rowType == Grid.RowType.SAFE) {
-                for (int i = 0; i < 2; i++) {
+                int treeCount = 4 + (int) (Math.random() * 5); // Random number between 3 and 6
+                for (int i = 0; i < treeCount; i++) {
                     int x;
                     do {
                         x = (int) (Math.random() * grid.getWidth());
