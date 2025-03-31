@@ -2,16 +2,13 @@ package com.frogger.controller;
 
 import com.frogger.model.Game;
 import com.frogger.model.Player;
-import com.frogger.model.Grid;
-import com.frogger.model.Grid.RowType;
 import com.frogger.model.Obstacle;
+import com.frogger.view.GameView;
 
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.Node;
@@ -44,18 +41,17 @@ public class GameController {
      **/
 
     private SceneController sceneController;
+    private GameView gameView;
 
     private boolean isDuoMode;
     private Game game;
 
-    private Region player1View;
-    private Region player2View;
-
     public void setDuoMode(boolean isDuoMode) {
         this.isDuoMode = isDuoMode;
         this.game = new Game(isDuoMode);
+        this.gameView = new GameView(grid, entityLayer);
 
-        initializeGameComponents();
+        setupGameComponents();
     }
 
     /**
@@ -73,65 +69,25 @@ public class GameController {
                 newScene.setOnKeyPressed(this::handleKeyPress);
 
                 if (game != null) {
-                    initializeGameComponents();
+                    setupGameComponents();
                 } else {
                     System.out.println("Game is not initialized yet.");
                 }
+
             }
         });
     }
 
-    private void initializeGameComponents() {
-        initializeGrid();
-        initializeObstacles();
-        initializePlayers();
+    private void setupGameComponents() {
+        gameView.initializeGrid(game);
+        gameView.initializeObstacles(game);
+        gameView.initializePlayers(game.getPlayer1(), game.getPlayer2(), isDuoMode);
         startGameLoop();
-    }
-
-    /**
-     * ============================
-     * PLAYER SECTION
-     * ============================
-     **/
-    private void initializePlayers() {
-        Player player1 = game.getPlayer1();
-        player1View = new Region();
-        player1View.getStyleClass().add("player");
-
-        GridPane.setColumnIndex(player1View, player1.getX());
-        GridPane.setRowIndex(player1View, player1.getY());
-        entityLayer.getChildren().add(player1View);
-
-        if (isDuoMode) {
-            Player player2 = game.getPlayer2();
-            player2View = new Region();
-            player2View.getStyleClass().add("player2");
-
-            GridPane.setColumnIndex(player2View, player2.getX());
-            GridPane.setRowIndex(player2View, player2.getY());
-            entityLayer.getChildren().add(player2View);
-        }
-    }
-
-    private void updatePlayerView() {
-        Player player1 = game.getPlayer1();
-        if (player1View != null) {
-            GridPane.setColumnIndex(player1View, player1.getX());
-            GridPane.setRowIndex(player1View, player1.getY());
-        }
-
-        if (isDuoMode) {
-            Player player2 = game.getPlayer2();
-            if (player2View != null) {
-                GridPane.setColumnIndex(player2View, player2.getX());
-                GridPane.setRowIndex(player2View, player2.getY());
-            }
-        }
     }
 
     private void checkCollisions() {
         boolean collisionOccurred = game.handleCollision(game.getPlayer1());
-        updatePlayerView();
+        gameView.updatePlayerView(game.getPlayer1(), game.getPlayer2(), isDuoMode);
 
         if (collisionOccurred) {
             updateScore();
@@ -139,7 +95,7 @@ public class GameController {
 
         if (isDuoMode) {
             collisionOccurred = game.handleCollision(game.getPlayer2());
-            updatePlayerView();
+            gameView.updatePlayerView(game.getPlayer1(), game.getPlayer2(), isDuoMode);
 
             if (collisionOccurred) {
                 updateScore();
@@ -210,82 +166,6 @@ public class GameController {
 
     /**
      * ============================
-     * GRID SECTION
-     * ============================
-     **/
-
-    private void initializeGrid() {
-        Grid gridModel = game.getGrid();
-
-        for (int col = 0; col < gridModel.getWidth(); col++) {
-            grid.getColumnConstraints().add(new ColumnConstraints(50));
-        }
-        for (int row = 0; row < gridModel.getHeight(); row++) {
-            grid.getRowConstraints().add(new RowConstraints(50));
-        }
-
-        for (int row = 0; row < gridModel.getHeight(); row++) {
-            RowType rowType = gridModel.getRowType(row);
-            for (int col = 0; col < gridModel.getWidth(); col++) {
-                Region cell = new Region();
-                if (rowType == RowType.SAFE) {
-                    cell.getStyleClass().addAll("grid-cell", "safe-cell");
-                } else if (rowType == RowType.ROAD) {
-                    cell.getStyleClass().addAll("grid-cell", "road-cell");
-                }
-                grid.add(cell, col, row);
-            }
-        }
-    }
-
-    /**
-     * ============================
-     * OBSTACLES SECTION
-     * ============================
-     **/
-
-    private void initializeObstacles() {
-        for (int col = 0; col < game.getGrid().getWidth(); col++) {
-            entityLayer.getColumnConstraints().add(new ColumnConstraints(50));
-        }
-
-        for (int row = 0; row < game.getGrid().getHeight(); row++) {
-            entityLayer.getRowConstraints().add(new RowConstraints(50));
-        }
-
-        for (Obstacle obstacle : game.getObstacles()) {
-            Region obstacleView = new Region();
-            if (obstacle.getType() == Obstacle.ObstacleType.TREE) {
-                obstacleView.getStyleClass().add("tree");
-            } else if (obstacle.getType() == Obstacle.ObstacleType.CAR) {
-                obstacleView.getStyleClass().add("car");
-            }
-
-            GridPane.setColumnIndex(obstacleView, obstacle.getX());
-            GridPane.setRowIndex(obstacleView, obstacle.getY());
-            entityLayer.getChildren().add(obstacleView);
-
-            obstacleView.setUserData(obstacle);
-        }
-    }
-
-    private void updateObstacleView() {
-        for (Node node : entityLayer.getChildren()) {
-            if (node instanceof Region) {
-                Region obstacleView = (Region) node;
-                Object userData = obstacleView.getUserData();
-
-                if (userData instanceof Obstacle) {
-                    Obstacle obstacle = (Obstacle) userData;
-                    GridPane.setColumnIndex(obstacleView, obstacle.getX());
-                    GridPane.setRowIndex(obstacleView, obstacle.getY());
-                }
-            }
-        }
-    }
-
-    /**
-     * ============================
      * GAME LOOP SECTION
      * ============================
      **/
@@ -298,11 +178,12 @@ public class GameController {
             public void handle(long now) {
                 if (now - lastUpdate >= 100_000_000) {
                     game.updateObstacles();
-                    updateObstacleView();
+                    gameView.updateObstacleView();
 
                     if (game.hasFinished(game.getPlayer1())) {
                         updateScore();
-                        resetGameView();
+                        game.resetGame();
+                        gameView.resetGameView(game);
                     }
                     if (isDuoMode && game.hasFinished(game.getPlayer2())) {
                         updateScore();
@@ -315,22 +196,6 @@ public class GameController {
             }
         };
         gameLoop.start();
-    }
-
-    private void resetGameView() {
-        game.resetGame();
-
-        grid.getChildren().clear();
-        grid.getColumnConstraints().clear();
-        grid.getRowConstraints().clear();
-        initializeGrid();
-
-        entityLayer.getChildren().clear();
-        entityLayer.getColumnConstraints().clear();
-        entityLayer.getRowConstraints().clear();
-        initializeObstacles();
-
-        initializePlayers();
     }
 
     public void setSceneController(SceneController sceneController) {
