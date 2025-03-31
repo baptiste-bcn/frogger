@@ -1,9 +1,11 @@
 .game {
   -fx-alignment: center;
+  -fx-border-color: transparent;
 }
 
-.obstacle-pane {
+.entity-layer {
   -fx-alignment: center;
+  -fx-border-color: transparent;
 }
 
 .gameHeader {
@@ -21,6 +23,7 @@
 
 .grid {
   -fx-alignment: center;
+  -fx-border-color: transparent;
 }
 
 .safe-cell {

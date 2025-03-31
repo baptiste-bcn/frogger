@@ -32,7 +32,7 @@ public class GameController {
     private GridPane grid;
 
     @FXML
-    private GridPane obstacleLayer;
+    private GridPane entityLayer;
 
     @FXML
     private Button btnBack;
@@ -100,7 +100,7 @@ public class GameController {
 
         GridPane.setColumnIndex(player1View, player1.getX());
         GridPane.setRowIndex(player1View, player1.getY());
-        obstacleLayer.getChildren().add(player1View);
+        entityLayer.getChildren().add(player1View);
 
         if (isDuoMode) {
             Player player2 = game.getPlayer2();
@@ -109,7 +109,7 @@ public class GameController {
 
             GridPane.setColumnIndex(player2View, player2.getX());
             GridPane.setRowIndex(player2View, player2.getY());
-            obstacleLayer.getChildren().add(player2View);
+            entityLayer.getChildren().add(player2View);
         }
     }
 
@@ -246,11 +246,11 @@ public class GameController {
 
     private void initializeObstacles() {
         for (int col = 0; col < game.getGrid().getWidth(); col++) {
-            obstacleLayer.getColumnConstraints().add(new ColumnConstraints(50));
+            entityLayer.getColumnConstraints().add(new ColumnConstraints(50));
         }
 
         for (int row = 0; row < game.getGrid().getHeight(); row++) {
-            obstacleLayer.getRowConstraints().add(new RowConstraints(50));
+            entityLayer.getRowConstraints().add(new RowConstraints(50));
         }
 
         for (Obstacle obstacle : game.getObstacles()) {
@@ -263,14 +263,14 @@ public class GameController {
 
             GridPane.setColumnIndex(obstacleView, obstacle.getX());
             GridPane.setRowIndex(obstacleView, obstacle.getY());
-            obstacleLayer.getChildren().add(obstacleView);
+            entityLayer.getChildren().add(obstacleView);
 
             obstacleView.setUserData(obstacle);
         }
     }
 
     private void updateObstacleView() {
-        for (Node node : obstacleLayer.getChildren()) {
+        for (Node node : entityLayer.getChildren()) {
             if (node instanceof Region) {
                 Region obstacleView = (Region) node;
                 Object userData = obstacleView.getUserData();
@@ -325,9 +325,9 @@ public class GameController {
         grid.getRowConstraints().clear();
         initializeGrid();
 
-        obstacleLayer.getChildren().clear();
-        obstacleLayer.getColumnConstraints().clear();
-        obstacleLayer.getRowConstraints().clear();
+        entityLayer.getChildren().clear();
+        entityLayer.getColumnConstraints().clear();
+        entityLayer.getRowConstraints().clear();
         initializeObstacles();
 
         initializePlayers();
