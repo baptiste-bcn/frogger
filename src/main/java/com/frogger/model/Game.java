@@ -112,19 +112,24 @@ public class Game {
             Grid.RowType rowType = grid.getRowType(row);
 
             if (rowType == Grid.RowType.SAFE) {
-                int treeCount = 4 + (int) (Math.random() * 5); // Random number between 3 and 6
+                int treeCount = 4 + (int) (Math.random() * 5);
+
                 for (int i = 0; i < treeCount; i++) {
-                    int x;
-                    do {
+                    int x = (int) (Math.random() * grid.getWidth());
+
+                    while (isRestrictedZone(x, row)) {
                         x = (int) (Math.random() * grid.getWidth());
-                    } while (isRestrictedZone(x, row));
+                    }
+
                     obstacles.add(new Obstacle(x, row, 0, Obstacle.ObstacleType.TREE));
                 }
             } else if (rowType == Grid.RowType.ROAD) {
-                int x;
-                do {
+                int x = (int) (Math.random() * grid.getWidth());
+
+                while (isRestrictedZone(x, row)) {
                     x = (int) (Math.random() * grid.getWidth());
-                } while (isRestrictedZone(x, row));
+                }
+
                 int speed = Math.random() < 0.5 ? 1 : -1;
                 obstacles.add(new Obstacle(x, row, speed, Obstacle.ObstacleType.CAR));
             }
