@@ -11,6 +11,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.Region;
 import javafx.scene.Node;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 
 public class GameView {
     private final GridPane grid;
@@ -18,6 +20,13 @@ public class GameView {
 
     private Region player1View;
     private Region player2View;
+
+    private static final Image GRASS_TILE_IMAGE = new Image(
+            GameView.class.getResourceAsStream("/images/GrassTile.png"));
+    private static final Image ROAD_TILE_IMAGE = new Image(GameView.class.getResourceAsStream("/images/RoadTile.png"));
+    private static final Image BLUE_CAR_IMAGE = new Image(
+            GameView.class.getResourceAsStream("/images/BlueCar.png"));
+    private static final Image TREE_IMAGE = new Image(GameView.class.getResourceAsStream("/images/Tree.png"));
 
     public GameView(GridPane grid, GridPane entityLayer) {
         this.grid = grid;
@@ -43,12 +52,14 @@ public class GameView {
         for (int row = 0; row < gridModel.getHeight(); row++) {
             RowType rowType = gridModel.getRowType(row);
             for (int col = 0; col < gridModel.getWidth(); col++) {
-                Region cell = new Region();
+                ImageView cell = new ImageView();
                 if (rowType == RowType.SAFE) {
-                    cell.getStyleClass().addAll("grid-cell", "safe-cell");
+                    cell.setImage(GRASS_TILE_IMAGE);
                 } else if (rowType == RowType.ROAD) {
-                    cell.getStyleClass().addAll("grid-cell", "road-cell");
+                    cell.setImage(ROAD_TILE_IMAGE);
                 }
+                cell.setFitWidth(50);
+                cell.setFitHeight(50);
                 grid.add(cell, col, row);
             }
         }
@@ -64,11 +75,25 @@ public class GameView {
         }
 
         for (Obstacle obstacle : game.getObstacles()) {
-            Region obstacleView = new Region();
+            ImageView obstacleView = new ImageView();
             if (obstacle.getType() == Obstacle.ObstacleType.TREE) {
+                obstacleView = new ImageView(TREE_IMAGE);
                 obstacleView.getStyleClass().add("tree");
+                obstacleView.setFitWidth(50);
+                obstacleView.setFitHeight(50);
             } else if (obstacle.getType() == Obstacle.ObstacleType.CAR) {
+                obstacleView = new ImageView(BLUE_CAR_IMAGE);
                 obstacleView.getStyleClass().add("car");
+                obstacleView.setFitWidth(60);
+                obstacleView.setFitHeight(60);
+            }
+
+            if (obstacle.getType() == Obstacle.ObstacleType.CAR) {
+                if (obstacle.getSpeed() == 1) {
+                    obstacleView.setRotate(90);
+                } else if (obstacle.getSpeed() == -1) {
+                    obstacleView.setRotate(-90);
+                }
             }
 
             GridPane.setColumnIndex(obstacleView, obstacle.getX());
@@ -117,8 +142,8 @@ public class GameView {
 
     public void updateObstacleView() {
         for (Node node : entityLayer.getChildren()) {
-            if (node instanceof Region) {
-                Region obstacleView = (Region) node;
+            if (node instanceof ImageView) {
+                ImageView obstacleView = (ImageView) node;
                 Object userData = obstacleView.getUserData();
 
                 if (userData instanceof Obstacle) {
