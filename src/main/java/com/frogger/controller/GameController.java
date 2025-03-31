@@ -2,16 +2,13 @@ package com.frogger.controller;
 
 import com.frogger.model.Game;
 import com.frogger.model.Player;
-import com.frogger.model.Obstacle;
 import com.frogger.view.GameView;
 
-import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
+import javafx.animation.AnimationTimer;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Region;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 
 public class GameController {
@@ -85,24 +82,6 @@ public class GameController {
         startGameLoop();
     }
 
-    private void checkCollisions() {
-        boolean collisionOccurred = game.handleCollision(game.getPlayer1());
-        gameView.updatePlayerView(game.getPlayer1(), game.getPlayer2(), isDuoMode);
-
-        if (collisionOccurred) {
-            updateScore();
-        }
-
-        if (isDuoMode) {
-            collisionOccurred = game.handleCollision(game.getPlayer2());
-            gameView.updatePlayerView(game.getPlayer1(), game.getPlayer2(), isDuoMode);
-
-            if (collisionOccurred) {
-                updateScore();
-            }
-        }
-    }
-
     /**
      * ============================
      * KEY HANDLER SECTION
@@ -131,7 +110,9 @@ public class GameController {
                 break;
         }
 
-        checkCollisions();
+        if (game.handleCollision(player1)) {
+            updateScore();
+        }
 
         if (isDuoMode) {
             Player player2 = game.getPlayer2();
@@ -154,9 +135,12 @@ public class GameController {
                     break;
             }
 
-            checkCollisions();
+            if (game.handleCollision(player2)) {
+                updateScore();
+            }
         }
 
+        gameView.updatePlayerView(game.getPlayer1(), game.getPlayer2(), isDuoMode);
     }
 
     private void updateScore() {
@@ -189,7 +173,13 @@ public class GameController {
                         updateScore();
                     }
 
-                    checkCollisions();
+                    if (game.handleCollision(game.getPlayer1())) {
+                        updateScore();
+                    }
+                    if (isDuoMode && game.handleCollision(game.getPlayer2())) {
+                        updateScore();
+                    }
+                    gameView.updatePlayerView(game.getPlayer1(), game.getPlayer2(), isDuoMode);
 
                     lastUpdate = now;
                 }
