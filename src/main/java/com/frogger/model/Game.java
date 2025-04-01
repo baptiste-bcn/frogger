@@ -124,14 +124,17 @@ public class Game {
                     obstacles.add(new Obstacle(x, row, 0, Obstacle.ObstacleType.TREE));
                 }
             } else if (rowType == Grid.RowType.ROAD) {
+                int speed = Math.random() < 0.5 ? 1 : -1;
+                int numCars =   2 + (int) (Math.random() * 2); // 2 à 3 voitures
+                for (int i = 0; i < numCars; i++) {
                 int x = (int) (Math.random() * grid.getWidth());
 
                 while (isRestrictedZone(x, row)) {
                     x = (int) (Math.random() * grid.getWidth());
                 }
 
-                int speed = Math.random() < 0.5 ? 1 : -1;
                 obstacles.add(new Obstacle(x, row, speed, Obstacle.ObstacleType.CAR));
+                }
             }
         }
     }
