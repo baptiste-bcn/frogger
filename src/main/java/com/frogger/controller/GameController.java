@@ -43,6 +43,9 @@ public class GameController {
     private boolean isDuoMode;
     private Game game;
 
+    private boolean isKeyPresed;
+    private KeyEvent lastKeyPressed;
+
     public void setDuoMode(boolean isDuoMode) {
         this.isDuoMode = isDuoMode;
         this.game = new Game(isDuoMode);
@@ -64,6 +67,7 @@ public class GameController {
                 btnBack.setOnAction(event -> sceneController.showMenu());
 
                 newScene.setOnKeyPressed(this::handleKeyPress);
+                newScene.setOnKeyReleased(this::handleKeyRelease);
 
                 if (game != null) {
                     setupGameComponents();
@@ -89,6 +93,12 @@ public class GameController {
      **/
 
     private void handleKeyPress(KeyEvent event) {
+        if (isKeyPresed && lastKeyPressed != null && event.getCode() == lastKeyPressed.getCode()) {
+            return;
+        }
+
+        isKeyPresed = true;
+        lastKeyPressed = event;
 
         Player player1 = game.getPlayer1();
         player1.savePreviousPosition();
@@ -141,6 +151,10 @@ public class GameController {
         }
 
         gameView.updatePlayerView(game.getPlayer1(), game.getPlayer2(), isDuoMode);
+    }
+
+    private void handleKeyRelease(KeyEvent event) {
+        isKeyPresed = false;
     }
 
     private void updateScore() {
