@@ -8,7 +8,7 @@ public class Game {
     private final List<Obstacle> obstacles;
     private final Player player1;
     private final Player player2;
-    private boolean duoMode;
+    private final boolean duoMode;
 
     public Game(boolean duoMode) {
         this.duoMode = duoMode;

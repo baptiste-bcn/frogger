@@ -3,13 +3,12 @@ package com.frogger.controller;
 import com.frogger.model.Game;
 import com.frogger.model.Player;
 import com.frogger.view.GameView;
-
-import javafx.fxml.FXML;
 import javafx.animation.AnimationTimer;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.control.Label;
 
 public class GameController {
 
