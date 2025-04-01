@@ -91,6 +91,10 @@ public class GameController {
      * KEY HANDLER SECTION
      * ============================
      **/
+    private boolean playersCollide(Player player1, Player player2) {
+        return player1.getX() == player2.getX() && player1.getY() == player2.getY();
+    }
+
 
     private void handleKeyPress(KeyEvent event) {
         if (isKeyPresed && lastKeyPressed != null && event.getCode() == lastKeyPressed.getCode()) {
@@ -143,6 +147,11 @@ public class GameController {
                     break;
                 default:
                     break;
+            }
+
+            if (playersCollide(player1, player2)) {
+                player1.restorePreviousPosition();
+                player2.restorePreviousPosition();
             }
 
             if (game.handleCollision(player2)) {
