@@ -15,13 +15,10 @@ public class Game {
         this.grid = new Grid(19, 15);
         this.obstacles = new ArrayList<>();
 
-        int gridWidth = grid.getWidth();
-        int player1X = gridWidth % 2 == 1 ? (isDuoMode() ? gridWidth / 2 - 1 : gridWidth / 2) : gridWidth / 2 - 1;
-        int player2X = gridWidth % 2 == 0 ? gridWidth / 2 : gridWidth / 2 + 1;
+        this.player1 = new Player(0, 0);
+        this.player2 = duoMode ? new Player(0, 0) : null;
 
-        this.player1 = new Player(player1X, grid.getHeight() - 1);
-        this.player2 = duoMode ? new Player(player2X, grid.getHeight() - 1) : null;
-
+        resetPlayerPositions();
         initializeObstacles();
     }
 
@@ -82,23 +79,36 @@ public class Game {
         this.obstacles.clear();
         initializeObstacles();
 
-        int gridWidth = grid.getWidth();
-        int player1X = gridWidth % 2 == 1 ? (isDuoMode() ? gridWidth / 2 - 1 : gridWidth / 2) : gridWidth / 2 - 1;
-        int player2X = gridWidth % 2 == 0 ? gridWidth / 2 : gridWidth / 2 + 1;
-
-        player1.resetPosition(player1X, grid.getHeight() - 1);
-        if (duoMode) {
-            player2.resetPosition(player2X, grid.getHeight() - 1);
-        }
+        resetPlayerPositions();
     }
 
     private boolean isRestrictedZone(int x, int row) {
         int center = grid.getWidth() / 2;
-        boolean isCenterRestricted = grid.getWidth() % 2 == 0
-                ? x >= center - 1 && x <= center
-                : x >= center - 1 && x <= center + 1;
-        return isCenterRestricted
-                && (row == 0 || row == 1 || row == grid.getHeight() - 1 || row == grid.getHeight() - 2);
+        boolean isCenterRestricted;
+
+        if (grid.getWidth() % 2 == 0) {
+            if (x >= center - 1 && x <= center) {
+                isCenterRestricted = true;
+            } else {
+                isCenterRestricted = false;
+            }
+        } else {
+            if (x >= center - 1 && x <= center + 1) {
+                isCenterRestricted = true;
+            } else {
+                isCenterRestricted = false;
+            }
+        }
+
+        if (isCenterRestricted) {
+            if (row == 0 || row == 1 || row == grid.getHeight() - 1 || row == grid.getHeight() - 2) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -125,15 +135,15 @@ public class Game {
                 }
             } else if (rowType == Grid.RowType.ROAD) {
                 int speed = Math.random() < 0.5 ? 1 : -1;
-                int numCars =   2 + (int) (Math.random() * 2); // 2 à 3 voitures
+                int numCars = 2 + (int) (Math.random() * 2); // 2 à 3 voitures
                 for (int i = 0; i < numCars; i++) {
-                int x = (int) (Math.random() * grid.getWidth());
+                    int x = (int) (Math.random() * grid.getWidth());
 
-                while (isRestrictedZone(x, row)) {
-                    x = (int) (Math.random() * grid.getWidth());
-                }
+                    while (isRestrictedZone(x, row)) {
+                        x = (int) (Math.random() * grid.getWidth());
+                    }
 
-                obstacles.add(new Obstacle(x, row, speed, Obstacle.ObstacleType.CAR));
+                    obstacles.add(new Obstacle(x, row, speed, Obstacle.ObstacleType.CAR));
                 }
             }
         }
@@ -152,12 +162,23 @@ public class Game {
                     player.restorePreviousPosition();
                     return true;
                 } else if (obstacle.getType() == Obstacle.ObstacleType.CAR) {
-                    player.resetPosition(grid.getWidth() / 2 - 1, grid.getHeight() - 1);
+                    resetPlayerPositions();
                     player.resetScore();
                     return true;
                 }
             }
         }
         return false; // Pas de collision
+    }
+
+    private void resetPlayerPositions() {
+        int gridWidth = grid.getWidth();
+        int player1X = gridWidth % 2 == 0 ? gridWidth / 2 - 1 : (duoMode ? gridWidth / 2 - 1 : gridWidth / 2);
+        int player2X = gridWidth % 2 == 0 ? gridWidth / 2 : gridWidth / 2 + 1;
+
+        player1.resetPosition(player1X, grid.getHeight() - 1);
+        if (duoMode && player2 != null) {
+            player2.resetPosition(player2X, grid.getHeight() - 1);
+        }
     }
 }
