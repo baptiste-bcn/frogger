@@ -55,7 +55,7 @@
             <task id="34" name="Création du diagramme UML des classes et des objets" color="#8cb6ce" meeting="false" start="2025-01-27" duration="1" complete="100" thirdDate="2025-01-27" thirdDate-constraint="0" expand="true"/>
             <task id="36" name="Choix des librairies" color="#8cb6ce" meeting="false" start="2025-01-27" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="13" name="Développement" color="#99ff99" meeting="false" start="2025-02-25" duration="51" complete="46" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
+        <task id="13" name="Développement" color="#99ff99" meeting="false" start="2025-02-25" duration="51" complete="47" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
             <task id="53" name="Ajout d'un système de scoring" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
             <task id="58" name="Impossible d'entrer en collision avec un arbre (obstacle fixe)" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
@@ -89,6 +89,8 @@
             <task id="169" name="Correction des bugs" color="#99ff99" meeting="false" start="2025-03-31" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
             <task id="172" name="Correction d'un bug où deux joueurs pouvaient entrer en collision" color="#99ff99" meeting="false" start="2025-04-01" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
             <task id="175" name="Complexification du jeu en modifiant le nombre de voitures par route" color="#99ff99" meeting="false" start="2025-04-01" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
+            <task id="178" name="Amélioration du style des menus" color="#99ff99" meeting="false" start="2025-04-09" duration="1" complete="100" thirdDate="2025-02-17" thirdDate-constraint="0" expand="true"/>
+            <task id="181" name="Implémenter la méthode resetPlayerPosition() pour améliorer la lisiblité" color="#99ff99" meeting="false" start="2025-04-09" duration="1" complete="100" thirdDate="2025-02-17" thirdDate-constraint="0" expand="true"/>
         </task>
         <task id="15" name="Documentation + rapport" color="#ffcc00" meeting="false" start="2025-03-25" duration="20" complete="0" thirdDate="2025-03-25" thirdDate-constraint="1" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
@@ -134,6 +136,8 @@
         <allocation task-id="161" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="164" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="168" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="178" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="181" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="1" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="13" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="58" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
