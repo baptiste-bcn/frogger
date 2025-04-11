@@ -1,18 +1,17 @@
 package com.frogger.view;
 
 import com.frogger.model.Game;
+import com.frogger.model.Grid;
 import com.frogger.model.Grid.RowType;
 import com.frogger.model.Obstacle;
 import com.frogger.model.Player;
-import com.frogger.model.Grid;
-
+import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.Region;
-import javafx.scene.Node;
-import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
+import javafx.scene.layout.RowConstraints;
 
 public class GameView {
     private final GridPane grid;

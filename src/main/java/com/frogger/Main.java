@@ -1,10 +1,10 @@
 package com.frogger;
 
+import com.frogger.controller.SceneController;
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
-import com.frogger.controller.SceneController;
-import javafx.scene.image.Image;
 
 public class Main extends Application {
     @Override

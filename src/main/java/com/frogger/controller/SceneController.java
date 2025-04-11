@@ -13,6 +13,7 @@ public class SceneController {
         this.stage = stage;
         this.scene = new Scene(new Parent() {
         }, 800, 600);
+        this.scene.getStylesheets().add(getClass().getResource("/view/menu/MenuStyles.css").toExternalForm()); // Ajout de la feuille de style
         this.stage.setScene(this.scene);
     }
 
@@ -39,6 +40,7 @@ public class SceneController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/game/GameLayout.fxml"));
             Parent gameLayout = loader.load();
+            gameLayout.getStyleClass().add("green-background"); // Appliquer le fond vert
             scene.setRoot(gameLayout);
 
             GameController controller = loader.getController();
@@ -51,9 +53,9 @@ public class SceneController {
 
     public void showSettings() {
         try {
-            FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("/view/settings/SettingsLayout.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/settings/SettingsLayout.fxml"));
             Parent settingsLayout = loader.load();
+            settingsLayout.getStyleClass().add("green-background"); // Appliquer le fond vert
             scene.setRoot(settingsLayout);
 
             SettingsController controller = loader.getController();
