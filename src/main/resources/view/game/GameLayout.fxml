@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.*?>
 <VBox styleClass="game" xmlns:fx="http://javafx.com/fxml" fx:controller="com.frogger.controller.GameController"
       stylesheets="@/view/game/GameStyles.css">
     <HBox styleClass="gameHeader">
-        <Button text="Retour" fx:id="btnBack"/>
-        <Label text="Welcome to FROGGER" fx:id="lblScore" styleClass="score-label"/>
+        <Button text="Retour" fx:id="btnBack" styleClass="back-button"/>
     </HBox>
     <StackPane styleClass="gameStackPane">
         <GridPane fx:id="grid" styleClass="grid"/>

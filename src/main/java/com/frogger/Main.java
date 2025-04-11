@@ -15,7 +15,7 @@ public class Main extends Application {
 
         // Configuration de la fenêtre
         stage.setResizable(false);
-        stage.setTitle("Frogger");
+        stage.setTitle("Froggy Road");
         stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
         stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
