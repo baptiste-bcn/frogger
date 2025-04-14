@@ -19,18 +19,20 @@ public class SettingsController {
     public void initialize() {
 
         checkFullScreen.sceneProperty().addListener((observable, oldScene, newScene) -> {
+            if (newScene != null) {
+                Stage stage = (Stage) checkFullScreen.getScene().getWindow();
 
-            Stage stage = (Stage) checkFullScreen.getScene().getWindow();
-
-            checkFullScreen.setSelected(stage.isFullScreen());
-            checkFullScreen.setOnAction(event -> {
-                stage.setFullScreen(checkFullScreen.isSelected());
-            });
-
+                checkFullScreen.setSelected(stage.isFullScreen());
+                checkFullScreen.setOnAction(event -> {
+                    stage.setFullScreen(checkFullScreen.isSelected());
+                });
+            }
         });
 
         btnBack.setOnAction(event -> {
-            sceneController.showMenu();
+            if (sceneController != null) {
+                sceneController.showMenu();
+            }
         });
 
     }

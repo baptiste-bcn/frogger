@@ -19,7 +19,10 @@ public class GameController {
      **/
 
     @FXML
-    private Label lblScore;
+    private Label lblScorePlayer1;
+
+    @FXML
+    private Label lblScorePlayer2;
 
     @FXML
     private GridPane grid;
@@ -123,6 +126,8 @@ public class GameController {
                 break;
         }
 
+        updateScore(); // Met à jour le score après le déplacement
+
         if (game.handleCollision(player1)) {
             updateScore();
         }
@@ -166,8 +171,13 @@ public class GameController {
     }
 
     private void updateScore() {
-        lblScore.setText("Player 1 Score: " + game.getPlayer1().getScore() +
-                (isDuoMode ? " | Player 2 Score: " + game.getPlayer2().getScore() : ""));
+        lblScorePlayer1.setText("Player 1 Score: " + game.getPlayer1().getScore());
+        if (isDuoMode) {
+            lblScorePlayer2.setVisible(true);
+            lblScorePlayer2.setText("Player 2 Score: " + game.getPlayer2().getScore());
+        } else {
+            lblScorePlayer2.setVisible(false);
+        }
     }
 
     /**
