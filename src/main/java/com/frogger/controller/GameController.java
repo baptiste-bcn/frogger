@@ -6,6 +6,7 @@ import com.frogger.view.GameView;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
@@ -35,9 +36,6 @@ public class GameController {
 
     @FXML
     private Button lblTimer;
-
-    @FXML
-    private Region spacer;
 
     /**
      * ============================
@@ -145,65 +143,48 @@ public class GameController {
         isKeyPressed = true;
         lastKeyPressed = event;
 
-        Player player1 = game.getPlayer1();
-        player1.savePreviousPosition();
+        handlePlayerMove(game.getPlayer1(), event.getCode(), true);
 
-        switch (event.getCode()) {
-            case Z:
-                player1.moveUp();
-                break;
-            case Q:
-                player1.moveLeft();
-                break;
-            case S:
-                player1.moveDown(game.getGrid().getHeight());
-                break;
-            case D:
-                player1.moveRight(game.getGrid().getWidth());
-                break;
-            default:
-                break;
-        }
-
-        updateScore(); // Met à jour le score après le déplacement
-
-        if (game.handleCollision(player1)) {
+        if (game.handleCollision(game.getPlayer1())) {
             updateScore();
         }
 
         if (isDuoMode) {
-            Player player2 = game.getPlayer2();
-            player2.savePreviousPosition();
+            handlePlayerMove(game.getPlayer2(), event.getCode(), false);
 
-            switch (event.getCode()) {
-                case UP:
-                    player2.moveUp();
-                    break;
-                case LEFT:
-                    player2.moveLeft();
-                    break;
-                case DOWN:
-                    player2.moveDown(game.getGrid().getHeight());
-                    break;
-                case RIGHT:
-                    player2.moveRight(game.getGrid().getWidth());
-                    break;
-                default:
-                    break;
+            if (playersCollide(game.getPlayer1(), game.getPlayer2())) {
+                game.getPlayer1().restorePreviousPosition();
+                game.getPlayer2().restorePreviousPosition();
             }
 
-            if (playersCollide(player1, player2)) {
-                player1.restorePreviousPosition();
-                player2.restorePreviousPosition();
-            }
-
-            if (game.handleCollision(player2)) {
+            if (game.handleCollision(game.getPlayer2())) {
                 updateScore();
             }
         }
 
         gameView.updatePlayerView(game.getPlayer1(), game.getPlayer2(), isDuoMode);
     }
+
+    private void handlePlayerMove(Player player, KeyCode code, boolean isFirstPlayer) {
+        player.savePreviousPosition();
+
+        if (isFirstPlayer) {
+            switch (code) {
+                case Z -> player.moveUp();
+                case Q -> player.moveLeft();
+                case S -> player.moveDown(game.getGrid().getHeight());
+                case D -> player.moveRight(game.getGrid().getWidth());
+            }
+        } else {
+            switch (code) {
+                case UP -> player.moveUp();
+                case LEFT -> player.moveLeft();
+                case DOWN -> player.moveDown(game.getGrid().getHeight());
+                case RIGHT -> player.moveRight(game.getGrid().getWidth());
+            }
+        }
+    }
+
 
     private void handleKeyRelease(KeyEvent event) {
         isKeyPressed = false;
