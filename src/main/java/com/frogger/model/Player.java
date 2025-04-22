@@ -6,6 +6,7 @@ public class Player {
     private int previousX;
     private int previousY;
     private int score;
+    private int bestScore = 0;
 
     public Player(int x, int y) {
         this.x = x;
@@ -58,6 +59,14 @@ public class Player {
 
     public void resetScore() {
         this.score = 0;
+    }
+
+    public int getBestScore() {
+        return bestScore;
+    }
+
+    public void setBestScore(int bestScore) {
+        this.bestScore = bestScore;
     }
 
     /**

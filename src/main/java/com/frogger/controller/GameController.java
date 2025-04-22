@@ -26,6 +26,13 @@ public class GameController {
     private Button lblScorePlayer2;
 
     @FXML
+    private Button lblBestScorePlayer1;
+
+    @FXML
+    private Button lblBestScorePlayer2;
+
+
+    @FXML
     private GridPane grid;
 
     @FXML
@@ -61,6 +68,7 @@ public class GameController {
         this.gameView = new GameView(grid, entityLayer);
 
         lblScorePlayer2.setVisible(isDuoMode);
+        lblBestScorePlayer2.setVisible(isDuoMode);
 
         setupGameComponents();
     }
@@ -120,6 +128,10 @@ public class GameController {
         lblScorePlayer1.setFocusTraversable(false);
         lblScorePlayer2.setMouseTransparent(true);
         lblScorePlayer2.setFocusTraversable(false);
+        lblBestScorePlayer1.setMouseTransparent(true);
+        lblBestScorePlayer1.setFocusTraversable(false);
+        lblBestScorePlayer2.setMouseTransparent(true);
+        lblBestScorePlayer2.setFocusTraversable(false);
 
         startGameLoop();
     }
@@ -189,14 +201,19 @@ public class GameController {
     }
 
     private void updateScore() {
-        lblScorePlayer1.setText("Score Joueur 1 : " + game.getPlayer1().getScore());
+        lblScorePlayer1.setText("Score J1 : " + game.getPlayer1().getScore());
+        lblBestScorePlayer1.setText("Best J1 : " + game.getPlayer1().getBestScore());
+
         if (isDuoMode) {
             lblScorePlayer2.setVisible(true);
-            lblScorePlayer2.setText("Score Joueur 2 : " + game.getPlayer2().getScore());
+            lblBestScorePlayer2.setVisible(true);
+            lblScorePlayer2.setText("Score J2 : " + game.getPlayer2().getScore());
+            lblBestScorePlayer2.setText("Best J2 : " + game.getPlayer2().getBestScore());
         } else {
             lblScorePlayer2.setVisible(false);
+            lblBestScorePlayer2.setVisible(false);
         }
-    }
+}
 
     /**
      * ============================

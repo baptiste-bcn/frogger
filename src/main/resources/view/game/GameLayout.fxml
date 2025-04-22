@@ -5,9 +5,11 @@
 <VBox styleClass="game" xmlns:fx="http://javafx.com/fxml" fx:controller="com.frogger.controller.GameController"
       stylesheets="@/view/game/GameStyles.css">
     <HBox styleClass="gameHeader" spacing="20">
-        <Button text="Retour" fx:id="btnBack" styleClass="back-button"/>
-        <Button fx:id="lblScorePlayer1" text="Score Joueur 1 : 0" styleClass="score-button"/>
-        <Button fx:id="lblScorePlayer2" text="Score Joueur 2 : 0" styleClass="score-button"/>
+        <Button text="Back" fx:id="btnBack" styleClass="back-button"/>
+        <Button fx:id="lblScorePlayer1" text="Score J1 : 0" styleClass="score-button"/>
+        <Button fx:id="lblBestScorePlayer1" text="Best J1 : 0" styleClass="score-button"/>
+        <Button fx:id="lblScorePlayer2" text="Score J2 : 0" styleClass="score-button"/>
+        <Button fx:id="lblBestScorePlayer2" text="Best J2 : 0" styleClass="score-button"/>
         <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
         <Button fx:id="lblTimer" text="Durée de la partie : 0s" styleClass="timer-label"/>
     </HBox>

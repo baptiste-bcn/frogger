@@ -1,9 +1,9 @@
 package com.frogger.model;
 
-import com.frogger.controller.SettingsController;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import com.frogger.controller.SettingsController;
 
 public class Game {
     private Grid grid;
@@ -63,6 +63,10 @@ public class Game {
 
         if (player.getY() == 0) {
             player.setScore(player.getScore() + 100);
+
+            if (player.getScore() > player.getBestScore()) {
+            player.setBestScore(player.getScore());
+        }
 
             int gridWidth = grid.getWidth();
             int startX = duoMode && player == player2 ? gridWidth / 2 + 1 : gridWidth / 2;
