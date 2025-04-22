@@ -52,6 +52,11 @@
         <artifactId>javafx-fxml</artifactId>
         <version>17.0.2</version>
     </dependency>
+    <dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-media</artifactId>
+    <version>17.0.2</version>
+</dependency>
   </dependencies>
 
   <build>
@@ -62,6 +67,7 @@
                 <include>**/*.fxml</include>
                 <include>**/*.css</include>
                 <include>**/*.png</include>
+                <include>**/*.mp3</include>
             </includes>
         </resource>
     </resources>

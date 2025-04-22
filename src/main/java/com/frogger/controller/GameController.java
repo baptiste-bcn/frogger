@@ -10,6 +10,9 @@ import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
 public class GameController {
 
     /**
@@ -99,7 +102,6 @@ public class GameController {
         return player1.getX() == player2.getX() && player1.getY() == player2.getY();
     }
 
-
     private void handleKeyPress(KeyEvent event) {
         if (isKeyPressed && lastKeyPressed != null && event.getCode() == lastKeyPressed.getCode()) {
             return;
@@ -132,6 +134,7 @@ public class GameController {
 
         if (game.handleCollision(player1)) {
             updateScore();
+            playDeathSound();
         }
 
         if (isDuoMode) {
@@ -162,6 +165,7 @@ public class GameController {
 
             if (game.handleCollision(player2)) {
                 updateScore();
+                playDeathSound();
             }
         }
 
@@ -224,5 +228,15 @@ public class GameController {
 
     public void setSceneController(SceneController sceneController) {
         this.sceneController = sceneController;
+    }
+
+    // Audio
+
+    private void playDeathSound() {
+        String deathSoundPath = getClass().getResource("/audio/death.mp3").toExternalForm();
+        Media deathSound = new Media(deathSoundPath);
+        MediaPlayer deathSoundPlayer = new MediaPlayer(deathSound);
+        deathSoundPlayer.setVolume(1.0); // Volume maximum (valeur entre 0.0 et 1.0)
+        deathSoundPlayer.play();
     }
 }
