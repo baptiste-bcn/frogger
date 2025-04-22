@@ -13,6 +13,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.RowConstraints;
 
+import java.util.Objects;
+
 public class GameView {
     private final GridPane grid;
     private final GridPane entityLayer;
@@ -21,11 +23,11 @@ public class GameView {
     private Region player2View;
 
     private static final Image GRASS_TILE_IMAGE = new Image(
-            GameView.class.getResourceAsStream("/images/GrassTile.png"));
-    private static final Image ROAD_TILE_IMAGE = new Image(GameView.class.getResourceAsStream("/images/RoadTile.png"));
+            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/GrassTile.png")));
+    private static final Image ROAD_TILE_IMAGE = new Image(Objects.requireNonNull(GameView.class.getResourceAsStream("/images/RoadTile.png")));
     private static final Image BLUE_CAR_IMAGE = new Image(
-            GameView.class.getResourceAsStream("/images/BlueCar.png"));
-    private static final Image TREE_IMAGE = new Image(GameView.class.getResourceAsStream("/images/Tree.png"));
+            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/BlueCar.png")));
+    private static final Image TREE_IMAGE = new Image(Objects.requireNonNull(GameView.class.getResourceAsStream("/images/Tree.png")));
 
     public GameView(GridPane grid, GridPane entityLayer) {
         this.grid = grid;

@@ -7,7 +7,7 @@
       fx:controller="com.frogger.controller.MenuController"
       styleClass="menu">
     <Text text="Froggy Road" styleClass="game-title"/>
-    <VBox styleClass="menu-buttons" alignment="CENTER" spacing="15">
+    <VBox alignment="CENTER" spacing="15">
         <Button text="Jouer Solo" fx:id="btnSolo" styleClass="button"/>
         <Button text="Jouer Duo" fx:id="btnDuo" styleClass="button"/>
         <Button text="Paramètres" fx:id="btnSettings" styleClass="button"/>

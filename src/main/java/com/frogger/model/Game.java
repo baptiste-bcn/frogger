@@ -1,9 +1,9 @@
 package com.frogger.model;
 
+import com.frogger.controller.SettingsController;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.frogger.controller.SettingsController;
 
 public class Game {
     private Grid grid;
@@ -86,32 +86,23 @@ public class Game {
 
     private boolean isRestrictedZone(int x, int row) {
         int center = grid.getWidth() / 2;
-        boolean isCenterRestricted;
+        boolean isCenterRestricted = false;
 
         if (grid.getWidth() % 2 == 0) {
-            if (x >= center - 1 && x <= center) {
+            if (x == center || x == center - 1) {
                 isCenterRestricted = true;
-            } else {
-                isCenterRestricted = false;
             }
         } else {
             if (x >= center - 1 && x <= center + 1) {
                 isCenterRestricted = true;
-            } else {
-                isCenterRestricted = false;
             }
         }
 
-        if (isCenterRestricted) {
-            if (row == 0 || row == 1 || row == grid.getHeight() - 1 || row == grid.getHeight() - 2) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
+        boolean isRowRestricted = row <= 1 || row >= grid.getHeight() - 2;
+
+        return isCenterRestricted && isRowRestricted;
     }
+
 
     /**
      * ============================
@@ -141,19 +132,11 @@ public class Game {
                 int speed = Math.random() < 0.5 ? 1 : -1;
 
                 // Déterminer le nombre de voitures en fonction de la difficulté
-                int numCars;
-                switch (difficulty) {
-                    case "Facile":
-                        numCars = 1 + (int) (Math.random() * 2); // 1 à 2 voitures
-                        break;
-                    case "Difficile":
-                        numCars = 2 + (int) (Math.random() * 3); // 2 à 4 voitures
-                        break;
-                    case "Normal":
-                    default:
-                        numCars = 2 + (int) (Math.random() * 2); // 2 à 3 voitures
-                        break;
-                }
+                int numCars = switch (difficulty) {
+                    case "Facile" -> 1 + (int) (Math.random() * 2); // 1 à 2 voitures
+                    case "Difficile" -> 2 + (int) (Math.random() * 3); // 2 à 4 voitures
+                    default -> 2 + (int) (Math.random() * 2); // 2 à 3 voitures
+                };
 
                 for (int i = 0; i < numCars; i++) {
                     int x = (int) (Math.random() * grid.getWidth());

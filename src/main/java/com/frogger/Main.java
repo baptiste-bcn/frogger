@@ -6,12 +6,14 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
         // Ajout de l'icône de l'application
-        Image icon = new Image(getClass().getResourceAsStream("/images/frog.png"));
+        Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/frog.png")));
         stage.getIcons().add(icon);
 
         // Configuration de la fenêtre

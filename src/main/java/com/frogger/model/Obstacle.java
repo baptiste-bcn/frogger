@@ -47,7 +47,7 @@ public class Obstacle {
 
     public void move(int gridWidth) {
         if (type == ObstacleType.CAR) {
-            x += speed;
+            x += (int) speed;
             if (x < 0) {
                 // On revient à droite de la grille
                 x = gridWidth - 1;

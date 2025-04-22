@@ -22,8 +22,7 @@ public class SettingsController {
 
     private static String selectedDifficulty = "Normal"; // Par défaut
 
-    // filepath:
-    // c:\Users\trist\Desktop\Coding\02-Java\frogger\src\main\java\com\frogger\controller\SettingsController.java
+
     @FXML
     public void initialize() {
         // Gestion du plein écran
