@@ -3,6 +3,7 @@ package com.frogger.controller;
 import com.frogger.model.Game;
 import com.frogger.model.Player;
 import com.frogger.view.GameView;
+
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -218,8 +219,10 @@ public class GameController {
                         game.resetGame();
                         gameView.resetGameView(game);
                     }
-                    if (isDuoMode && game.hasFinished(game.getPlayer2())) {
+                    if (game.hasFinished(game.getPlayer2())) {
                         updateScore();
+                        game.resetGame();
+                        gameView.resetGameView(game);
                     }
 
                     if (game.handleCollision(game.getPlayer1())) {

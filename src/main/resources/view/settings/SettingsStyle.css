@@ -2,3 +2,33 @@
     -fx-alignment: center;
     -fx-spacing: 10;
 }
+
+.combo-box {
+    -fx-background-color: rgb(225, 200, 128);
+    -fx-text-fill: rgb(39, 38, 18);
+    -fx-border-width: 4;
+    -fx-border-color: rgb(39, 38, 18);
+    -fx-border-radius: 15;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgb(39, 38, 18), 4, 0, 0, 4);
+    -fx-pref-width: 300;
+
+    -fx-font-family: "Press Start 2P", cursive;
+
+    -fx-background-insets: 4; /* Ajouté pour éviter que la couleur de fond dépasse la bordure */
+  }
+  
+  .combo-box .list-cell {
+    -fx-padding: 25 45;
+    -fx-font-size: 16px;
+    -fx-text-fill: rgb(39, 38, 18);
+    -fx-background-color: rgb(225, 200, 128);
+    -fx-font-family: "Press Start 2P", cursive;
+    -fx-background-insets: 4;
+  }
+
+  .combo-box .list-view {
+    -fx-background-color: black;
+    -fx-border-color: rgb(225, 200, 128);
+    -fx-border-width: 2;
+}

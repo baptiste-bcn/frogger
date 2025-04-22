@@ -43,16 +43,12 @@
 
 /* Styles pour les obstacles */
 .tree {
-    -fx-background-color: purple;
-    -fx-border-color: black;
     -fx-pref-width: 50px;
     -fx-pref-height: 50px;
     -fx-background-radius: 25px;
 }
 
 .car {
-    -fx-background-color: red;
-    -fx-border-color: black;
     -fx-pref-width: 50px;
     -fx-pref-height: 50px;
 }
@@ -81,7 +77,7 @@
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
     -fx-alignment: center;
-    -fx-pref-width: 100px;
+    -fx-pref-width: 200px;
 }
 
 .score-button {
