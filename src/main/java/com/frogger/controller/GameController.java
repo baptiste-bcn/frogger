@@ -45,13 +45,15 @@ public class GameController {
     private boolean isDuoMode;
     private Game game;
 
-    private boolean isKeyPresed;
+    private boolean isKeyPressed;
     private KeyEvent lastKeyPressed;
 
     public void setDuoMode(boolean isDuoMode) {
         this.isDuoMode = isDuoMode;
         this.game = new Game(isDuoMode);
         this.gameView = new GameView(grid, entityLayer);
+
+        lblScorePlayer2.setVisible(isDuoMode);
 
         setupGameComponents();
     }
@@ -99,11 +101,11 @@ public class GameController {
 
 
     private void handleKeyPress(KeyEvent event) {
-        if (isKeyPresed && lastKeyPressed != null && event.getCode() == lastKeyPressed.getCode()) {
+        if (isKeyPressed && lastKeyPressed != null && event.getCode() == lastKeyPressed.getCode()) {
             return;
         }
 
-        isKeyPresed = true;
+        isKeyPressed = true;
         lastKeyPressed = event;
 
         Player player1 = game.getPlayer1();
@@ -167,14 +169,14 @@ public class GameController {
     }
 
     private void handleKeyRelease(KeyEvent event) {
-        isKeyPresed = false;
+        isKeyPressed = false;
     }
 
     private void updateScore() {
-        lblScorePlayer1.setText("Player 1 Score: " + game.getPlayer1().getScore());
+        lblScorePlayer1.setText("Score Joueur 1 : " + game.getPlayer1().getScore());
         if (isDuoMode) {
             lblScorePlayer2.setVisible(true);
-            lblScorePlayer2.setText("Player 2 Score: " + game.getPlayer2().getScore());
+            lblScorePlayer2.setText("Score Joueur 2 : " + game.getPlayer2().getScore());
         } else {
             lblScorePlayer2.setVisible(false);
         }
