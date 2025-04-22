@@ -101,3 +101,16 @@
     -fx-spacing: 20px;
     -fx-padding: 5px 10px;
 }
+
+.timer-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: yellow;
+    -fx-padding: 5px;
+    -fx-background-color: #444;
+    -fx-border-color: #222;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-alignment: center;
+    -fx-pref-width: 150px;
+}
