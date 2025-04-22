@@ -48,6 +48,8 @@ public class Main extends Application {
                 new Image(getClass().getResourceAsStream("/images/BlueCar.png"));
                 new Image(getClass().getResourceAsStream("/images/Tree.png"));
                 new Image(getClass().getResourceAsStream("/images/frog.png"));
+                new Image(getClass().getResourceAsStream("/images/Background.png"));
+
                 return null;
             }
         };

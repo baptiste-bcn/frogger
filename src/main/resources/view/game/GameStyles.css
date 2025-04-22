@@ -1,5 +1,9 @@
 .game {
   -fx-border-color: transparent;
+  -fx-background-image: url("/images/Background.png");
+  -fx-background-size: cover;
+  -fx-background-position: center;
+  -fx-background-repeat: no-repeat;
 }
 
 .entity-layer {
