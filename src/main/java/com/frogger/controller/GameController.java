@@ -6,7 +6,6 @@ import com.frogger.view.GameView;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
@@ -114,10 +113,18 @@ public class GameController {
     }
 
     private void setupGameComponents() {
-        resetTimer(); // Démarre ou réinitialise le timer
+        resetTimer();
         gameView.initializeGrid(game);
         gameView.initializeObstacles(game);
         gameView.initializePlayers(game.getPlayer1(), game.getPlayer2(), isDuoMode);
+
+        lblTimer.setMouseTransparent(true);
+        lblTimer.setFocusTraversable(false);
+        lblScorePlayer1.setMouseTransparent(true);
+        lblScorePlayer1.setFocusTraversable(false);
+        lblScorePlayer2.setMouseTransparent(true);
+        lblScorePlayer2.setFocusTraversable(false);
+
         startGameLoop();
     }
 
