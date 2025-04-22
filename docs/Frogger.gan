@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-02-16" view-index="0" gantt-divider-location="487" resource-divider-location="300" version="2.8.11" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-02-23" view-index="0" gantt-divider-location="487" resource-divider-location="300" version="2.8.11" locale="fr">
     <description/>
-    <view zooming-state="default:5" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="236" order="0"/>
-        <field id="tpd4" name="Date de début" width="116" order="1"/>
-        <field id="tpd5" name="Date de fin" width="116" order="2"/>
-        <option id="color.recent"><![CDATA[#99ff99 #cc00cc #990099 #ff0033 #ffcc00 #c6cbf1 #000000 #ff00ff #f4f4f4 #00ffff]]></option>
+    <view zooming-state="default:6" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="241" order="0"/>
+        <field id="tpd4" name="Date de début" width="121" order="1"/>
+        <field id="tpd5" name="Date de fin" width="121" order="2"/>
+        <option id="color.recent"><![CDATA[#ffcc00 #99ff99 #cc00cc #990099 #ff0033 #c6cbf1 #000000 #ff00ff #f4f4f4 #00ffff]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="210" order="0"/>
@@ -55,7 +55,7 @@
             <task id="34" name="Création du diagramme UML des classes et des objets" color="#8cb6ce" meeting="false" start="2025-01-27" duration="1" complete="100" thirdDate="2025-01-27" thirdDate-constraint="0" expand="true"/>
             <task id="36" name="Choix des librairies" color="#8cb6ce" meeting="false" start="2025-01-27" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="13" name="Développement" color="#99ff99" meeting="false" start="2025-02-25" duration="51" complete="47" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
+        <task id="13" name="Développement" color="#99ff99" meeting="false" start="2025-02-25" duration="51" complete="47" thirdDate="2025-02-25" thirdDate-constraint="1" expand="false">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
             <task id="53" name="Ajout d'un système de scoring" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
             <task id="58" name="Impossible d'entrer en collision avec un arbre (obstacle fixe)" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
@@ -92,17 +92,12 @@
             <task id="178" name="Amélioration du style des menus" color="#99ff99" meeting="false" start="2025-04-09" duration="1" complete="100" thirdDate="2025-02-17" thirdDate-constraint="0" expand="true"/>
             <task id="181" name="Implémenter la méthode resetPlayerPosition() pour améliorer la lisiblité" color="#99ff99" meeting="false" start="2025-04-09" duration="1" complete="100" thirdDate="2025-02-17" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="15" name="Documentation + rapport" color="#ffcc00" meeting="false" start="2025-03-25" duration="20" complete="0" thirdDate="2025-03-25" thirdDate-constraint="1" expand="true">
-            <depend id="17" type="2" difference="0" hardness="Strong"/>
-        </task>
-        <task id="17" name="Optimisation et debugging" color="#99ff99" meeting="false" start="2025-05-07" duration="5" complete="0" thirdDate="2025-04-22" thirdDate-constraint="1" expand="true">
-            <depend id="21" type="2" difference="0" hardness="Strong"/>
-        </task>
-        <task id="21" name="Tests finaux" color="#ffcc00" meeting="false" start="2025-05-14" duration="3" complete="0" thirdDate="2025-04-29" thirdDate-constraint="1" expand="true">
-            <depend id="26" type="2" difference="0" hardness="Strong"/>
-        </task>
-        <task id="26" name="Rendu du projet + soutenance" color="#ffcc00" meeting="false" start="2025-05-19" duration="2" complete="0" thirdDate="2025-05-02" thirdDate-constraint="1" expand="true"/>
-        <task id="102" name="Amélioration continuelle du Gantt" color="#cc00cc" meeting="false" start="2025-01-15" duration="70" complete="75" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+        <task id="15" name="Documentation du code" color="#ffcc00" meeting="false" start="2025-03-25" duration="40" complete="20" thirdDate="2025-03-25" thirdDate-constraint="1" expand="true"/>
+        <task id="17" name="Optimisation et debugging" color="#99ff99" meeting="false" start="2025-05-07" duration="5" complete="0" thirdDate="2025-04-22" thirdDate-constraint="1" expand="true"/>
+        <task id="21" name="Tests finaux" color="#ffcc00" meeting="false" start="2025-04-29" duration="3" complete="0" thirdDate="2025-04-29" thirdDate-constraint="1" expand="true"/>
+        <task id="26" name="Rendu du projet + soutenance" color="#ffcc00" meeting="false" start="2025-05-20" duration="1" complete="0" thirdDate="2025-05-02" thirdDate-constraint="0" expand="true"/>
+        <task id="102" name="Amélioration continuelle du Gantt" color="#cc00cc" meeting="false" start="2025-01-15" duration="90" complete="70" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+        <task id="198" name="Diaporama pour présentation orale" color="#ffcc00" meeting="false" start="2025-04-22" duration="21" complete="10" thirdDate="2025-01-06" thirdDate-constraint="0" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="Baptiste" function="Default:0" contacts="" phone=""/>
@@ -138,6 +133,7 @@
         <allocation task-id="168" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="178" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="181" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="198" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="1" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="13" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="58" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
@@ -149,6 +145,7 @@
         <allocation task-id="169" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="172" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="175" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="198" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
     </allocations>
     <vacations/>
     <previous/>
