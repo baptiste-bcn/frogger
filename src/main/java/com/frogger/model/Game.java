@@ -14,7 +14,7 @@ public class Game {
 
     public Game(boolean duoMode) {
         this.duoMode = duoMode;
-        this.grid = new Grid(19, 15);
+        this.grid = new Grid(25, 15);
         this.obstacles = new ArrayList<>();
 
         this.player1 = new Player(0, 0);
