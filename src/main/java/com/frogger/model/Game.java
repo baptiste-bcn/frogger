@@ -3,6 +3,8 @@ package com.frogger.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.frogger.controller.SettingsController;
+
 public class Game {
     private Grid grid;
     private final List<Obstacle> obstacles;
@@ -118,6 +120,8 @@ public class Game {
      **/
 
     private void initializeObstacles() {
+        String difficulty = SettingsController.getSelectedDifficulty(); // Récupérer la difficulté sélectionnée
+
         for (int row = 0; row < grid.getHeight(); row++) {
             Grid.RowType rowType = grid.getRowType(row);
 
@@ -135,7 +139,22 @@ public class Game {
                 }
             } else if (rowType == Grid.RowType.ROAD) {
                 int speed = Math.random() < 0.5 ? 1 : -1;
-                int numCars = 2 + (int) (Math.random() * 2); // 2 à 3 voitures
+
+                // Déterminer le nombre de voitures en fonction de la difficulté
+                int numCars;
+                switch (difficulty) {
+                    case "Facile":
+                        numCars = 1 + (int) (Math.random() * 2); // 1 à 2 voitures
+                        break;
+                    case "Difficile":
+                        numCars = 2 + (int) (Math.random() * 3); // 2 à 4 voitures
+                        break;
+                    case "Normal":
+                    default:
+                        numCars = 2 + (int) (Math.random() * 2); // 2 à 3 voitures
+                        break;
+                }
+
                 for (int i = 0; i < numCars; i++) {
                     int x = (int) (Math.random() * grid.getWidth());
 
