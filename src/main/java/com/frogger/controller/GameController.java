@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 
 public class GameController {
 
@@ -19,10 +20,10 @@ public class GameController {
      **/
 
     @FXML
-    private Label lblScorePlayer1;
+    private Button lblScorePlayer1;
 
     @FXML
-    private Label lblScorePlayer2;
+    private Button lblScorePlayer2;
 
     @FXML
     private GridPane grid;
@@ -34,7 +35,10 @@ public class GameController {
     private Button btnBack;
 
     @FXML
-    private Label lblTimer;
+    private Button lblTimer;
+
+    @FXML
+    private Region spacer;
 
     /**
      * ============================

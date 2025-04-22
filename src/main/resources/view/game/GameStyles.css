@@ -92,7 +92,7 @@
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
     -fx-alignment: center;
-    -fx-pref-width: 200px;
+    -fx-pref-width: 300px;
 }
 
 .gameHeader {
@@ -103,14 +103,12 @@
 }
 
 .timer-label {
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-text-fill: yellow;
-    -fx-padding: 5px;
-    -fx-background-color: #444;
-    -fx-border-color: #222;
+    -fx-font-size: 12px;
+    -fx-padding: 5px 10px;
+    -fx-background-color: #555;
+    -fx-text-fill: white;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
     -fx-alignment: center;
-    -fx-pref-width: 150px;
+    -fx-pref-width: 400px;
 }
