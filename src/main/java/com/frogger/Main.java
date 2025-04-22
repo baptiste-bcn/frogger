@@ -43,12 +43,14 @@ public class Main extends Application {
         Task<Void> preloadTask = new Task<>() {
             @Override
             protected Void call() {
-                new Image(getClass().getResourceAsStream("/images/GrassTile.png"));
-                new Image(getClass().getResourceAsStream("/images/RoadTile.png"));
-                new Image(getClass().getResourceAsStream("/images/BlueCar.png"));
-                new Image(getClass().getResourceAsStream("/images/Tree.png"));
-                new Image(getClass().getResourceAsStream("/images/frog.png"));
-                new Image(getClass().getResourceAsStream("/images/Background.png"));
+                // Précharger les images nécessaires
+                Image grassTile = new Image(getClass().getResourceAsStream("/images/GrassTile.png"));
+                Image roadTile = new Image(getClass().getResourceAsStream("/images/RoadTile.png"));
+                Image blueCar = new Image(getClass().getResourceAsStream("/images/BlueCar.png"));
+                Image tree = new Image(getClass().getResourceAsStream("/images/Tree.png"));
+                Image frog = new Image(getClass().getResourceAsStream("/images/frog.png"));
+                Image background = new Image(getClass().getResourceAsStream("/images/Background.png"),
+                        1920, 1080, true, true); // Charger avec des dimensions adaptées
 
                 return null;
             }
