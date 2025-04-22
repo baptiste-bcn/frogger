@@ -33,6 +33,10 @@ public class GameController {
     @FXML
     private Button btnBack;
 
+    @FXML
+    private Label lblTimer;
+
+
     /**
      * ============================
      * GAMECONTROLLER ATTRIBUTES SECTION
@@ -47,6 +51,9 @@ public class GameController {
 
     private boolean isKeyPressed;
     private KeyEvent lastKeyPressed;
+
+    private long startTime;
+    private AnimationTimer timer;
 
     public void setDuoMode(boolean isDuoMode) {
         this.isDuoMode = isDuoMode;
@@ -83,7 +90,28 @@ public class GameController {
         });
     }
 
+    private void startTimer() {
+        startTime = System.currentTimeMillis();
+        timer = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
+                lblTimer.setText("Durée de la partie : " + elapsedTime + "s");
+            }
+        };
+        timer.start();
+    }
+
+    private void resetTimer() {
+        if (timer != null) {
+            timer.stop();
+        }
+        lblTimer.setText("Durée de la partie : 0s");
+        startTimer();
+    }
+
     private void setupGameComponents() {
+        resetTimer(); // Démarre ou réinitialise le timer
         gameView.initializeGrid(game);
         gameView.initializeObstacles(game);
         gameView.initializePlayers(game.getPlayer1(), game.getPlayer2(), isDuoMode);
