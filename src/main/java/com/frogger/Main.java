@@ -2,6 +2,7 @@ package com.frogger;
 
 import com.frogger.controller.SceneController;
 import javafx.application.Application;
+import javafx.concurrent.Task;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
@@ -12,6 +13,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        // Chargement asynchrone des images pour gagner en performance
+        preloadImagesAsync();
+
         // Ajout de l'icône de l'application
         Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/frog.png")));
         stage.getIcons().add(icon);
@@ -33,5 +37,21 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    private void preloadImagesAsync() {
+        Task<Void> preloadTask = new Task<>() {
+            @Override
+            protected Void call() {
+                new Image(getClass().getResourceAsStream("/images/GrassTile.png"));
+                new Image(getClass().getResourceAsStream("/images/RoadTile.png"));
+                new Image(getClass().getResourceAsStream("/images/BlueCar.png"));
+                new Image(getClass().getResourceAsStream("/images/Tree.png"));
+                new Image(getClass().getResourceAsStream("/images/frog.png"));
+                return null;
+            }
+        };
+
+        new Thread(preloadTask).start();
     }
 }
