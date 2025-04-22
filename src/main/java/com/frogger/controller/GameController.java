@@ -82,8 +82,6 @@ public class GameController {
 
                 if (game != null) {
                     setupGameComponents();
-                } else {
-                    System.out.println("Game is not initialized yet.");
                 }
 
             }
