@@ -8,9 +8,9 @@
       styleClass="menu">
     <Text text="Froggy Road" styleClass="game-title"/>
     <VBox alignment="CENTER" spacing="15">
-        <Button text="Jouer Solo" fx:id="btnSolo" styleClass="button"/>
-        <Button text="Jouer Duo" fx:id="btnDuo" styleClass="button"/>
-        <Button text="Paramètres" fx:id="btnSettings" styleClass="button"/>
-        <Button text="Quitter" fx:id="btnQuit" styleClass="button"/>
+        <Button text="Play Solo" fx:id="btnSolo" styleClass="button"/>
+        <Button text="Play Duo" fx:id="btnDuo" styleClass="button"/>
+        <Button text="Settings" fx:id="btnSettings" styleClass="button"/>
+        <Button text="Exit" fx:id="btnQuit" styleClass="button"/>
     </VBox>
 </VBox>

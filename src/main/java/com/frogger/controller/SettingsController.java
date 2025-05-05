@@ -38,7 +38,7 @@ public class SettingsController {
         });
 
         // Initialiser le menu déroulant de difficulté
-        difficultyComboBox.setItems(FXCollections.observableArrayList("Facile", "Normal", "Difficile"));
+        difficultyComboBox.setItems(FXCollections.observableArrayList("Easy", "Normal", "Hard"));
         difficultyComboBox.setValue(selectedDifficulty); // Pré-sélectionner la difficulté actuelle
         difficultyComboBox.setOnAction(event -> {
             selectedDifficulty = difficultyComboBox.getValue(); // Mettre à jour la difficulté sélectionnée

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.frogger.controller.SettingsController"
       stylesheets="@/view/settings/SettingsStyle.css" styleClass="settings">
-    <CheckBox text="Plein écran" fx:id="checkFullScreen"/>
+    <CheckBox text="Fullscreen" fx:id="checkFullScreen"/>
     <ComboBox fx:id="difficultyComboBox" promptText="Difficulté du jeu"/>
-    <Button text="Retour" fx:id="btnBack"/>
+    <Button text="Back" fx:id="btnBack"/>
 </VBox>

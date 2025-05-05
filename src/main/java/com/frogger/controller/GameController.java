@@ -102,7 +102,7 @@ public class GameController {
             @Override
             public void handle(long now) {
                 long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
-                lblTimer.setText("Durée de la partie : " + elapsedTime + "s");
+                lblTimer.setText("Match time : " + elapsedTime + "s");
             }
         };
         timer.start();
@@ -112,7 +112,7 @@ public class GameController {
         if (timer != null) {
             timer.stop();
         }
-        lblTimer.setText("Durée de la partie : 0s");
+        lblTimer.setText("Match time : 0s");
         startTimer();
     }
 

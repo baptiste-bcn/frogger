@@ -137,8 +137,8 @@ public class Game {
 
                 // Déterminer le nombre de voitures en fonction de la difficulté
                 int numCars = switch (difficulty) {
-                    case "Facile" -> 1 + (int) (Math.random() * 2); // 1 à 2 voitures
-                    case "Difficile" -> 2 + (int) (Math.random() * 3); // 2 à 4 voitures
+                    case "Easy" -> 1 + (int) (Math.random() * 2); // 1 à 2 voitures
+                    case "Hard" -> 2 + (int) (Math.random() * 3); // 2 à 4 voitures
                     default -> 2 + (int) (Math.random() * 2); // 2 à 3 voitures
                 };
 
