@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-02-23" view-index="0" gantt-divider-location="487" resource-divider-location="300" version="2.8.11" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-03-17" view-index="0" gantt-divider-location="196" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
     <description/>
-    <view zooming-state="default:6" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="233" order="0"/>
-        <field id="tpd4" name="Date de début" width="118" order="1"/>
-        <field id="tpd5" name="Date de fin" width="117" order="2"/>
+    <view zooming-state="default:5" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="90" order="0"/>
+        <field id="tpd4" name="Date de début" width="45" order="1"/>
+        <field id="tpd5" name="Date de fin" width="45" order="2"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
         <option id="color.recent"><![CDATA[#99ff99 #ffcc00 #cc00cc #990099 #ff0033 #c6cbf1 #000000 #ff00ff #f4f4f4 #00ffff]]></option>
     </view>
     <view id="resource-table">
@@ -34,81 +38,92 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Initialisation du projet" color="#c6cbf1" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2025-01-15" thirdDate-constraint="0" expand="true">
+        <task id="0" uid="f42de47a95384346bb450b6f931b37de" name="Initialisation du projet" color="#c6cbf1" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2025-01-15" thirdDate-constraint="0" expand="true">
             <notes><![CDATA[- Création du dépôt GitHub
 - Mise en place des outils de développement (IDE, JDK, etc.)
 - Configuration du projet Java avec Maven (structure de répertoires, fichiers de configuration)]]></notes>
             <depend id="1" type="2" difference="0" hardness="Strong"/>
-            <task id="41" name="Création du dépôt GitHub" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="42" name="Ajout des collaborateurs au projet" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="44" name="Mise en place des outils de développement" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="46" name="Configuration du projet avec l'outil Maven" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="41" uid="47d417b7200544829dba43677d3cffc7" name="Création du dépôt GitHub" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="42" uid="8a2d50aa017246fd821aee7ca7312c28" name="Ajout des collaborateurs au projet" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="44" uid="adda64cd8dc74b8a9195d93684788f1d" name="Mise en place des outils de développement" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="46" uid="65db6f9018b642c2a28062c6f96aadbd" name="Configuration du projet avec l'outil Maven" color="#8cb6ce" meeting="false" start="2025-01-15" duration="6" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="1" name="Planification et Conception" color="#c6cbf1" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2025-01-27" duration="1" complete="100" thirdDate="2025-01-27" thirdDate-constraint="1" expand="true">
+        <task id="1" uid="888d8aa33b474ee39408fc12ad7fdcd5" name="Planification et Conception" color="#c6cbf1" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2025-01-27" duration="1" complete="100" thirdDate="2025-01-27" thirdDate-constraint="1" expand="true">
             <notes><![CDATA[- Définition des objectifs et des fonctionnalités du jeu
 - Création du diagramme UML des classes et des objets
 - Choix des librairies
 
 ]]></notes>
             <depend id="13" type="2" difference="0" hardness="Strong"/>
-            <task id="30" name="Définition des objectifs et des fonctionnalités du jeu" color="#8cb6ce" meeting="false" start="2025-01-27" duration="1" complete="100" thirdDate="2025-01-27" thirdDate-constraint="0" expand="true"/>
-            <task id="34" name="Création du diagramme UML des classes et des objets" color="#8cb6ce" meeting="false" start="2025-01-27" duration="1" complete="100" thirdDate="2025-01-27" thirdDate-constraint="0" expand="true"/>
-            <task id="36" name="Choix des librairies" color="#8cb6ce" meeting="false" start="2025-01-27" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="30" uid="afddf34be51f418f92f3506606afb6ff" name="Définition des objectifs et des fonctionnalités du jeu" color="#8cb6ce" meeting="false" start="2025-01-27" duration="1" complete="100" thirdDate="2025-01-27" thirdDate-constraint="0" expand="true"/>
+            <task id="34" uid="44b828df8bc3469eb553456de62cec54" name="Création du diagramme UML des classes et des objets" color="#8cb6ce" meeting="false" start="2025-01-27" duration="1" complete="100" thirdDate="2025-01-27" thirdDate-constraint="0" expand="true"/>
+            <task id="36" uid="c719efcadf5e417aa4727c6e33a2434d" name="Choix des librairies" color="#8cb6ce" meeting="false" start="2025-01-27" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="13" name="Développement" color="#99ff99" meeting="false" start="2025-02-25" duration="51" complete="84" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
-            <task id="53" name="Ajout d'un système de scoring" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
-            <task id="58" name="Impossible d'entrer en collision avec un arbre (obstacle fixe)" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
-            <task id="64" name="Améliorer la gestion de l'appui des touches" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
-            <task id="72" name="Restructure du code pour respecter le modèle MVC" color="#99ff99" meeting="false" start="2025-03-18" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="75" name="Restructure et finalisation du diagramme de classes" color="#99ff99" meeting="false" start="2025-03-18" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="78" name="Essai de rendre aléatoire la création de routes, vitesses des véhicules" color="#99ff99" meeting="false" start="2025-03-18" duration="27" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="81" name="Refactoring du MVC" color="#99ff99" meeting="false" start="2025-03-25" duration="10" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="85" name="Création d'une branche de développement secondaire" color="#99ff99" meeting="false" start="2025-03-26" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="89" name="Tests et bugs" color="#99ff99" meeting="false" start="2025-02-25" duration="40" complete="75" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true"/>
-            <task id="92" name="Modèle MVC non conforme : refactoring" color="#99ff99" meeting="false" start="2025-03-26" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="129" name="Gestion des scènes et du mode plein écran" color="#99ff99" meeting="false" start="2025-03-26" duration="1" complete="100" thirdDate="2025-01-28" thirdDate-constraint="0" expand="true"/>
-            <task id="112" name="Liste des fonctions et du code à déplacer" color="#99ff99" meeting="false" start="2025-03-26" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-            <task id="115" name="Suivi tutoriel JavaFX" color="#99ff99" meeting="false" start="2025-03-26" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true">
+        <task id="13" uid="41c6dd65fb254c12999c51bdf4358fb4" name="Développement" color="#99ff99" meeting="false" start="2025-02-25" duration="60" complete="99" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true">
+            <depend id="26" type="2" difference="0" hardness="Strong"/>
+            <task id="53" uid="163e7e1d491743459a13d94aeedb03a4" name="Ajout d'un système de scoring" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
+            <task id="58" uid="4cb4bcfb85f94473929912414baff22d" name="Impossible d'entrer en collision avec un arbre (obstacle fixe)" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
+            <task id="64" uid="fc078b370fd1402c9a30285ce93568cd" name="Améliorer la gestion de l'appui des touches" color="#99ff99" meeting="false" start="2025-03-11" duration="1" complete="100" thirdDate="2025-03-11" thirdDate-constraint="1" expand="true"/>
+            <task id="72" uid="1c1e1b7f11ba4c7bbf6b40c8e3f8b605" name="Restructure du code pour respecter le modèle MVC" color="#99ff99" meeting="false" start="2025-03-18" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="75" uid="5a6444aed7c74f45b6ec4de7658294a4" name="Restructure et finalisation du diagramme de classes" color="#99ff99" meeting="false" start="2025-03-18" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="78" uid="415bf47f40ed4cb7bcde44cc2ac82bb9" name="Essai de rendre aléatoire la création de routes, vitesses des véhicules" color="#99ff99" meeting="false" start="2025-03-18" duration="27" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="81" uid="fb582707273849abbc027eafe9ce99ae" name="Refactoring du MVC" color="#99ff99" meeting="false" start="2025-03-25" duration="10" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="85" uid="c1971d66d9c542599d9db07bd32baa43" name="Création d'une branche de développement secondaire" color="#99ff99" meeting="false" start="2025-03-26" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="89" uid="5ef9b3e37eda4e49b1b40ff77ef2c462" name="Tests et bugs" color="#99ff99" meeting="false" start="2025-02-25" duration="40" complete="100" thirdDate="2025-02-25" thirdDate-constraint="1" expand="true"/>
+            <task id="92" uid="43b5202a91c04e6f83df3037121ea3be" name="Modèle MVC non conforme : refactoring" color="#99ff99" meeting="false" start="2025-03-26" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="129" uid="97ece90fe77b4057af54b1af12f33c33" name="Gestion des scènes et du mode plein écran" color="#99ff99" meeting="false" start="2025-03-26" duration="1" complete="100" thirdDate="2025-01-28" thirdDate-constraint="0" expand="true"/>
+            <task id="112" uid="1923a25c1f214e1f9332c5be7d3eef47" name="Liste des fonctions et du code à déplacer" color="#99ff99" meeting="false" start="2025-03-26" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+            <task id="115" uid="fb39f1c5218b44039bb3cb020db4400b" name="Suivi tutoriel JavaFX" color="#99ff99" meeting="false" start="2025-03-26" duration="1" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true">
                 <notes><![CDATA[Pour mieux assimiler le FXML, procédé du JavaFX qui nous servira de "View" pour notre architecture MVC (Model, View, Controler)]]></notes>
             </task>
-            <task id="119" name="Configuration de la partie view du MVC à partir de FXML" color="#99ff99" meeting="false" start="2025-03-26" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
-            <task id="123" name="Développement de la partie interface via FXML" color="#99ff99" meeting="false" start="2025-03-26" duration="30" complete="80" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
-            <task id="152" name="Ajout d'une classe Player, d'un mode duo et du jeu infini" color="#99ff99" meeting="false" start="2025-03-31" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
-            <task id="157" name="Correction de l'initialisation du joueur et réinitialisation du jeu en mode solo" color="#99ff99" meeting="false" start="2025-03-31" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
-            <task id="161" name="Correction d'une erreur qui empechait l'initialisation du jeu" color="#99ff99" meeting="false" start="2025-03-31" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
-            <task id="164" name="Ajout d'une classe GameView" color="#99ff99" meeting="false" start="2025-03-31" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true">
+            <task id="119" uid="6f75327a173d441bb2fcdedaf9b72a96" name="Configuration de la partie view du MVC à partir de FXML" color="#99ff99" meeting="false" start="2025-03-26" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
+            <task id="123" uid="e2c51c0a280d4eb1b1a2a599e918eaa3" name="Développement de la partie interface via FXML" color="#99ff99" meeting="false" start="2025-03-26" duration="30" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
+            <task id="152" uid="bc6a28bb1f3e4389804f2a8fb5c9b91f" name="Ajout d'une classe Player, d'un mode duo et du jeu infini" color="#99ff99" meeting="false" start="2025-03-31" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
+            <task id="157" uid="905f9e19957f462085a7166f49d6a2bf" name="Correction de l'initialisation du joueur et réinitialisation du jeu en mode solo" color="#99ff99" meeting="false" start="2025-03-31" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
+            <task id="161" uid="3cb96f4249bf41ae98f69d1d5ea0c87b" name="Correction d'une erreur qui empechait l'initialisation du jeu" color="#99ff99" meeting="false" start="2025-03-31" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
+            <task id="164" uid="3d847beb280e4bf08f270d54accda5a7" name="Ajout d'une classe GameView" color="#99ff99" meeting="false" start="2025-03-31" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true">
                 <notes><![CDATA[Manage view and entity view]]></notes>
             </task>
-            <task id="168" name="Embellissement des assets du jeu" color="#99ff99" meeting="false" start="2025-03-31" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true">
+            <task id="168" uid="fe56cc5abff74ed48b54d147614ac7bb" name="Embellissement des assets du jeu" color="#99ff99" meeting="false" start="2025-03-31" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true">
                 <notes><![CDATA[Ajout d'images (assets) pour :
 - les routes
 - les obstacles
 - le personnage]]></notes>
             </task>
-            <task id="169" name="Correction des bugs" color="#99ff99" meeting="false" start="2025-03-31" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
-            <task id="172" name="Correction d'un bug où deux joueurs pouvaient entrer en collision" color="#99ff99" meeting="false" start="2025-04-01" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
-            <task id="175" name="Complexification du jeu en modifiant le nombre de voitures par route" color="#99ff99" meeting="false" start="2025-04-01" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
-            <task id="178" name="Amélioration du style des menus" color="#99ff99" meeting="false" start="2025-04-09" duration="1" complete="100" thirdDate="2025-02-17" thirdDate-constraint="0" expand="true"/>
-            <task id="181" name="Implémenter la méthode resetPlayerPosition() pour améliorer la lisiblité" color="#99ff99" meeting="false" start="2025-04-09" duration="1" complete="100" thirdDate="2025-02-17" thirdDate-constraint="0" expand="true"/>
-            <task id="199" name="Réajout des boutons de score" color="#99ff99" meeting="false" start="2025-04-14" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
-            <task id="203" name="Amélioration de la fonction initalize()" color="#99ff99" meeting="false" start="2025-04-14" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
-            <task id="205" name="Optimisation et debugging" color="#99ff99" meeting="false" start="2025-04-22" duration="5" complete="0" thirdDate="2025-04-22" thirdDate-constraint="1" expand="true"/>
-            <task id="208" name="Enlever le score Joueur 2 pour le mode solo" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
-            <task id="211" name="Mis à jour du diagramme UML" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
-            <task id="214" name="Ajout du style Froggy Road au Timer et aux Scores" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
-            <task id="225" name="Refactor de la fonction handleKeyPress()" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true">
+            <task id="169" uid="a27987f04f24400998b431e7d817ccfc" name="Correction des bugs" color="#99ff99" meeting="false" start="2025-03-31" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
+            <task id="172" uid="7b1e4938c2974029b0dfd54d8fce610e" name="Correction d'un bug où deux joueurs pouvaient entrer en collision" color="#99ff99" meeting="false" start="2025-04-01" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
+            <task id="175" uid="7092b213ecd047c88536eb8289260632" name="Complexification du jeu en modifiant le nombre de voitures par route" color="#99ff99" meeting="false" start="2025-04-01" duration="1" complete="100" thirdDate="2024-12-23" thirdDate-constraint="0" expand="true"/>
+            <task id="178" uid="79e0f119481c44b3997c344a02a7006c" name="Amélioration du style des menus" color="#99ff99" meeting="false" start="2025-04-09" duration="1" complete="100" thirdDate="2025-02-17" thirdDate-constraint="0" expand="true"/>
+            <task id="181" uid="c19f56649cd54d059aa2a76f81dcff1a" name="Implémenter la méthode resetPlayerPosition() pour améliorer la lisiblité" color="#99ff99" meeting="false" start="2025-04-09" duration="1" complete="100" thirdDate="2025-02-17" thirdDate-constraint="0" expand="true"/>
+            <task id="199" uid="a77df20b543941c6ad77fcf5325c2ff3" name="Réajout des boutons de score" color="#99ff99" meeting="false" start="2025-04-14" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
+            <task id="203" uid="4c9e76ae3e754a4eaf3281dca2959525" name="Amélioration de la fonction initalize()" color="#99ff99" meeting="false" start="2025-04-14" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
+            <task id="205" uid="62d569602a9d48b88dd627c9f4172f03" name="Optimisation et debugging" color="#99ff99" meeting="false" start="2025-04-22" duration="5" complete="100" thirdDate="2025-04-22" thirdDate-constraint="1" expand="true"/>
+            <task id="208" uid="e4a1e721fb6240489f5dd4a11927f093" name="Enlever le score Joueur 2 pour le mode solo" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
+            <task id="211" uid="0fe2de5527884abd912ad8ed69c5638d" name="Mis à jour du diagramme UML" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
+            <task id="214" uid="3b2d7ddb03c54ebd85c07a76e1948514" name="Ajout du style Froggy Road au Timer et aux Scores" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
+            <task id="225" uid="be88c2d8a5054542bcccb3bddfd79c17" name="Refactor de la fonction handleKeyPress()" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true">
                 <notes><![CDATA[Il y avait du code dupliqué 2 fois dans la meme fonction pour le joueur 1 et pour le joueur 2 + ajout d'une fonction handlePlayerMove()]]></notes>
             </task>
-            <task id="230" name="Suppression config inutile pom.xml" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
-            <task id="233" name="Bug : recharger grille quand Joueur 2 franchit l'arrivée" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
-            <task id="236" name="Ajout de style pour les boutons de difficulté" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
-            <task id="239" name="Ajout de la sauvegarde pour le meilleur score" color="#99ff99" meeting="false" start="2025-04-22" duration="7" complete="80" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
+            <task id="230" uid="936358382e474cdab45be22ff50bd22f" name="Suppression config inutile pom.xml" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
+            <task id="233" uid="b2f8d8a883314673a2ef3e51387609e4" name="Bug : recharger grille quand Joueur 2 franchit l'arrivée" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
+            <task id="236" uid="cc9329e6d11e476babf193b19c515116" name="Ajout de style pour les boutons de difficulté" color="#99ff99" meeting="false" start="2025-04-22" duration="1" complete="100" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
+            <task id="239" uid="a6473cd6e183423aafa1f2b815f350c1" name="Ajout de la sauvegarde pour le meilleur score" color="#99ff99" meeting="false" start="2025-04-22" duration="7" complete="80" thirdDate="2025-02-24" thirdDate-constraint="0" expand="true"/>
+            <task id="241" uid="c5c1f01ba92b4a17b3100417bb950c7c" name="Suppression mode plein ecran" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true"/>
+            <task id="242" uid="251f063688214a60ba4a923fdd570ff1" name="Ajout de style pour les paramètres" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true"/>
+            <task id="243" uid="ca4c6078db4646de8de61b0930fe3cd0" name="Bug résolu concernant la sauvegarde du score" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true"/>
+            <task id="244" uid="ac9536daf6b045c79072fdab3054bfc2" name="Ajout d'une voiture rouge pour représenter un camion" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true">
+                <notes><![CDATA[Quand deux voitures apparaissent collées, elles sont rouges pour représenter un véhicule plus long, comme par exemple un camion.]]></notes>
+            </task>
         </task>
-        <task id="15" name="Documentation du code" color="#ffcc00" meeting="false" start="2025-03-25" duration="40" complete="20" thirdDate="2025-03-25" thirdDate-constraint="1" expand="true"/>
-        <task id="21" name="Tests finaux" color="#ffcc00" meeting="false" start="2025-04-29" duration="3" complete="0" thirdDate="2025-04-29" thirdDate-constraint="1" expand="true"/>
-        <task id="26" name="Rendu du projet + soutenance" color="#ffcc00" meeting="false" start="2025-05-20" duration="1" complete="0" thirdDate="2025-05-02" thirdDate-constraint="0" expand="true"/>
-        <task id="102" name="Amélioration continuelle du Gantt" color="#cc00cc" meeting="false" start="2025-01-15" duration="90" complete="70" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
-        <task id="198" name="Diaporama pour présentation orale" color="#ffcc00" meeting="false" start="2025-04-22" duration="21" complete="10" thirdDate="2025-01-06" thirdDate-constraint="0" expand="true"/>
+        <task id="15" uid="935b8565cf35456b90d6ae1b2f53fc44" name="Documentation du code" color="#ffcc00" meeting="false" start="2025-03-25" duration="15" complete="100" thirdDate="2025-03-25" thirdDate-constraint="1" expand="true">
+            <depend id="26" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="21" uid="bc574e23d3f64a32969952f1264a29df" name="Tests finaux" color="#ffcc00" meeting="false" start="2025-04-29" duration="3" complete="100" thirdDate="2025-04-29" thirdDate-constraint="1" expand="true">
+            <depend id="26" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="26" uid="ef972a83081f4f4291b1666f565c8674" name="Rendu du projet" color="#ffcc00" meeting="true" start="2025-05-20" duration="0" complete="0" thirdDate="2025-05-20" thirdDate-constraint="1" expand="true"/>
+        <task id="102" uid="73707274d81e46eda326e41faaf8dd57" name="Amélioration continuelle du Gantt" color="#cc00cc" meeting="false" start="2025-01-15" duration="90" complete="100" thirdDate="2024-12-09" thirdDate-constraint="0" expand="true"/>
+        <task id="198" uid="1943867077764608b18167f631da70e4" name="Diaporama pour présentation orale" color="#ffcc00" meeting="false" start="2025-04-22" duration="21" complete="10" thirdDate="2025-01-06" thirdDate-constraint="0" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="Baptiste" function="Default:0" contacts="" phone=""/>
@@ -152,6 +167,10 @@
         <allocation task-id="198" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="230" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="239" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="241" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="242" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="243" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="244" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="1" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="13" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="58" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
