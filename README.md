@@ -2,12 +2,14 @@
 
 ## Sommaire
 
-- [Installation et lancement du projet](#installation-et-lancement-du-projet)
+- [Installation de Maven sur Windows](#installation-de-maven-sur-windows)
+- [Installation de Maven sur Linux](#installation-de-maven-sur-linux)
+- [Exécuter le projet](#exécuter-le-projet)
 - [Description](#description)
 - [Fonctionnalités principales](#fonctionnalités-principales)
 - [Fonctionnalités secondaires](#fonctionnalités-secondaires)
 
-## Installation et lancement du projet
+## Installation de Maven sur Windows
 
 Pour cloner et lancer ce projet avec Maven, suivre les étapes ci-dessous :
 
@@ -38,7 +40,30 @@ Pour cloner et lancer ce projet avec Maven, suivre les étapes ci-dessous :
     mvn -v
     ```
 
-3. **Exécuter le projet :**
+## Installation de Maven sur Linux
+
+1. **Cloner le dépôt GitHub :**
+
+    ```bash
+    git clone https://github.com/baptiste-bcn/frogger
+    ```
+
+2. **Installer Maven + JDK :**
+   
+    ```bash
+    sudo apt update && sudo apt install default-jdk maven
+    ```
+3. **Vérifier Java :**
+   ```bash
+    java -version
+    ```
+4. **Vérifier Maven :**
+    ```bash
+    mvn -v
+    ```
+
+
+## Exécuter le projet
 
    Accéder au répertoire racine du projet :
 
