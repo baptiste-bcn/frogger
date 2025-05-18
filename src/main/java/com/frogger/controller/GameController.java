@@ -1,5 +1,6 @@
 package com.frogger.controller;
 
+import com.frogger.model.Difficulty;
 import com.frogger.model.Game;
 import com.frogger.model.Player;
 import com.frogger.view.GameView;
@@ -223,10 +224,11 @@ public class GameController {
     private void startGameLoop() {
         AnimationTimer gameLoop = new AnimationTimer() {
             private long lastUpdate = 0;
+            final Difficulty difficulty = SettingsController.getSelectedDifficulty();
 
             @Override
             public void handle(long now) {
-                if (now - lastUpdate >= 100_000_000) {
+                if (now - lastUpdate >= 100_000_000 * difficulty.getSpeedMultiplier()) {
                     game.updateObstacles();
                     gameView.updateObstacleView();
 

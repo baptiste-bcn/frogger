@@ -111,7 +111,7 @@ public class Game {
      **/
 
     private void initializeObstacles() {
-        String difficulty = SettingsController.getSelectedDifficulty(); // Récupérer la difficulté sélectionnée
+        Difficulty difficulty = SettingsController.getSelectedDifficulty(); // Récupérer la difficulté sélectionnée
 
         for (int row = 0; row < grid.getHeight(); row++) {
             Grid.RowType rowType = grid.getRowType(row);
@@ -133,8 +133,8 @@ public class Game {
 
                 // Déterminer le nombre de voitures en fonction de la difficulté
                 int numCars = switch (difficulty) {
-                    case "Easy" -> 1 + (int) (Math.random() * 2); // 1 à 2 voitures
-                    case "Hard" -> 2 + (int) (Math.random() * 3); // 2 à 4 voitures
+                    case EASY -> 1 + (int) (Math.random() * 2); // 1 à 2 voitures
+                    case HARD -> 2 + (int) (Math.random() * 3); // 2 à 4 voitures
                     default -> 2 + (int) (Math.random() * 2); // 2 à 3 voitures
                 };
 
