@@ -1,38 +1,56 @@
 .settings {
-  -fx-alignment: center;
-  -fx-spacing: 10;
-  -fx-background-image: url("/images/Background.png");
-  -fx-background-size: cover;
-  -fx-background-position: center;
-  -fx-background-repeat: no-repeat;
+    -fx-alignment: center;
+    -fx-spacing: 10;
+    -fx-background-image: url("/images/Background.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
 }
 
 .combo-box {
-  -fx-background-color: rgb(225, 200, 128);
-  -fx-text-fill: rgb(39, 38, 18);
-  -fx-border-width: 4;
-  -fx-border-color: rgb(39, 38, 18);
-  -fx-border-radius: 15;
-  -fx-cursor: hand;
-  -fx-effect: dropshadow(gaussian, rgb(39, 38, 18), 4, 0, 0, 4);
-  -fx-pref-width: 300;
+    -fx-background-color: rgb(225, 200, 128);
+    -fx-text-fill: rgb(39, 38, 18);
+    -fx-border-width: 4;
+    -fx-border-color: rgb(39, 38, 18);
+    -fx-border-radius: 15;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgb(39, 38, 18), 4, 0, 0, 4);
+    -fx-pref-width: 300;
 
-  -fx-font-family: "Press Start 2P", cursive;
+    -fx-font-family: "Press Start 2P", cursive;
 
-  -fx-background-insets: 4; /* Ajouté pour éviter que la couleur de fond dépasse la bordure */
+    -fx-background-insets: 4; /* Ajouté pour éviter que la couleur de fond dépasse la bordure */
 }
 
 .combo-box .list-cell {
-  -fx-padding: 25 45;
-  -fx-font-size: 16px;
-  -fx-text-fill: rgb(39, 38, 18);
-  -fx-background-color: rgb(225, 200, 128);
-  -fx-font-family: "Press Start 2P", cursive;
-  -fx-background-insets: 4;
+    -fx-padding: 25 45;
+    -fx-font-size: 16px;
+    -fx-text-fill: rgb(39, 38, 18);
+    -fx-background-color: rgb(225, 200, 128);
+    -fx-font-family: "Press Start 2P", cursive;
+    -fx-background-insets: 4;
 }
 
 .combo-box .list-view {
-  -fx-background-color: black;
-  -fx-border-color: rgb(225, 200, 128);
-  -fx-border-width: 2;
+    -fx-background-color: black;
+    -fx-border-color: rgb(225, 200, 128);
+    -fx-border-width: 2;
+}
+
+.settings-card {
+    -fx-background-color: rgba(98, 164, 69, 0.55); /* vert transparent */
+    -fx-background-radius: 30;
+    -fx-padding: 40 50;
+    -fx-effect: dropshadow(gaussian, #083919, 10, 0.2, 0, 4);
+    -fx-max-width: 500px;
+    -fx-pref-width: 420px;
+    -fx-alignment: center;
+}
+
+.difficulty-label {
+    -fx-font-size: 20px;
+    -fx-font-family: "Press Start 2P", cursive;
+    -fx-text-fill: #fdd835;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #083919, 2, 0.2, 0, 1);
 }

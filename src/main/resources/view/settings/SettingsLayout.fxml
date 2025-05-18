@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.frogger.controller.SettingsController"
-      stylesheets="@/view/settings/SettingsStyle.css" styleClass="settings">
-    <CheckBox text="Fullscreen" fx:id="checkFullScreen"/>
-    <ComboBox fx:id="difficultyComboBox" promptText="Difficulté du jeu"/>
-    <Button text="Back" fx:id="btnBack"/>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.frogger.controller.SettingsController"
+      stylesheets="@/view/settings/SettingsStyle.css"
+      styleClass="settings"
+      spacing="20"
+      alignment="CENTER">
+    <VBox styleClass="settings-card" spacing="20" alignment="CENTER">
+        <Text text="Settings" styleClass="game-title"/>
+        <Separator />
+        <HBox alignment="CENTER" spacing="10">
+            <Label text="Difficulty :" styleClass="difficulty-label"/>
+            <ComboBox fx:id="difficultyComboBox" promptText="Difficulté du jeu"/>
+        </HBox>
+        <Button text="Back" fx:id="btnBack"/>
+    </VBox>
 </VBox>

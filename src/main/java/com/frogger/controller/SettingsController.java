@@ -3,14 +3,9 @@ package com.frogger.controller;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
-import javafx.stage.Stage;
 
 public class SettingsController {
-
-    @FXML
-    private CheckBox checkFullScreen;
 
     @FXML
     private ComboBox<String> difficultyComboBox;
@@ -22,21 +17,8 @@ public class SettingsController {
 
     private static String selectedDifficulty = "Normal"; // Par défaut
 
-
     @FXML
     public void initialize() {
-        // Gestion du plein écran
-        checkFullScreen.sceneProperty().addListener((observable, oldScene, newScene) -> {
-            if (newScene != null) {
-                Stage stage = (Stage) checkFullScreen.getScene().getWindow();
-
-                checkFullScreen.setSelected(stage.isFullScreen());
-                checkFullScreen.setOnAction(event -> {
-                    stage.setFullScreen(checkFullScreen.isSelected());
-                });
-            }
-        });
-
         // Initialiser le menu déroulant de difficulté
         difficultyComboBox.setItems(FXCollections.observableArrayList("Easy", "Normal", "Hard"));
         difficultyComboBox.setValue(selectedDifficulty); // Pré-sélectionner la difficulté actuelle
