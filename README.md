@@ -29,9 +29,9 @@ Pour cloner et lancer ce projet avec Maven, suivre les étapes ci-dessous :
     - Copier le chemin d'accès en haut (devrait ressembler à `C:\Users\name\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin`).
     - Ajouter à la variable d'environnement `PATH` le chemin `C:\Program Files\Maven\apache-maven-3.9.9\bin`.
     - Pour se faire, rechercher (`Windows + S`) "Variables d'environnement" puis cliquer sur "Modifier les variables d’environnement système".
-    - Cliquer sur "Variables d'environnement"
-    - Cliquer sur celle qui a le nom "Path" dans la partie "Variables systèmes" puis "Modifier"
-    - En ajouter une nouvelle via "Nouveau" puis coller le chemin d'accès à l'endroit où vous l'avez télécharger : `C:\Users\name\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin` puis cliquer sur "OK"
+    - Cliquer sur "Variables d'environnement".
+    - Cliquer sur celle qui a le nom "Path" dans la partie "Variables systèmes" puis "Modifier".
+    - En ajouter une nouvelle via "Nouveau" puis coller le chemin d'accès à l'endroit où vous l'avez télécharger : `C:\Users\name\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin` puis cliquer sur "OK".
     
     - Vérifier l'installation en ouvrant un terminal et en exécutant la commande suivante :
     ```bash
