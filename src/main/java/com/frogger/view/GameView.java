@@ -19,9 +19,14 @@ public class GameView {
     private final GridPane grid;
     private final GridPane entityLayer;
 
-    private Region player1View;
-    private Region player2View;
+    private ImageView player1View;
+    private ImageView player2View;
 
+
+    private static final Image FROG_IMAGE = new Image(
+            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/frog.png")));
+    private static final Image TURTLE_IMAGE = new Image(
+            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/turtle.png")));
     private static final Image GRASS_TILE_IMAGE = new Image(
             Objects.requireNonNull(GameView.class.getResourceAsStream("/images/GrassTile.png")));
     private static final Image ROAD_TILE_IMAGE = new Image(
@@ -112,7 +117,9 @@ public class GameView {
     }
 
     public void initializePlayers(Player player1, Player player2, boolean isDuoMode) {
-        player1View = new Region();
+        player1View = new ImageView(FROG_IMAGE);
+        player1View.setFitWidth(50);
+        player1View.setFitHeight(50);
         player1View.getStyleClass().add("player");
 
         GridPane.setColumnIndex(player1View, player1.getX());
@@ -120,7 +127,9 @@ public class GameView {
         entityLayer.getChildren().add(player1View);
 
         if (isDuoMode && player2 != null) {
-            player2View = new Region();
+            player2View = new ImageView(TURTLE_IMAGE);
+            player2View.setFitWidth(50);
+            player2View.setFitHeight(50);
             player2View.getStyleClass().add("player2");
 
             GridPane.setColumnIndex(player2View, player2.getX());
@@ -128,6 +137,7 @@ public class GameView {
             entityLayer.getChildren().add(player2View);
         }
     }
+
 
     /**
      * ============================
