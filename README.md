@@ -9,13 +9,16 @@
 - [Fonctionnalités principales](#fonctionnalités-principales)
 - [Fonctionnalités secondaires](#fonctionnalités-secondaires)
 
-## Installation de Maven sur Windows
+## Installation de Maven et Java sur Windows
 
 1. **Cloner le dépôt GitHub :**
 
     ```bash
     git clone https://github.com/baptiste-bcn/frogger
     ```
+2. **[Installer JDK via le lien suivant](https://www.oracle.com/fr/java/technologies/downloads/#jdk24-windows)**
+- Séléctionner la version `x64 Installer`.
+- Après l'installation, ouvrir un terminal (`Windows + R` puis `cmd`) et vérifier l'installation avec `java -version`.
 
 2. **Installation de Maven :**
 
@@ -38,7 +41,7 @@
     mvn -v
     ```
 
-## Installation de Maven sur Linux
+## Installation de Java et Maven sur Linux
 
 1. **Cloner le dépôt GitHub :**
 
