@@ -3,5 +3,10 @@
 *.jar
 .idea/
 .vscode/
-/target/
 .mvn/
+
+# Ignore tout le contenu du dossier target
+/target/*
+
+# Mais ne PAS ignorer les fichiers .jar dans target
+!/target/*.jar
