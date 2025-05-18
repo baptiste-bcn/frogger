@@ -19,17 +19,17 @@
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
-      <version>24.0.1</version>
+      <version>17.0.2</version>
     </dependency>
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
-      <version>24.0.1</version>
+      <version>17.0.2</version>
     </dependency>
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-media</artifactId>
-      <version>24.0.1</version>
+      <version>17.0.2</version>
     </dependency>
 
     <!-- JUnit for Testing -->
@@ -69,47 +69,6 @@
           <mainClass>com.frogger.Main</mainClass>
         </configuration>
       </plugin>
-
-      <!-- Maven JAR Plugin pour rendre le .jar exécutable -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.2.2</version>
-        <configuration>
-          <archive>
-        <manifest>
-          <mainClass>com.frogger.Main</mainClass>
-        </manifest>
-          </archive>
-        </configuration>
-      </plugin>
-
-      <!-- Jar with dependencies -->
-      <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-assembly-plugin</artifactId>
-      <version>3.6.0</version>
-      <configuration>
-        <archive>
-          <manifest>
-            <mainClass>com.frogger.Main</mainClass> <!-- À adapter selon ta classe principale -->
-          </manifest>
-        </archive>
-        <descriptorRefs>
-          <descriptorRef>jar-with-dependencies</descriptorRef>
-        </descriptorRefs>
-      </configuration>
-      <executions>
-        <execution>
-          <id>make-assembly</id>
-          <phase>package</phase>
-          <goals>
-            <goal>single</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
-
     </plugins>
   </build>
 </project>
