@@ -3,6 +3,5 @@
 *.jar
 .idea/
 .vscode/
-/target/
 .mvn/
 target/
