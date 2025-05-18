@@ -47,6 +47,7 @@ public class Main extends Application {
                 Image grassTile = new Image(getClass().getResourceAsStream("/images/GrassTile.png"));
                 Image roadTile = new Image(getClass().getResourceAsStream("/images/RoadTile.png"));
                 Image blueCar = new Image(getClass().getResourceAsStream("/images/BlueCar.png"));
+                Image redCar = new Image(getClass().getResourceAsStream("/images/redCar.png"));
                 Image tree = new Image(getClass().getResourceAsStream("/images/Tree.png"));
                 Image frog = new Image(getClass().getResourceAsStream("/images/frog.png"));
                 Image background = new Image(getClass().getResourceAsStream("/images/Background.png"),

@@ -24,10 +24,14 @@ public class GameView {
 
     private static final Image GRASS_TILE_IMAGE = new Image(
             Objects.requireNonNull(GameView.class.getResourceAsStream("/images/GrassTile.png")));
-    private static final Image ROAD_TILE_IMAGE = new Image(Objects.requireNonNull(GameView.class.getResourceAsStream("/images/RoadTile.png")));
+    private static final Image ROAD_TILE_IMAGE = new Image(
+            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/RoadTile.png")));
     private static final Image BLUE_CAR_IMAGE = new Image(
             Objects.requireNonNull(GameView.class.getResourceAsStream("/images/BlueCar.png")));
-    private static final Image TREE_IMAGE = new Image(Objects.requireNonNull(GameView.class.getResourceAsStream("/images/Tree.png")));
+    private static final Image RED_CAR_IMAGE = new Image(
+            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/RedCar.png")));
+    private static final Image TREE_IMAGE = new Image(
+            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/Tree.png")));
 
     public GameView(GridPane grid, GridPane entityLayer) {
         this.grid = grid;
@@ -83,7 +87,9 @@ public class GameView {
                 obstacleView.setFitWidth(50);
                 obstacleView.setFitHeight(50);
             } else if (obstacle.getType() == Obstacle.ObstacleType.CAR) {
-                obstacleView = new ImageView(BLUE_CAR_IMAGE);
+                // Choix aléatoire de la couleur de la voiture
+                Image carImage = Math.random() < 0.5 ? BLUE_CAR_IMAGE : RED_CAR_IMAGE;
+                obstacleView = new ImageView(carImage);
                 obstacleView.getStyleClass().add("car");
                 obstacleView.setFitWidth(60);
                 obstacleView.setFitHeight(60);
