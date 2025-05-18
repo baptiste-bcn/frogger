@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-03-17" view-index="0" gantt-divider-location="565" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-03-17" view-index="0" gantt-divider-location="550" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
     <description/>
     <view zooming-state="default:6" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="274" order="0"/>
-        <field id="tpd4" name="Date de début" width="136" order="1"/>
-        <field id="tpd5" name="Date de fin" width="139" order="2"/>
+        <field id="tpd3" name="Nom" width="267" order="0"/>
+        <field id="tpd4" name="Date de début" width="132" order="1"/>
+        <field id="tpd5" name="Date de fin" width="135" order="2"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
         <option id="filter.overdueTasks" value="false"/>
@@ -124,6 +124,7 @@
 
 Ajout de cette modification pour que tout le monde puisse bénéficier d'un jeu en plein écran (fenêtré) pour une meilleur expérience de jeu.]]></notes>
             </task>
+            <task id="249" uid="a4276092cb2d446cacdf64358aacfe6f" name="Ajout d'un fichier Enum pour mieux gérer la difficulté" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true"/>
         </task>
         <task id="15" uid="935b8565cf35456b90d6ae1b2f53fc44" name="Documentation du code" color="#ffcc00" meeting="false" start="2025-03-25" duration="15" complete="100" thirdDate="2025-03-25" thirdDate-constraint="1" expand="true">
             <depend id="26" type="2" difference="0" hardness="Strong"/>
@@ -161,6 +162,7 @@ Ajout de cette modification pour que tout le monde puisse bénéficier d'un jeu 
         <allocation task-id="246" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="247" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="248" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="249" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="1" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="13" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="0" resource-id="1" function="Default:0" responsible="false" load="50.0"/>
