@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-03-17" view-index="0" gantt-divider-location="196" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-03-17" view-index="0" gantt-divider-location="595" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
     <description/>
-    <view zooming-state="default:5" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="90" order="0"/>
-        <field id="tpd4" name="Date de début" width="45" order="1"/>
-        <field id="tpd5" name="Date de fin" width="45" order="2"/>
+    <view zooming-state="default:6" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="288" order="0"/>
+        <field id="tpd4" name="Date de début" width="144" order="1"/>
+        <field id="tpd5" name="Date de fin" width="147" order="2"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
         <option id="filter.overdueTasks" value="false"/>
@@ -114,6 +114,8 @@
             <task id="244" uid="ac9536daf6b045c79072fdab3054bfc2" name="Ajout d'une voiture rouge pour représenter un camion" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true">
                 <notes><![CDATA[Quand deux voitures apparaissent collées, elles sont rouges pour représenter un véhicule plus long, comme par exemple un camion.]]></notes>
             </task>
+            <task id="245" uid="9a55ce558483410885df73f9fbf614df" name="Ajout d'une grenouille pour le joueur 1 et d'une tortue pour le joueur 2" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true"/>
+            <task id="246" uid="f654d123066142548efe4b1555d9f40e" name="Ajout du guide d'installation de Maven pour Linux" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true"/>
         </task>
         <task id="15" uid="935b8565cf35456b90d6ae1b2f53fc44" name="Documentation du code" color="#ffcc00" meeting="false" start="2025-03-25" duration="15" complete="100" thirdDate="2025-03-25" thirdDate-constraint="1" expand="true">
             <depend id="26" type="2" difference="0" hardness="Strong"/>
@@ -147,6 +149,8 @@
         <allocation task-id="208" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="214" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="225" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="245" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="246" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="1" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="13" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="0" resource-id="1" function="Default:0" responsible="false" load="50.0"/>
