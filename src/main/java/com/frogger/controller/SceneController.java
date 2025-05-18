@@ -12,7 +12,7 @@ public class SceneController {
     public SceneController(Stage stage) {
         this.stage = stage;
         this.scene = new Scene(new Parent() {
-        }, 800, 600);
+        });
         this.scene.getStylesheets().add(getClass().getResource("/view/menu/MenuStyles.css").toExternalForm()); // Ajout de la feuille de style
         this.stage.setScene(this.scene);
     }

@@ -4,7 +4,6 @@ import com.frogger.controller.SceneController;
 import javafx.application.Application;
 import javafx.concurrent.Task;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
 import java.util.Objects;
@@ -23,9 +22,9 @@ public class Main extends Application {
         // Configuration de la fenêtre
         stage.setResizable(false);
         stage.setTitle("Froggy Road");
-        stage.setFullScreen(true);
-        stage.setFullScreenExitHint("");
-        stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
+        stage.setOnShown(event -> {
+            stage.setMaximized(true);
+        });
 
         // Création du contrôleur de scène
         SceneController sceneController = new SceneController(stage);
