@@ -2,14 +2,14 @@
 
 ## Sommaire
 
-- [Installation de Maven et Java sur Windows](#installation-de-maven-et-java-sur-windows)
-- [Installation de Maven et Java sur Linux](#installation-de-maven-et-java-sur-linux)
+- [Installation de Java et Maven sur Windows](#installation-de-java-et-maven-sur-windows)
+- [Installation de Java et Maven sur Linux](#installation-de-java-et-maven-sur-linux)
 - [Exécuter le projet](#exécuter-le-projet)
 - [Description](#description)
 - [Fonctionnalités principales](#fonctionnalités-principales)
 - [Fonctionnalités secondaires](#fonctionnalités-secondaires)
 
-## Installation de Maven et Java sur Windows
+## Installation de Java et Maven sur Windows
 
 1. **Cloner le dépôt GitHub :**
 
