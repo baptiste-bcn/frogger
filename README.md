@@ -11,8 +11,6 @@
 
 ## Installation de Maven sur Windows
 
-Pour cloner et lancer ce projet avec Maven, suivre les étapes ci-dessous :
-
 1. **Cloner le dépôt GitHub :**
 
     ```bash
