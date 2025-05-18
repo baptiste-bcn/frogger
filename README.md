@@ -2,8 +2,8 @@
 
 ## Sommaire
 
-- [Installation de Maven sur Windows](#installation-de-maven-sur-windows)
-- [Installation de Maven sur Linux](#installation-de-maven-sur-linux)
+- [Installation de Maven et Java sur Windows](#installation-de-maven-et-java-sur-windows)
+- [Installation de Maven et Java sur Linux](#installation-de-maven-et-java-sur-linux)
 - [Exécuter le projet](#exécuter-le-projet)
 - [Description](#description)
 - [Fonctionnalités principales](#fonctionnalités-principales)
