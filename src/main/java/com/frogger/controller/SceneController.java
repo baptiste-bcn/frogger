@@ -42,6 +42,7 @@ public class SceneController {
             Parent gameLayout = loader.load();
             gameLayout.getStyleClass().add("green-background"); // Appliquer le fond vert
             scene.setRoot(gameLayout);
+            gameLayout.requestFocus(); // Permet de faire marcher les touches directionnelles pour le Joueur 2
 
             GameController controller = loader.getController();
             controller.setSceneController(this);
