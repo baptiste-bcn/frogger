@@ -17,8 +17,8 @@ public class Game {
         this.grid = new Grid(25, 15);
         this.obstacles = new ArrayList<>();
 
-        this.player1 = new Player(0, 0);
-        this.player2 = duoMode ? new Player(0, 0) : null;
+        this.player1 = new Player(0, 0, false);
+        this.player2 = duoMode ? new Player(0, 0, true) : null;
 
         resetPlayerPositions();
         initializeObstacles();
@@ -63,10 +63,7 @@ public class Game {
 
         if (player.getY() == 0) {
             player.setScore(player.getScore() + 100);
-
-            if (player.getScore() > player.getBestScore()) {
-            player.setBestScore(player.getScore());
-        }
+            player.updateBestScore();
 
             int gridWidth = grid.getWidth();
             int startX = duoMode && player == player2 ? gridWidth / 2 + 1 : gridWidth / 2;
@@ -107,7 +104,6 @@ public class Game {
         return isCenterRestricted && isRowRestricted;
     }
 
-
     /**
      * ============================
      * OBSTACLES SECTION
@@ -121,7 +117,7 @@ public class Game {
             Grid.RowType rowType = grid.getRowType(row);
 
             if (rowType == Grid.RowType.SAFE) {
-                int treeCount = 4 + (int) (Math.random() * 5);
+                int treeCount = 8 + (int) (Math.random() * 6);
 
                 for (int i = 0; i < treeCount; i++) {
                     int x = (int) (Math.random() * grid.getWidth());

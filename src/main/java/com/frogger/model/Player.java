@@ -6,11 +6,20 @@ public class Player {
     private int previousX;
     private int previousY;
     private int score;
-    private int bestScore = 0;
+
+    // Best scores statiques pour chaque joueur
+    private static int bestScoreJ1 = 0;
+    private static int bestScoreJ2 = 0;
+    private final boolean isPlayer2;
 
     public Player(int x, int y) {
+        this(x, y, false);
+    }
+
+    public Player(int x, int y, boolean isPlayer2) {
         this.x = x;
         this.y = y;
+        this.isPlayer2 = isPlayer2;
     }
 
     /**
@@ -26,7 +35,6 @@ public class Player {
     public int getY() {
         return y;
     }
-
 
     public void savePreviousPosition() {
         this.previousX = this.x;
@@ -62,11 +70,21 @@ public class Player {
     }
 
     public int getBestScore() {
-        return bestScore;
+        return isPlayer2 ? bestScoreJ2 : bestScoreJ1;
     }
 
-    public void setBestScore(int bestScore) {
-        this.bestScore = bestScore;
+    public void updateBestScore() {
+        if (isPlayer2) {
+            if (score > bestScoreJ2)
+                bestScoreJ2 = score;
+        } else {
+            if (score > bestScoreJ1)
+                bestScoreJ1 = score;
+        }
+    }
+
+    public boolean isPlayer2() {
+        return isPlayer2;
     }
 
     /**

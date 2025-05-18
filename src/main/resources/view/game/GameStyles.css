@@ -1,112 +1,113 @@
 .game {
-  -fx-border-color: transparent;
-  -fx-background-image: url("/images/Background.png");
-  -fx-background-size: cover;
-  -fx-background-position: center;
-  -fx-background-repeat: no-repeat;
+    -fx-border-color: transparent;
+    -fx-background-image: url("/images/Background.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
 }
 
 .entity-layer {
-  -fx-alignment: center;
-  -fx-border-color: transparent;
+    -fx-alignment: center;
+    -fx-border-color: transparent;
 }
 
 .gameHeader {
-  -fx-background-color: #333;
-  -fx-spacing: 10px;
+    -fx-background-color: #333;
+    -fx-spacing: 10px;
 }
 
 .score-label {
-  -fx-font-size: 16px;
-  -fx-font-weight: bold;
-  -fx-text-fill: red;
-  -fx-padding: 7px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: red;
+    -fx-padding: 7px;
 }
 
 .grid {
-  -fx-alignment: center;
-  -fx-border-color: transparent;
+    -fx-alignment: center;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, #083919, 18, 0.2, 0, 4);
 }
 
 .safe-cell {
-  -fx-background-color: green;
+    -fx-background-color: green;
 }
 
 .road-cell {
-  -fx-background-color: gray;
+    -fx-background-color: gray;
 }
 
 .grid-cell {
-  -fx-border-color: black;
-  -fx-border-width: 1px;
-  -fx-pref-width: 50px;
-  -fx-pref-height: 50px;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
 }
 
 /* Styles pour les obstacles */
 .tree {
-  -fx-pref-width: 50px;
-  -fx-pref-height: 50px;
-  -fx-background-radius: 25px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-background-radius: 25px;
 }
 
 .car {
-  -fx-pref-width: 50px;
-  -fx-pref-height: 50px;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
 }
 
 .player {
-  -fx-background-color: blue;
-  -fx-border-color: black;
-  -fx-pref-width: 50px;
-  -fx-pref-height: 50px;
-  -fx-background-radius: 25px;
+    -fx-background-color: blue;
+    -fx-border-color: black;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-background-radius: 25px;
 }
 
 .player2 {
-  -fx-background-color: orange;
-  -fx-border-color: black;
-  -fx-pref-width: 50px;
-  -fx-pref-height: 50px;
-  -fx-background-radius: 25px;
+    -fx-background-color: orange;
+    -fx-border-color: black;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+    -fx-background-radius: 25px;
 }
 
 .back-button {
-  -fx-font-size: 12px;
-  -fx-padding: 7px 10px;
-  -fx-background-color: #555;
-  -fx-text-fill: white;
-  -fx-border-radius: 5px;
-  -fx-background-radius: 5px;
-  -fx-alignment: center;
-  -fx-pref-width: 150px;
+    -fx-font-size: 12px;
+    -fx-padding: 7px 10px;
+    -fx-background-color: #555;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-alignment: center;
+    -fx-pref-width: 150px;
 }
 
 .score-button {
-  -fx-font-size: 12px;
-  -fx-padding: 7px 10px;
-  -fx-background-color: #555;
-  -fx-text-fill: white;
-  -fx-border-radius: 5px;
-  -fx-background-radius: 5px;
-  -fx-alignment: center;
-  -fx-pref-width: 300px;
+    -fx-font-size: 12px;
+    -fx-padding: 7px 10px;
+    -fx-background-color: #555;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-alignment: center;
+    -fx-pref-width: 300px;
 }
 
 .gameHeader {
-  -fx-background-color: #333;
-  -fx-alignment: center-left;
-  -fx-spacing: 20px;
-  -fx-padding: 5px 10px;
+    -fx-background-color: #333;
+    -fx-alignment: center-left;
+    -fx-spacing: 20px;
+    -fx-padding: 5px 10px;
 }
 
 .timer-label {
-  -fx-font-size: 12px;
-  -fx-padding: 7px 10px;
-  -fx-background-color: #555;
-  -fx-text-fill: white;
-  -fx-border-radius: 5px;
-  -fx-background-radius: 5px;
-  -fx-alignment: center;
-  -fx-pref-width: 400px;
+    -fx-font-size: 12px;
+    -fx-padding: 7px 10px;
+    -fx-background-color: #555;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-alignment: center;
+    -fx-pref-width: 400px;
 }

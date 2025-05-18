@@ -31,7 +31,6 @@ public class GameController {
     @FXML
     private Button lblBestScorePlayer2;
 
-
     @FXML
     private GridPane grid;
 
@@ -133,6 +132,7 @@ public class GameController {
         lblBestScorePlayer2.setMouseTransparent(true);
         lblBestScorePlayer2.setFocusTraversable(false);
 
+        updateScore();
         startGameLoop();
     }
 
@@ -195,7 +195,6 @@ public class GameController {
         }
     }
 
-
     private void handleKeyRelease(KeyEvent event) {
         isKeyPressed = false;
     }
@@ -213,7 +212,7 @@ public class GameController {
             lblScorePlayer2.setVisible(false);
             lblBestScorePlayer2.setVisible(false);
         }
-}
+    }
 
     /**
      * ============================
