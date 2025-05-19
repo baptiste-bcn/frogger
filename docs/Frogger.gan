@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-03-17" view-index="0" gantt-divider-location="550" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-03-17" view-index="0" gantt-divider-location="535" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
     <description/>
     <view zooming-state="default:6" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="267" order="0"/>
-        <field id="tpd4" name="Date de début" width="132" order="1"/>
-        <field id="tpd5" name="Date de fin" width="135" order="2"/>
+        <field id="tpd3" name="Nom" width="260" order="0"/>
+        <field id="tpd4" name="Date de début" width="128" order="1"/>
+        <field id="tpd5" name="Date de fin" width="131" order="2"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
         <option id="filter.overdueTasks" value="false"/>
         <option id="filter.inProgressTodayTasks" value="false"/>
-        <option id="color.recent"><![CDATA[#99ff99 #ffcc00 #cc00cc #990099 #ff0033 #c6cbf1 #000000 #ff00ff #f4f4f4 #00ffff]]></option>
+        <option id="color.recent"><![CDATA[#99ff99 #f4f4f4 #ffcc00 #cc00cc #990099 #ff0033 #c6cbf1 #000000 #ff00ff #00ffff]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="210" order="0"/>
@@ -125,6 +125,15 @@
 Ajout de cette modification pour que tout le monde puisse bénéficier d'un jeu en plein écran (fenêtré) pour une meilleur expérience de jeu.]]></notes>
             </task>
             <task id="249" uid="a4276092cb2d446cacdf64358aacfe6f" name="Ajout d'un fichier Enum pour mieux gérer la difficulté" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true"/>
+            <task id="250" uid="fbdcdbdbb56642d39e25fb686ed82ad5" name="Correction du nom des assets" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true"/>
+            <task id="251" uid="f0fb22ab54dc47c984ad3111b075716e" name="Correction du mode Versus" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true">
+                <notes><![CDATA[Cela réinitialisait les deux joueurs au départ quand un des deux franchissait une collision.]]></notes>
+            </task>
+            <task id="252" uid="35471f687393431eb4e1f92dbc8a0a36" name="Préchargement des assets pour optimiser le code" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true"/>
+            <task id="253" uid="1a2789ed4be44743a636f8fe6295be81" name="Changement de la taille de la grille en fonction de la hauteur de l'écran" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true">
+                <notes><![CDATA[- Pour convenir aux PC avec une plus petite résolution (normalement)]]></notes>
+            </task>
+            <task id="254" uid="f4272b45ae7c4b1393ad719a23c70dc5" name="Correction d'un bug à propos du score" color="#99ff99" meeting="false" start="2025-05-19" duration="1" complete="100" expand="true"/>
         </task>
         <task id="15" uid="935b8565cf35456b90d6ae1b2f53fc44" name="Documentation du code" color="#ffcc00" meeting="false" start="2025-03-25" duration="15" complete="100" thirdDate="2025-03-25" thirdDate-constraint="1" expand="true">
             <depend id="26" type="2" difference="0" hardness="Strong"/>
@@ -163,6 +172,10 @@ Ajout de cette modification pour que tout le monde puisse bénéficier d'un jeu 
         <allocation task-id="247" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="248" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="249" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="250" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="251" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="253" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="254" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="1" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="13" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="0" resource-id="1" function="Default:0" responsible="false" load="50.0"/>
@@ -187,6 +200,7 @@ Ajout de cette modification pour que tout le monde puisse bénéficier d'un jeu 
         <allocation task-id="242" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="243" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="244" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="252" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="1" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="13" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="58" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
