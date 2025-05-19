@@ -1,7 +1,7 @@
 package com.frogger.model;
 
 public enum Difficulty {
-    EASY("Easy", 1.5), NORMAL("Normal", 1.2), HARD("Hard", 0.9);
+    EASY("Easy", 1.5), NORMAL("Normal", 1.3), HARD("Hard", 1.2);
 
     private final String label;
     private final double speedMultiplier;
