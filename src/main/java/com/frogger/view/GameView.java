@@ -12,6 +12,8 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 
+import com.frogger.util.ImageCache;
+
 import java.util.Objects;
 
 public class GameView {
@@ -21,21 +23,13 @@ public class GameView {
     private ImageView player1View;
     private ImageView player2View;
 
-
-    private static final Image FROG_IMAGE = new Image(
-            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/frog.png")));
-    private static final Image TURTLE_IMAGE = new Image(
-            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/turtle.png")));
-    private static final Image GRASS_TILE_IMAGE = new Image(
-            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/GrassTile.png")));
-    private static final Image ROAD_TILE_IMAGE = new Image(
-            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/RoadTile.png")));
-    private static final Image BLUE_CAR_IMAGE = new Image(
-            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/BlueCar.png")));
-    private static final Image RED_CAR_IMAGE = new Image(
-            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/RedCar.png")));
-    private static final Image TREE_IMAGE = new Image(
-            Objects.requireNonNull(GameView.class.getResourceAsStream("/images/Tree.png")));
+    private static final Image FROG_IMAGE = ImageCache.get("/images/frog.png");
+    private static final Image TURTLE_IMAGE = ImageCache.get("/images/turtle.png");
+    private static final Image GRASS_TILE_IMAGE = ImageCache.get("/images/grasstile.png");
+    private static final Image ROAD_TILE_IMAGE = ImageCache.get("/images/roadtile.png");
+    private static final Image BLUE_CAR_IMAGE = ImageCache.get("/images/bluecar.png");
+    private static final Image RED_CAR_IMAGE = ImageCache.get("/images/redcar.png");
+    private static final Image TREE_IMAGE = ImageCache.get("/images/tree.png");
 
     public GameView(GridPane grid, GridPane entityLayer) {
         this.grid = grid;
@@ -136,7 +130,6 @@ public class GameView {
             entityLayer.getChildren().add(player2View);
         }
     }
-
 
     /**
      * ============================

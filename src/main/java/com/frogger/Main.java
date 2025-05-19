@@ -1,6 +1,8 @@
 package com.frogger;
 
 import com.frogger.controller.SceneController;
+import com.frogger.util.ImageCache;
+
 import javafx.application.Application;
 import javafx.concurrent.Task;
 import javafx.scene.image.Image;
@@ -42,21 +44,10 @@ public class Main extends Application {
         Task<Void> preloadTask = new Task<>() {
             @Override
             protected Void call() {
-                // Précharger les images nécessaires
-                Image grassTile = new Image(getClass().getResourceAsStream("/images/GrassTile.png"));
-                Image roadTile = new Image(getClass().getResourceAsStream("/images/RoadTile.png"));
-                Image blueCar = new Image(getClass().getResourceAsStream("/images/BlueCar.png"));
-                Image redCar = new Image(getClass().getResourceAsStream("/images/redCar.png"));
-                Image tree = new Image(getClass().getResourceAsStream("/images/Tree.png"));
-                Image frog = new Image(getClass().getResourceAsStream("/images/frog.png"));
-                Image turtle = new Image(getClass().getResourceAsStream("/images/turtle.png"));
-                Image background = new Image(getClass().getResourceAsStream("/images/Background.png"),
-                        1920, 1080, true, true); // Charger avec des dimensions adaptées
-
+                ImageCache.preload(getClass());
                 return null;
             }
         };
-
         new Thread(preloadTask).start();
     }
 }
