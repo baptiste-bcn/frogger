@@ -49,6 +49,7 @@ public class Main extends Application {
                 Image redCar = new Image(getClass().getResourceAsStream("/images/redCar.png"));
                 Image tree = new Image(getClass().getResourceAsStream("/images/Tree.png"));
                 Image frog = new Image(getClass().getResourceAsStream("/images/frog.png"));
+                Image turtle = new Image(getClass().getResourceAsStream("/images/turtle.png"));
                 Image background = new Image(getClass().getResourceAsStream("/images/Background.png"),
                         1920, 1080, true, true); // Charger avec des dimensions adaptées
 
