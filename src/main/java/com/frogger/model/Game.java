@@ -22,11 +22,11 @@ public class Game {
         int startY = grid.getHeight() - 1;
 
         int P1StartX = duoMode ? GRID_WIDTH / 2 - 1 : GRID_WIDTH / 2;
-        this.player1 = new Player(0, 0, P1StartX, startY, false);
+        this.player1 = new Player(P1StartX, startY, false);
 
         if (duoMode) {
             int P2startX = GRID_WIDTH / 2 + 1;
-            this.player2 = new Player(0, 0, P2startX, startY, true);
+            this.player2 = new Player(P2startX, startY, true);
         }
 
         initializeObstacles();

@@ -14,11 +14,11 @@ public class Player {
     private static int bestScoreJ2 = 0;
     private final boolean isPlayer2;
 
-    public Player(int x, int y, int startX, int startY, boolean isPlayer2) {
+    public Player(int x, int y, boolean isPlayer2) {
         this.x = x;
         this.y = y;
-        this.startX = startX;
-        this.startY = startY;
+        this.startX = x;
+        this.startY = y;
         this.isPlayer2 = isPlayer2;
     }
 
