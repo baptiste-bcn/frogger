@@ -3,6 +3,8 @@ package com.frogger.model;
 public class Player {
     private int x;
     private int y;
+    private final int startX;
+    private final int startY;
     private int previousX;
     private int previousY;
     private int score;
@@ -12,13 +14,11 @@ public class Player {
     private static int bestScoreJ2 = 0;
     private final boolean isPlayer2;
 
-    public Player(int x, int y) {
-        this(x, y, false);
-    }
-
-    public Player(int x, int y, boolean isPlayer2) {
+    public Player(int x, int y, int startX, int startY, boolean isPlayer2) {
         this.x = x;
         this.y = y;
+        this.startX = startX;
+        this.startY = startY;
         this.isPlayer2 = isPlayer2;
     }
 
@@ -39,6 +39,11 @@ public class Player {
     public void savePreviousPosition() {
         this.previousX = this.x;
         this.previousY = this.y;
+    }
+
+    public void restoreStartPosition() {
+        this.x = this.startX;
+        this.y = this.startY;
     }
 
     public void restorePreviousPosition() {

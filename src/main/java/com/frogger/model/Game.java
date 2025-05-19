@@ -9,18 +9,25 @@ public class Game {
     private Grid grid;
     private final List<Obstacle> obstacles;
     private final Player player1;
-    private final Player player2;
+    private Player player2 = null;
     private final boolean duoMode;
 
     public Game(boolean duoMode) {
+        int gridWidth = 25;
         this.duoMode = duoMode;
-        this.grid = new Grid(25, 15);
+        this.grid = new Grid(gridWidth, 15);
         this.obstacles = new ArrayList<>();
 
-        this.player1 = new Player(0, 0, false);
-        this.player2 = duoMode ? new Player(0, 0, true) : null;
+        int startY = grid.getHeight() - 1;
 
-        resetPlayerPositions();
+        int P1StartX = duoMode ? gridWidth / 2 - 1 : gridWidth / 2;
+        this.player1 = new Player(0, 0, P1StartX, startY, false);
+
+        if (duoMode) {
+            int P2startX = gridWidth / 2 + 1;
+            this.player2 = new Player(0, 0, P2startX, startY, true);
+        }
+
         initializeObstacles();
     }
 
@@ -64,11 +71,6 @@ public class Game {
         if (player.getY() == 0) {
             player.setScore(player.getScore() + 100);
             player.updateBestScore();
-
-            int gridWidth = grid.getWidth();
-            int startX = duoMode && player == player2 ? gridWidth / 2 + 1 : gridWidth / 2;
-            player.resetPosition(startX, grid.getHeight() - 1);
-
             return true;
         }
 
@@ -82,7 +84,7 @@ public class Game {
         this.obstacles.clear();
         initializeObstacles();
 
-        resetPlayerPositions();
+        resetBothPlayerPositions();
     }
 
     private boolean isRestrictedZone(int x, int row) {
@@ -164,7 +166,7 @@ public class Game {
                     player.restorePreviousPosition();
                     return true;
                 } else if (obstacle.getType() == Obstacle.ObstacleType.CAR) {
-                    resetPlayerPositions();
+                    player.restoreStartPosition();
                     player.resetScore();
                     return true;
                 }
@@ -173,14 +175,10 @@ public class Game {
         return false; // Pas de collision
     }
 
-    private void resetPlayerPositions() {
-        int gridWidth = grid.getWidth();
-        int player1X = gridWidth % 2 == 0 ? gridWidth / 2 - 1 : (duoMode ? gridWidth / 2 - 1 : gridWidth / 2);
-        int player2X = gridWidth % 2 == 0 ? gridWidth / 2 : gridWidth / 2 + 1;
-
-        player1.resetPosition(player1X, grid.getHeight() - 1);
+    private void resetBothPlayerPositions() {
+        player1.restoreStartPosition();
         if (duoMode && player2 != null) {
-            player2.resetPosition(player2X, grid.getHeight() - 1);
+            player2.restoreStartPosition();
         }
     }
 }
