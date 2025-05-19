@@ -11,20 +11,21 @@ public class Game {
     private final Player player1;
     private Player player2 = null;
     private final boolean duoMode;
+    public final static int GRID_WIDTH = 25;
+    public final static int GRID_HEIGHT = 15;
 
     public Game(boolean duoMode) {
-        int gridWidth = 25;
         this.duoMode = duoMode;
-        this.grid = new Grid(gridWidth, 15);
+        this.grid = new Grid(GRID_WIDTH, GRID_HEIGHT);
         this.obstacles = new ArrayList<>();
 
         int startY = grid.getHeight() - 1;
 
-        int P1StartX = duoMode ? gridWidth / 2 - 1 : gridWidth / 2;
+        int P1StartX = duoMode ? GRID_WIDTH / 2 - 1 : GRID_WIDTH / 2;
         this.player1 = new Player(0, 0, P1StartX, startY, false);
 
         if (duoMode) {
-            int P2startX = gridWidth / 2 + 1;
+            int P2startX = GRID_WIDTH / 2 + 1;
             this.player2 = new Player(0, 0, P2startX, startY, true);
         }
 

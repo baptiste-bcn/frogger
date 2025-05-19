@@ -5,6 +5,7 @@ import com.frogger.model.Grid;
 import com.frogger.model.Grid.RowType;
 import com.frogger.model.Obstacle;
 import com.frogger.model.Player;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -13,6 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 
 import com.frogger.util.ImageCache;
+import javafx.stage.Screen;
 
 public class GameView {
     private final GridPane grid;
@@ -20,6 +22,8 @@ public class GameView {
 
     private ImageView player1View;
     private ImageView player2View;
+
+    private final int cellSize;
 
     private static final Image FROG_IMAGE = ImageCache.get("/images/frog.png");
     private static final Image TURTLE_IMAGE = ImageCache.get("/images/turtle.png");
@@ -30,6 +34,12 @@ public class GameView {
     private static final Image TREE_IMAGE = ImageCache.get("/images/tree.png");
 
     public GameView(GridPane grid, GridPane entityLayer) {
+        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+
+        // Calcul du ratio hauteur de l'écran / nombre de cases sur la hauteur.
+        double cellRatio = screenBounds.getHeight() / Game.GRID_HEIGHT;
+
+        this.cellSize = (int) (cellRatio - (cellRatio * 0.3));  // Marge de 30%
         this.grid = grid;
         this.entityLayer = entityLayer;
     }
@@ -44,10 +54,10 @@ public class GameView {
         Grid gridModel = game.getGrid();
 
         for (int col = 0; col < gridModel.getWidth(); col++) {
-            grid.getColumnConstraints().add(new ColumnConstraints(50));
+            grid.getColumnConstraints().add(new ColumnConstraints(cellSize));
         }
         for (int row = 0; row < gridModel.getHeight(); row++) {
-            grid.getRowConstraints().add(new RowConstraints(50));
+            grid.getRowConstraints().add(new RowConstraints(cellSize));
         }
 
         for (int row = 0; row < gridModel.getHeight(); row++) {
@@ -59,8 +69,8 @@ public class GameView {
                 } else if (rowType == RowType.ROAD) {
                     cell.setImage(ROAD_TILE_IMAGE);
                 }
-                cell.setFitWidth(50);
-                cell.setFitHeight(50);
+                cell.setFitWidth(cellSize);
+                cell.setFitHeight(cellSize);
                 grid.add(cell, col, row);
             }
         }
@@ -68,11 +78,11 @@ public class GameView {
 
     public void initializeObstacles(Game game) {
         for (int col = 0; col < game.getGrid().getWidth(); col++) {
-            entityLayer.getColumnConstraints().add(new ColumnConstraints(50));
+            entityLayer.getColumnConstraints().add(new ColumnConstraints(cellSize));
         }
 
         for (int row = 0; row < game.getGrid().getHeight(); row++) {
-            entityLayer.getRowConstraints().add(new RowConstraints(50));
+            entityLayer.getRowConstraints().add(new RowConstraints(cellSize));
         }
 
         for (Obstacle obstacle : game.getObstacles()) {
@@ -80,15 +90,15 @@ public class GameView {
             if (obstacle.getType() == Obstacle.ObstacleType.TREE) {
                 obstacleView = new ImageView(TREE_IMAGE);
                 obstacleView.getStyleClass().add("tree");
-                obstacleView.setFitWidth(50);
-                obstacleView.setFitHeight(50);
+                obstacleView.setFitWidth(cellSize);
+                obstacleView.setFitHeight(cellSize);
             } else if (obstacle.getType() == Obstacle.ObstacleType.CAR) {
                 // Choix aléatoire de la couleur de la voiture
                 Image carImage = Math.random() < 0.5 ? BLUE_CAR_IMAGE : RED_CAR_IMAGE;
                 obstacleView = new ImageView(carImage);
                 obstacleView.getStyleClass().add("car");
-                obstacleView.setFitWidth(60);
-                obstacleView.setFitHeight(60);
+                obstacleView.setFitWidth(cellSize);
+                obstacleView.setFitHeight(cellSize);
             }
 
             if (obstacle.getType() == Obstacle.ObstacleType.CAR) {
@@ -109,8 +119,8 @@ public class GameView {
 
     public void initializePlayers(Player player1, Player player2, boolean isDuoMode) {
         player1View = new ImageView(FROG_IMAGE);
-        player1View.setFitWidth(50);
-        player1View.setFitHeight(50);
+        player1View.setFitWidth(cellSize);
+        player1View.setFitHeight(cellSize);
         player1View.getStyleClass().add("player");
 
         GridPane.setColumnIndex(player1View, player1.getX());
@@ -119,8 +129,8 @@ public class GameView {
 
         if (isDuoMode && player2 != null) {
             player2View = new ImageView(TURTLE_IMAGE);
-            player2View.setFitWidth(50);
-            player2View.setFitHeight(50);
+            player2View.setFitWidth(cellSize);
+            player2View.setFitHeight(cellSize);
             player2View.getStyleClass().add("player2");
 
             GridPane.setColumnIndex(player2View, player2.getX());
