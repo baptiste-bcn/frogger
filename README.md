@@ -16,14 +16,26 @@
     ```bash
     git clone https://github.com/baptiste-bcn/frogger
     ```
-2. **[Installer JDK via le lien suivant](https://www.oracle.com/fr/java/technologies/downloads/#jdk24-windows)**
+2. **[Installer Java (JDK) via le lien suivant](https://www.oracle.com/fr/java/technologies/downloads/#jdk24-windows)**
 - Séléctionner la version `x64 Installer`.
 - Après l'installation, ouvrir un terminal (`Windows + R` puis `cmd`) et vérifier l'installation avec `java -version`.
 
-3. **Exécuter le projet :**
+3. **Installer Maven :**
 
-    ```bash
-    java -jar .\frogger-1.0-SNAPSHOT.jar
+- S'assurer que Maven est installé sur la machine (`mvn -v`). Si ce n'est pas le cas, le télécharger et l'installer depuis [le site officiel de Maven](https://maven.apache.org/).
+- Télécharger la version **apache-maven-3.9.9-bin.zip**.
+- Dans `Téléchargements`, extraire l'archive .zip vers `apache-maven-3.9.9\bin`.
+- Copier le dossier obtenu (`apache-maven-3.9.9-bin`) dans `C:\Program Files` (Programmes) et aussi dans `C:\Program Files (x86)` (Programmes x86) pour être sûr que ça fonctionne.
+- Dans `Téléchargements`, ouvrir le dossier `apache-maven-3.9.9-bin` jusqu'au répertoire `bin`.
+- Copier le chemin d'accès en haut (devrait ressembler à `C:\Users\name\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin`).
+- Ajouter à la variable d'environnement `PATH` le chemin `C:\Program Files\Maven\apache-maven-3.9.9\bin`.
+- Pour se faire, rechercher (`Windows + S`) "Variables d'environnement" puis cliquer sur "Modifier les variables d’environnement système".
+- Cliquer sur "Variables d'environnement".
+- Cliquer sur celle qui a le nom "Path" dans la partie "Variables systèmes" puis "Modifier".
+- En ajouter une nouvelle via "Nouveau" puis coller le chemin d'accès à l'endroit où vous l'avez télécharger : `C:\Users\name\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin` puis cliquer sur "OK".
+- Vérifier l'installation en ouvrant un terminal et en exécutant la commande suivante :
+  ```bash
+    mvn -v
     ```
 
 ## Installation de Java et Maven sur Linux
@@ -60,7 +72,7 @@
    Nettoyer et installer les dépendances :
 
    ```bash
-   mvn clean install
+   mvn clean package
    ```
 
    Lancer le projet :
