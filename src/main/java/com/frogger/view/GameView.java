@@ -14,8 +14,6 @@ import javafx.scene.layout.RowConstraints;
 
 import com.frogger.util.ImageCache;
 
-import java.util.Objects;
-
 public class GameView {
     private final GridPane grid;
     private final GridPane entityLayer;
@@ -25,10 +23,10 @@ public class GameView {
 
     private static final Image FROG_IMAGE = ImageCache.get("/images/frog.png");
     private static final Image TURTLE_IMAGE = ImageCache.get("/images/turtle.png");
-    private static final Image GRASS_TILE_IMAGE = ImageCache.get("/images/grasstile.png");
-    private static final Image ROAD_TILE_IMAGE = ImageCache.get("/images/roadtile.png");
-    private static final Image BLUE_CAR_IMAGE = ImageCache.get("/images/bluecar.png");
-    private static final Image RED_CAR_IMAGE = ImageCache.get("/images/redcar.png");
+    private static final Image GRASS_TILE_IMAGE = ImageCache.get("/images/grass_tile.png");
+    private static final Image ROAD_TILE_IMAGE = ImageCache.get("/images/road_tile.png");
+    private static final Image BLUE_CAR_IMAGE = ImageCache.get("/images/blue_car.png");
+    private static final Image RED_CAR_IMAGE = ImageCache.get("/images/red_car.png");
     private static final Image TREE_IMAGE = ImageCache.get("/images/tree.png");
 
     public GameView(GridPane grid, GridPane entityLayer) {

@@ -14,14 +14,14 @@ public class ImageCache {
     }
 
     public static void preload(Class<?> clazz) {
-        load(clazz, "/images/grasstile.png");
-        load(clazz, "/images/roadtile.png");
-        load(clazz, "/images/bluecar.png");
-        load(clazz, "/images/redcar.png");
+        load(clazz, "/images/grass_tile.png");
+        load(clazz, "/images/road_tile.png");
+        load(clazz, "/images/blue_car.png");
+        load(clazz, "/images/red_car.png");
         load(clazz, "/images/tree.png");
         load(clazz, "/images/frog.png");
         load(clazz, "/images/turtle.png");
-        load(clazz, "/images/Background.png", 1920, 1080, true, true);
+        load(clazz, "/images/background.png", 1920, 1080, true, true);
     }
 
     private static void load(Class<?> clazz, String path) {
